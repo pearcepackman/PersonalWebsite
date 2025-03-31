@@ -44,8 +44,8 @@ function App() {
                 Most of my experience has been in full-stack web development. I am passionate
                 and excited to expand my knowledge and skills!
               </p>
-              <br/>
-              <br/>
+              
+            
             </div>
           </div>
           <div className = "section">
@@ -170,7 +170,7 @@ function App() {
                 </div>
                 
               </div>
-              <p>Thank you for reading! If you're interested to know more about me,
+              <p className='footer'>Thank you for reading! If you're interested to know more about me,
                 you can send me an email at pearcepackman@gmail.com.
               </p>
             </div>
