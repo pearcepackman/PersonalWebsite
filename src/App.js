@@ -5,6 +5,8 @@ import resume from './assets/resume.png';
 import email from './assets/email.png';
 import pslogo from './assets/pslogo.png';
 import pcrlogo from './assets/pcrlogo.png';
+import pcli from './assets/pcli.png';
+import library from './assets/book.png';
 
 import './App.css';
 
@@ -103,21 +105,64 @@ function App() {
             <div className = "projectarea">
               <div className = "project">
                 <a href = "https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
-                <img src = {pslogo}></img>
+                <div className = "projectpic">
+                  <img className = "pslogo" src = {pslogo}></img>
+                </div>
                 <h3>Projects Simplified</h3>
                 <p>
-                  - Built using Node.JS, Express.JS, and SQL<br></br>
+                  
                   - Full-Stack CRUD application to manage projects<br></br>
                   - Secure user authentication and login system<br></br>
                   - Utilizes SQL Database to create, read, update, and delete information<br></br>
-                  - Deployed on Heroku for stable usage
+                  - Deployed on Heroku for stable usage<br></br>
+                  - Built using Node.JS, Express.JS, and SQL
+                </p>
+                
+                </a>
+              </div>
+              <div className = "project">
+              <a href = "https://github.com/pearcepackman/Pearces_CLI" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
+                
+                <div className = "projectpic">
+
+
+                  <img className = "cli"src = {pcli}></img>
+                                                  
+                </div>
+                <h3>PCLI: Pearce's CLI</h3>
+                
+                <p>
+                  - Command-line Interface (CLI) tool for file management <br></br>
+                  - Simple directory navigation features<br></br>
+                  - Functionality to create, read, update, and delete directories and text files<br></br>
+                  - User-friendly help and error system for ease of use<br></br>
+                  - Built using Python, CMD and OS libraries
+                </p>
+                
+                
+                </a>
+              </div>
+              <div className = "project">
+                <a href = "https://github.com/pearcepackman/Library_Management_System" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
+                <div className = "projectpic">
+                  <img className = "bookimg" src = {library}></img>
+                </div>
+                <h3>C++ Library Management System</h3>
+                <p>
+                  - Library Management System that keeps track of books and customers<br></br>
+                  - Utilizes object-oriented (OOP) programming principles<br></br>
+                  - Simple commands to add, delete, and search customers, along with checking out books<br></br>
+                  - User-friendly CLI for efficient book and customer management<br></br>
+                  
                 </p>
                 
                 </a>
               </div>
               <div className = "project">
                 <a href = "https://pearcescolognereview.netlify.app/" target = "_blank" rel="noopener noreferrer" alt = "pearce's cologne review">
-                <img src = {pcrlogo}></img>
+                <div className = "projectpic">
+                  <img className = "pcrlogo" src = {pcrlogo}></img>
+                </div>
                 <h3>Pearce's Cologne Review</h3>
                 <p>
                   - Built using Node.JS and React<br></br>
