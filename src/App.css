@@ -312,7 +312,15 @@ html, body {
     font-size: 12px;
     margin-bottom: 0;
   }
-  
+  .acharea{
+    height: auto;
+    margin-top: .5%;
+    margin-left: 5%;
+    margin-right: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
   .educationarea{
     height: auto;
     margin-top: .5%;
@@ -601,7 +609,7 @@ html, body {
     justify-content: space-evenly;
   }
   .project{
-    height: 500px;
+    height: 420px;
     width: 45%;
     margin-bottom: 5%;
     /*background-color: darkcyan;*/
@@ -639,7 +647,7 @@ html, body {
   }
   .projectpic {
     /*background-color: orange;*/
-    min-height: 200px;
+    min-height: 160px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -647,29 +655,30 @@ html, body {
   }
   
   .cli {
-    min-height: 100px;
-    max-height: 200px ;
+    min-height: 80px;
+    max-height: 170px ;
     width: 100%;
+    /*background-color: blue;*/
     
   }
   .pslogo {
-    min-height: 100px;
-    max-height: 200px;
+    min-height: 80px;
+    max-height: 170px;
     min-width: 200px;
     max-width: 600px;
     /*background-color: red;*/
   }
   .pcrlogo{
-    min-height: 100px;
-    max-height: 200px;
+    min-height: 80px;
+    max-height: 170px;
     min-width: 100px;
     max-width: 600px;
     
   }
   .bookimg{
     filter: invert(1) brightness(.8);
-    min-height: 100px;
-    max-height: 200px;
+    min-height: 80px;
+    max-height: 170px;
     min-width: 100px;
     max-width: 200px;
     margin-bottom: 10px;
@@ -737,6 +746,17 @@ html, body {
     margin-bottom: 0;
   }
 
+  .acharea{
+    height: auto;
+    margin-top: .5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 0;
+    display: flex;
+    /*background-color: green;*/
+    flex-direction: column;
+    
+  }
   .educationarea{
     height: 450px;;
     margin-top: .5%;

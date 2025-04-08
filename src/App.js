@@ -60,7 +60,7 @@ function App() {
                 <div className="skillcarddesc">
                   <p>
                     - Experience in building full-stack applications<br></br>
-                    - Experience using Node.JS, Express.JS, React, HTML, CSS, and SQL<br></br>
+                    - Experience using Node.JS, Express.JS, React & React Native, HTML, CSS, and SQL<br></br>
                     - Create RESTful API for web applications <br></br>
                     - Implemented secure user login and authentication system<br></br>
                     - Ensure clean and stable mobile functionality 
@@ -179,6 +179,26 @@ function App() {
             </div>
             
           </div>
+          <div className="section">
+            <h1>Achievemenets</h1>
+            <div className='acharea'>
+              <div className='school'>
+                <div className='schoolanddates'>
+                  <h3>Hackathon Winner - HackHounds 2025 Loyola University, MD</h3>
+                  <h5>April 2025</h5>
+                </div>
+                <div className = "schoolnotes">
+                  <p>
+                    - Awarded Best Computer Vision for developing a goal-tracking app using image recognition to monitor user progress<br></br>
+                    - Designed a clean, user-friendly UI in React Native to enhance app usability and engagement<br></br>
+                    - Learned React Native UI in 24 hours and collaborated with a team to meet tight deadlines<br></br>
+                    
+                  </p>
+                  <br></br>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className = "section">
             <h1>Education</h1>
             <div className = "educationarea">
@@ -195,6 +215,7 @@ function App() {
                     - Coursework: Principles of Programming Languages, Computer Organazation and Assembly Language<br></br>
                     - Extra Curricular Activities: UMBC Racing Team Member
                   </p>
+                  <br></br>
                 </div>
                 
               </div>
