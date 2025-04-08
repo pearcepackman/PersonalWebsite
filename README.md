@@ -1,6 +1,10 @@
 # Personal Website
 ## Link: https://pearcepackman.com/
 ## Versions:
+### Version 1.05:
+- New achievements section!
+- Showing HackHounds 2025 win
+- Updated project styling
 ### Version 1.04:
 - Updated projects and resume
 - Fixed small CSS visual bugs
