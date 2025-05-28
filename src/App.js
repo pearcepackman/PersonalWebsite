@@ -7,6 +7,8 @@ import pslogo from './assets/pslogo.png';
 import pcrlogo from './assets/pcrlogo.png';
 import pcli from './assets/pcli.png';
 import library from './assets/book.png';
+import iot from './assets/iot.png';
+import app from './assets/app-store.png';
 
 import './App.css';
 
@@ -41,10 +43,10 @@ function App() {
               </div>
             </div>
             <div className = "navdesc">
-              <p>Hello, my name is Pearce. I am a dedicated computer science student
-                at UMBC with a strong academic record and will be graduating in December 2026. 
-                Most of my experience has been in full-stack web development. I am passionate
-                and excited to expand my knowledge and skills!
+              <p>Hello, I'm Pearce! I'm a computer science student at UMBC graduating in December 2026 with a strong academic
+                record and passion for building practical, real-world applications. My experience includes full-stack web development,
+                embedded systems, and command-line tools with a focus on clean and reliable code. I bring a strong work ethic from years
+                working in the trades, and I am always excited to learn new things! 
               </p>
               
             
@@ -55,43 +57,43 @@ function App() {
             <div className = "projectarea">
               <div className = "skillcard">
                 <div className = "skillcardtitle">
-                  <h3>Full-Stack Web Development</h3>
+                  <h3>Full-Stack Development</h3>
                 </div>
                 <div className="skillcarddesc">
                   <p>
-                    - Experience in building full-stack applications<br></br>
-                    - Experience using Node.JS, Express.JS, React & React Native, HTML, CSS, and SQL<br></br>
-                    - Create RESTful API for web applications <br></br>
-                    - Implemented secure user login and authentication system<br></br>
-                    - Ensure clean and stable mobile functionality 
+                    - Proficient in building responsive full-stack applications using React, React Native, Node.js, Express.js, JSON, SQL, HTML, and CSS<br></br>
+                    - Experience designing RESTful APIs and integrating JWT-based authentication for secure login systems<br></br>
+                    - Developed mobile and desktop UIs with intuitive navigation and live data visualizations <br></br>
+                    - Deployed applications using Heroku and Netlify for stable, public access
                   </p>
                 </div>
               </div>
               
                 <div className = "skillcard">
                   <div className = "skillcardtitle">
-                    <h3>Software Development and Programming</h3>
+                    <h3>Software Engineering and Programming</h3>
                   </div>
                   <div className="skillcarddesc">
                     <p>
-                      - Write and create programs in Python, C++, and JavaScript<br></br>
-                      - Backend development experience utilizing SQL to perform CRUD operations<br></br>
-                      - Utilized Git and Github for easy version control <br></br>
-                      - Developed software using industry standard tools like VSCode and Git
+                      - Write and maintain software in Python, C++, and JavaScript using object-oriented and modular principles<br></br>
+                      - Backend development with SQL and SQLite for CRUD operations<br></br>
+                      - Built CLI tools and embedded C++ firmware for ESP32 IoT devices with JSON serialization<br></br>
+                      - Version control using Git & GitHub; worked in fast-paced team environments for Hackathon<br></br>
+                      - Proficient with VSCode, Arduino IDE, and CLI tools
                     </p>
                   </div>
                   
                 </div>
                 <div className = "skillcard">
                 <div className = "skillcardtitle">
-                  <h3>Soft-Skills and Teamwork</h3>
+                  <h3>Collaboration and Problem Solving</h3>
                 </div>
                 <div className="skillcarddesc">
                   <p>
-                    - Strong problem-solving and analytical skills developed building my own projects <br></br>
-                    - Experience working collaboratively on team projects in education and the UMBC
-                    Racing Team<br></br>
-                    - Able to communicate and teach complex topics from tutoring experience<br></br>
+                    - Strong problem-solving skills demonstrated through end-to-end personal projects and hackathon challenges<br></br>
+                    - Thrive in collaborative settings like hackathons and engineering projects (UMBC Racing Team), contributing under pressure and tight deadlines<br></br>
+                    - Comfortable communicating technical concepts through tutoring, group work, and documentation<br></br>
+                    - Bring a strong work ethic and maturity from full-time experience in the trades prior to pursuing computer science<br></br>
                     
                   </p>
                 </div>
@@ -104,6 +106,30 @@ function App() {
             <h1>Projects</h1>
             <div className = "projectarea">
               <div className = "project">
+                <a href = "https://github.com/pearcepackman/Smart-home-dashboard" target = "_blank" rel="noopener noreferrer" alt = "smart home sensor system">
+                <div className = "projectpic">
+                  <img className = "iot" src = {iot}></img>
+                </div>
+                <h3>Smart Home Sensor System</h3>
+                <p>
+                  Full-stack project with embedded C++ firmware for an ESP32 that transmits real-time sensor data as JSON to a Node.js + Express backend with a REST API and SQLite database. Designed a React Native mobile app using Expo to visualize live and historical data, ensuring a user-friendly experience
+                </p>
+                
+                </a>
+              </div>
+              <div className = "project">
+                <a href = "https://devpost.com/software/d-kh8jf4" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
+                <div className = "projectpic">
+                  <img className = "iot" src = {app}></img>
+                </div>
+                <h3>SnapMotive</h3>
+                <p>
+                  Winning Best Computer Vision at Loyola HackHounds 2025, SnapMotive is a goal tracking app developed in React Native that uses computer vision to track your progress. Collaborated in a team to deploy the app within 24 hours
+                </p>
+                
+                </a>
+              </div>
+              <div className = "project">
                 <a href = "https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
                 <div className = "projectpic">
                   <img className = "pslogo" src = {pslogo}></img>
@@ -111,11 +137,7 @@ function App() {
                 <h3>Projects Simplified</h3>
                 <p>
                   
-                  - Full-Stack CRUD application to manage projects<br></br>
-                  - Secure user authentication and login system<br></br>
-                  - Utilizes SQL Database to create, read, update, and delete information<br></br>
-                  - Deployed on Heroku for stable usage<br></br>
-                  - Built using Node.JS, Express.JS, and SQL
+                  Full-stack CRUD application for project and task management with a secure JWT-based login system. Built with JavaScript, Node.js, Express, SQL, and styled with HTML/CSS, the app is deployed on Heroku to ensure 24/7 accessibility
                 </p>
                 
                 </a>
@@ -132,11 +154,7 @@ function App() {
                 <h3>PCLI: Pearce's CLI</h3>
                 
                 <p>
-                  - Command-line Interface (CLI) tool for file management <br></br>
-                  - Simple directory navigation features<br></br>
-                  - Functionality to create, read, update, and delete directories and text files<br></br>
-                  - User-friendly help and error system for ease of use<br></br>
-                  - Built using Python, CMD and OS libraries
+                  Python-based command-line interface (CLI) tool for intuitive file and directory management, supporting navigation, creation, editing, and deletion operations. Features a built-in help and error system for user-friendly interaction, utilizing Python's cmd and os libraries.
                 </p>
                 
                 
@@ -147,12 +165,9 @@ function App() {
                 <div className = "projectpic">
                   <img className = "bookimg" src = {library}></img>
                 </div>
-                <h3>C++ Library Management System</h3>
+                <h3>Library Management System</h3>
                 <p>
-                  - Library Management System that keeps track of books and customers<br></br>
-                  - Utilizes object-oriented (OOP) programming principles<br></br>
-                  - Simple commands to add, delete, and search customers, along with checking out books<br></br>
-                  - User-friendly CLI for efficient book and customer management<br></br>
+                  C++ library management system using object-oriented programming to manage books and customer records. Utilizes a command-line interface for efficiently adding, deleting, searching, and checking out books, making it easy to use
                   
                 </p>
                 
@@ -165,11 +180,7 @@ function App() {
                 </div>
                 <h3>Pearce's Cologne Review</h3>
                 <p>
-                  - Built using Node.JS and React<br></br>
-                  - Frontend application designed to showcase my cologne collection<br></br> 
-                  - Designed full mobile functionality<br></br>
-                  - Designed intuitive UI with navigation across multiple pages<br></br>
-                  - Deployed on Netlify for stable usage<br></br>
+                  Responsive frontend application with React and Node.js to showcase a personal cologne collection, featuring smooth navigation across multiple pages. Created a clean, mobile-friendly UI and deployed the app on Netlify for stable public access
                   
                 </p>
                 
@@ -211,8 +222,8 @@ function App() {
                   <p>
                     - Obtaining Bachelor's of Science in Computer Science<br></br>
                     - Graduating in December of 2026<br></br>
-                    - GPA: 4.0 (Dean's List)<br></br>
-                    - Coursework: Principles of Programming Languages, Computer Organazation and Assembly Language<br></br>
+                    - GPA: 3.79<br></br>
+                    - Coursework: Data Structures, Principles of Programming Languages, Computer Organazation and Assembly Language<br></br>
                     - Extra Curricular Activities: UMBC Racing Team Member
                   </p>
                   <br></br>

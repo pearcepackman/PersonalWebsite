@@ -191,10 +191,12 @@ html, body {
     justify-content: space-evenly;
   }
   .project{
-    height: 100%;
+    height: auto;
     width: 100%;
     margin-bottom: 7%;
     /*background-color: darkcyan;*/
+    border: solid 1px rgba(161, 161, 161, 0.8);
+    border-radius: 12px;
     filter: brightness(70%);
     transition: all .2s ease;
     display: flex;
@@ -218,16 +220,17 @@ html, body {
   .project p {
     font-size: 12px;
     font-weight: 500;
-    line-height: 170%;
-    margin-top: 5%;
-    margin-bottom: 0;
+    height: auto;
+    margin-top: 0%;
+    width: 90%;
+    align-self: center;
     color: var(--darkwhite);
     /*background-color: violet;*/
-    text-align: left;
+    text-align: center;
   }
   .projectpic {
     /*background-color: orange;*/
-    min-height: 100px;
+   
     width: 100%;
     display: flex;
     justify-content: center;
@@ -236,25 +239,41 @@ html, body {
   .cli {
     max-height: 50px;
     
-    width: 100%;
+    width: 90%;
     /*background-color: gray;*/
     
   }
   .bookimg{
     filter: invert(1) brightness(.8);
-    min-height: 50px;
-    max-height: 100px;
-    min-width: 50px;
-    max-width: 100px;
+    height: 75px;
+    width: 75px;
     margin-bottom: 10px;
+  }
+  .iot {
+    filter: invert(1) brightness(.95);
+    height: 75px;
+    min-width: 75px;
+    max-width: 100px;
+
+  }
+  .pslogo {
+    height: 70px;
+    min-width: 50%;
+    max-width: 90%;
+    /*background-color: red;*/
+  }
+  .pcrlogo{
+    height: 70px;
+    width: 50%;
+    
+    
   }
   .project img{
     /*background-color: green;*/
-    height: 90px;
-    width: 250px;
     margin-left:auto;
     margin-right: auto;
-    margin-top: 0;
+    margin-top: 2%;
+    margin-bottom: 0;
   }
   .project a{
     display: flex; /* Makes the anchor tag a flex container */
@@ -273,11 +292,15 @@ html, body {
     display: flex;
     flex-direction: column;
     transition: all .2s ease;
+    border: solid 1px rgba(161, 161, 161, 0.8);
+    border-radius: 12px;
+    margin-bottom: 5%;
     filter:brightness(80%);
   }
   .skillcard:hover{
     transform: scale(1.02);
     filter:brightness(100%);
+    box-shadow: 0px 0px 35px rgba(228, 228, 228, 0.05);
   }
   .skillcard p {
     font-size: 18px;
@@ -300,10 +323,11 @@ html, body {
   }
   .skillcarddesc{
     height: 100%;
+    width: 94%;
     text-align: left;
     margin-top: 0;
     margin-bottom: 5%;
-    
+    align-self: center;
     color: var(--darkwhite);
     /*background-color: rgb(2, 47, 32);*/
   }
@@ -597,7 +621,8 @@ html, body {
     border-bottom:solid 1px #7b7b7b;
   }
   .projectarea{
-    height: 100%;
+    height: auto;
+    font-family:"Geist";
     /*background-color: blue;*/
     width: auto;
     flex-wrap: wrap;
@@ -609,95 +634,102 @@ html, body {
     justify-content: space-evenly;
   }
   .project{
-    height: 420px;
-    width: 45%;
-    margin-bottom: 5%;
+    height: auto;
+    width: 40%;
+    margin-bottom: 1.5%;
     /*background-color: darkcyan;*/
+    border: solid 1px rgba(161, 161, 161, 0.8);
+    border-radius: 12px;
     filter: brightness(70%);
     transition: all .2s ease;
     display: flex;
     flex-direction: column;
-    
-    
   }
   .project:hover{
-    transform:scale(1.02);
+    transform:scale(1.01);
     filter:brightness(92%);
-    
+    box-shadow: 0px 0px 35px rgba(228, 228, 228, 0.05);
   }
   .project h3{
-    margin-top: 0;
-    margin-bottom: 0;
+    
     color: var(--impwhite);
-    font-size: 30px;
+    font-size: 28px;
     /*background-color: red;*/
+    
   }
   .project p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
-    line-height: 170%;
-    height: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
+    line-height: 1.4;
+    height: auto;
+    margin-top: -2.5%;
+    width: 90%;
+    align-self: center;
     color: var(--darkwhite);
     /*background-color: violet;*/
-    text-align: left;
+    text-align: center;
     align-items: center;
-    display: flex;
+    display: block;
   }
   .projectpic {
     /*background-color: orange;*/
-    min-height: 160px;
+    min-height: 120px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
   
   .cli {
-    min-height: 80px;
-    max-height: 170px ;
-    width: 100%;
+    height: 90px;
+    width: 90%;
     /*background-color: blue;*/
     
   }
   .pslogo {
-    min-height: 80px;
-    max-height: 170px;
-    min-width: 200px;
-    max-width: 600px;
+    height: 120px;
+    min-width: 50%;
+    max-width: 90%;
     /*background-color: red;*/
   }
   .pcrlogo{
-    min-height: 80px;
-    max-height: 170px;
-    min-width: 100px;
-    max-width: 600px;
+    min-height: 100px;
+    max-height: 150px;
+    width: 50%;
+    
     
   }
   .bookimg{
     filter: invert(1) brightness(.8);
-    min-height: 80px;
-    max-height: 170px;
+    min-height: 50px;
+    max-height: 120px;
     min-width: 100px;
     max-width: 200px;
     margin-bottom: 10px;
+  }
+  .iot {
+    filter: invert(1) brightness(.95);
+    height: 120px;
+    min-width: 100px;
+    max-width: 200px;
+
   }
   .project img{
     /*background-color: green;*/
     
     margin-left:auto;
     margin-right: auto;
-    margin-top: 0;
+    margin-top: 2%;
+    margin-bottom: 0;
   }
   .project a{
-    display: flex; /* Makes the anchor tag a flex container */
+    display: flex;
     flex-direction: column;
-    text-decoration: none; /* Removes the underline */
-    color: inherit; /* Inherits color from parent */
-    height: 100%;
-    width: 100%;
-    justify-content: space-between;
+    text-decoration: none; 
+    color: inherit; 
+    
+    
   }
 
   .skillcard{
@@ -707,21 +739,24 @@ html, body {
     display: flex;
     flex-direction: column;
     transition: all .2s ease;
+    border: solid 1px rgba(161, 161, 161, 0.8);
+    border-radius: 12px;
     filter:brightness(80%);
   }
   .skillcard:hover{
-    transform: scale(1.02);
+    transform: scale(1.01);
     filter:brightness(100%);
+    box-shadow: 0px 0px 35px rgba(228, 228, 228, 0.05);
   }
   .skillcard p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
-    line-height: 170%;
+    line-height: 200%;
   }
   .skillcardtitle{
     height: 100px;
-    font-size: 24px;
-    margin-top: 0;
+    font-size: 22px;
+    margin-top: 2%;
     /*background-color: red;*/
     
     
@@ -735,7 +770,9 @@ html, body {
   }
   .skillcarddesc{
     height: 100%;
+    width: 94%;
     text-align: left;
+    align-self: center;
     margin-top: 0;
     margin-bottom: 0;
     color: var(--darkwhite);
@@ -772,7 +809,7 @@ html, body {
     color: var(--darkwhite);
     font-style:italic;
     margin-top: auto;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     animation-duration: 1s;
     animation-name: contentdrop;
@@ -842,7 +879,7 @@ html, body {
     margin-top: 0px;
     
     font-style: italic;
-    font-size: 18px;
+    font-size: 16px;
     
   }
   .school h3{
