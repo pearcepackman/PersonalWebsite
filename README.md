@@ -7,6 +7,18 @@ This is the code for my personal portfolio website. Built with React, JavaScript
 - Personal statements, information, and contacts
 - Deployed on Netlify
 - Updated README
+## Future Plans:
+- Dark mode / light mode would be super cool
+- Color if it looks nice? Dark theme with bright blue/pink/purple gradient
+- Remove some projects in favor for others
+- Expand skills section
+- Better animations/UX stuff, fade in?
+- Maybe a bit smaller text/sections
+- More verbose project information? Like tech stack, if it fits
+- Different project containers based on stack??? Or maybe 'stickers'? This would be super cool
+- Something with multiple resumes, maybe allow user to pick one?
+- Aiming for slick, modern, clean, techy 
+- If you're reading this hello :)
 ## Version History:
 ### Version 1.06 - 5/28/2025:
 - Changed personal description
