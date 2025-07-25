@@ -18,39 +18,13 @@ function App() {
       <header className="App-header">
         <div className = "Nav">
           <div className = "navbar">
-            <div className = "topnav">
-              <div className = "lefthandnav">
-                <img className = "picofme" src = {pictureofme} width="90" height="90" alt = "pictureofme"/>
-                <div className = "nametext">
-                  <h2>Pearce Packman</h2>
-                  <p>Computer Science student at UMBC</p>
-                </div>
-              </div>
-              <div className = "righthandnav">
-                <a href = "https://github.com/pearcepackman" target = "_blank" rel="noopener noreferrer">
-                  <img className = "picofme" src = {github} width="40" height="40" alt = "github"/>
-                </a>
-                <a href = "https://www.linkedin.com/in/pearce-packman/" target = "_blank" rel="noopener noreferrer">
-                  <img className = "picofme" src = {linkedin} width="40" height="40" alt = "linkedin"/>
-                </a>
-                <a href = "mailto:pearcepackman@gmail.com" target = "_blank" rel="noopener noreferrer">
-                  <img className = "picofme" src = {email} width="40" height="40" alt = "github"/>
-                </a>
-                
-                <a href = "https://drive.google.com/file/d/151GyXMqMP7wq571OO6Mu-xP-C8lHL283/view" target = "_blank" rel="noopener noreferrer">
-                  <img className = "picofme" src = {resume} width="40" height="40" alt = "github"/>
-                </a>
-              </div>
-            </div>
-            <div className = "navdesc">
-              <p>Hello, I'm Pearce! I'm a computer science student at UMBC graduating in December 2026 with a strong academic
-                record and passion for building practical, real-world applications. My experience includes full-stack web development,
-                embedded systems, and command-line tools with a focus on clean and reliable code. I bring a strong work ethic from years
-                working in the trades, and I am always excited to learn new things! 
-              </p>
-              
+            <p className = "navbaroptions">Testing</p>
+            <p className = "navbaroptions">Testing</p>
+            <p className = "navbaroptions">Testing</p>
             
-            </div>
+          </div>
+          <div className="startsection">
+
           </div>
           <div className = "section">
             <h1>Skills</h1>
