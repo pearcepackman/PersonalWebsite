@@ -479,7 +479,10 @@ html, body {
     color: white;
   }
   .Nav{
+<<<<<<< HEAD
   background: linear-gradient(180deg,rgba(16, 24, 31, 1) 0%, rgba(20, 7, 20, 1) 100%);  
+=======
+    background-color: rgb(47, 3, 3); 
     margin-bottom: auto;
     margin-top: 0%;
     width: 100%;
