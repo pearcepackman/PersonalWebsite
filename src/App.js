@@ -24,7 +24,26 @@ function App() {
             
           </div>
           <div className="startsection">
-
+	  	<div className = "introsection">
+	  		<div className = "namebox">
+          <p className = "introtext">
+            Hey, I'm Pearce!
+          </p>
+          <p className = "introdesc">
+            Full-Stack Developer
+          </p>
+          <p className = "introdesc">
+            Undergraduate Research Assistant
+          </p>
+          <p className = "introdesc">
+            Student at UMBC
+          </p>
+          <img className = "profpic" src = {pictureofme}></img>
+          <p className = "introblurb">
+            I love to design and build software that bridges hardware and systems. From real-time monitoring tools to IoT sensor platforms. Currently working for a backend or systems internship and loving the low-level side of CS!
+          </p>
+	  		</div>
+	  	</div>
           </div>
           <div className = "section">
             <h1>Skills</h1>

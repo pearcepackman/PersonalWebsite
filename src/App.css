@@ -469,7 +469,7 @@ html, body {
 /*------------------------------------------------------------------Fullscreen------------------------------------------------------------------*/
 @media (min-width: 1024px) {
   .App-header {
-    background: linear-gradient(173deg, rgba(36,36,36,1) 0%, rgba(15,15,15,1) 100%);
+    background: linear-gradient(90deg,rgba(30, 61, 74, 1) 0%, rgba(107, 42, 107, 1) 50%, rgba(129, 83, 237, 1) 100%);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -479,10 +479,9 @@ html, body {
     color: white;
   }
   .Nav{
-    background-color: rgb(47, 3, 3);
-    
+  background: linear-gradient(180deg,rgba(16, 24, 31, 1) 0%, rgba(20, 7, 20, 1) 100%);  
     margin-bottom: auto;
-    margin-top: .5%;
+    margin-top: 0%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -493,16 +492,85 @@ html, body {
     animation-duration: 2s;
     animation-name: contentdrop;
     display: flex;
+    margin-top: .75%;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     gap: 20px;
     background-color: rgba(109, 109, 109, 0.26);
     position: fixed;
-    width: 35%;
+    width: 80%;
     height: 40px;
     border-radius: 50px;
     
+  }
+  .introsection{
+	  /*background-color: rgb(10, 50, 50);*/
+	  width: 85%;
+	  height: 50%;
+	  
+	  margin-top:12%;
+	  display: flex;
+	  align-items:center;
+  }
+  .namebox{
+	  /*background-color: orange;*/
+	  height: auto;
+	  width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+	  margin-left: auto;
+	  margin-right: auto;
+  }
+  .introtext{
+    font-family: "Geist";
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    font-size: 65px;
+    line-height: 1.2;
+    /*background-color: red;*/
+  }
+  .introdesc{
+    /*background-color: blue;*/
+    color: grey;
+    line-height: 1.2;
+    font-family: "Geist";
+    font-weight: 600;
+    font-size: 20px;
+    margin: .15%;
+    font-style: italic;
+    padding: 0;
+  }
+  .introblurb{
+    color: grey;
+    line-height: 1.2;
+    font-family: "Geist";
+    font-weight: 500;
+    font-size: 16px;
+    margin: .15%;
+    font-style: italic;
+    padding: 0;
+    /*background-color: blue;*/
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .profpic{
+    width: 225px;
+    height: 225px;
+    border-radius: 10px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    transition: all .175s ease;
+    filter: brightness(70%);
+  }
+
+  .profpic:hover{
+    transform: scale(1.015);
+    filter:brightness(80%);
+    box-shadow: 0px 0px 20px 0px rgb(235, 235, 235, 0.175);
+
   }
   .navbaroptions{
     font-size: 14px;
@@ -511,10 +579,11 @@ html, body {
   }
   
   .startsection{
-    background-color: rgb(43, 43, 43);
+    /*background-color: rgb(43, 43, 43);*/
     width: 90vw;
     height: 100vh;
     display: flex;
+    align-items: center;
     flex-direction: column;
   }
   .section{
