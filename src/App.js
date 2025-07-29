@@ -9,6 +9,7 @@ import pcli from './assets/pcli.png';
 import library from './assets/book.png';
 import iot from './assets/iot.png';
 import app from './assets/app-store.png';
+import terminal from './assets/terminal.png';
 
 import React from "react";
 import ParticlesBackground from "./ParticlesBackground";
@@ -25,40 +26,66 @@ function App() {
         <div className = "Nav">
              
           <div className = "navbar">
-            <a href = "#projects" className = "navbaroptions">Projects</a>
-            <p className = "navbaroptions">Testing</p>
-            <p className = "navbaroptions">Testing</p>
+            <div className = "navbarleft">
+              <a href = "#" className = "navhome">PearcePackman.com</a>
+              
+            </div>
+            <div className = "navbaright">
+              <a href = "#skills" className = "navbaroptions">Skills</a>
+              <a href = "#projects" className = "navbaroptions">Projects</a>
+              <a href = "#projects" className = "navbaroptions">Projects</a>
+              <a href = "#projects" className = "navbaroptions">Projects</a>
+              <a href = "#projects" className = "navbaroptions">Projects</a>
+              
+            </div>
+            
             
           </div>
-    <ScrollFadeIn>
-          <div className="startsection">
-    
-	  	<div className = "introsection">
-	  		<div className = "namebox">
-          <p className = "introtext">
-            Pearce Packman
-          </p>
-          <p className = "introdesc">
-            Building systems that bridge hardware and software.
-          </p>
-          
-
-          
-	  		</div>
-        <p className="introblurb">
-            From embedded IoT systems to full-stack apps and real-time hardware monitoring tools, I enjoy building polished software that bridges low-level systems and user-facing design. 
-          </p>
-          <div className = "introbuttonbox">
-            <a href = "#projects" className = "workbutton">
-              Explore my work ▼
-            </a>
-            
-        </div>
-	  	</div>
-          </div>
-    </ScrollFadeIn>
           <ScrollFadeIn>
-    <ScrollFadeIn> 
+            <div className="startsection">
+              <div className = "introsection">
+                <div className = "namebox">
+                  <p className = "introtext">
+                    Pearce Packman
+                  </p>
+                  <p className = "introdesc">
+                    Building systems that bridge hardware and software.
+                  </p>
+                </div>
+                <p className="introblurb">
+                  From embedded IoT systems to full-stack apps and real-time hardware monitoring tools, I enjoy building polished software that bridges low-level systems and user-facing design. 
+                </p>
+                <div className = "introbuttonbox">
+                  <a href = "#skills" className = "workbutton">
+                    Explore my work ▼
+                  </a>
+                </div>
+	  	        </div>
+            </div>
+          </ScrollFadeIn>
+          <ScrollFadeIn>
+            <div id = "skills" className = "section">
+            <h1>Skills</h1>
+            <div className = "projectarea">
+              <div className = "skillcard">
+                
+                <div className="skillcardimg">
+                  <img className = "languageimg" src = {terminal}></img>
+                </div>
+                <div className = "skillcardtitle">
+                  <h3>C++</h3>
+                </div>
+              </div>
+              
+                
+                
+          
+            
+            </div>
+          </div>
+          </ScrollFadeIn>
+            
+          <ScrollFadeIn>
           <div id="projects" className = "section">
             <h1>Projects</h1>
             <div className = "projectarea">
@@ -209,7 +236,6 @@ function App() {
             
             </div>
           </div>
-          </ScrollFadeIn>
           <ScrollFadeIn> 
           <div className = "section">
             <h1>Projects</h1>
