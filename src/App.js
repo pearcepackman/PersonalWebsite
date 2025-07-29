@@ -25,7 +25,7 @@ function App() {
         <div className = "Nav">
              
           <div className = "navbar">
-            <p className = "navbaroptions">Testing</p>
+            <a href = "#projects" className = "navbaroptions">Projects</a>
             <p className = "navbaroptions">Testing</p>
             <p className = "navbaroptions">Testing</p>
             
@@ -36,30 +36,43 @@ function App() {
 	  	<div className = "introsection">
 	  		<div className = "namebox">
           <p className = "introtext">
-            Hey, I'm Pearce!
+            Pearce Packman
           </p>
           <p className = "introdesc">
-            Full-Stack Developer
+            Building systems that bridge hardware and software.
           </p>
-          <p className = "introdesc">
-            Undergraduate Research Assistant
-          </p>
-          <p className = "introdesc">
-            Student at UMBC
-          </p>
-          <img className = "profpic" src = {pictureofme}></img>
-          <p className = "introblurb">
-            I love to design and build software that bridges hardware and systems. From real-time monitoring tools to IoT sensor platforms. Currently working for a backend or systems internship and loving the low-level side of CS!
-          </p>
+          
+
+          
 	  		</div>
+        <p className="introblurb">
+            From embedded IoT systems to full-stack apps and real-time hardware monitoring tools, I enjoy building polished software that bridges low-level systems and user-facing design. 
+          </p>
+          <div className = "introbuttonbox">
+            <a href = "#projects" className = "workbutton">
+              Explore my work ▼
+            </a>
+            
+        </div>
 	  	</div>
           </div>
     </ScrollFadeIn>
           <ScrollFadeIn>
     <ScrollFadeIn> 
-          <div className = "section">
+          <div id="projects" className = "section">
             <h1>Projects</h1>
             <div className = "projectarea">
+              <div className = "project">
+                <a href = "https://github.com/pearcepackman/CorePanel" target = "_blank" rel="noopener noreferrer" alt = "CorePanel">
+                <div className = "projectpic">
+                  <img className = "iot" src = {iot}></img>
+                </div>
+                <h3>CorePanel</h3>
+                <p>CorePanel is a C++/Qt desktop app with a C# backend that displays real-time CPU, GPU, RAM, and disk usage using live charts and system sensor data from LibreHardwareMonitor. 
+                </p>
+                
+                </a>
+              </div>
               <div className = "project">
                 <a href = "https://github.com/pearcepackman/Smart-home-dashboard" target = "_blank" rel="noopener noreferrer" alt = "smart home sensor system">
                 <div className = "projectpic">
@@ -71,18 +84,7 @@ function App() {
                 
                 </a>
               </div>
-    <div className = "project">
-                <a href = "https://github.com/pearcepackman/CorePanel" target = "_blank" rel="noopener noreferrer" alt = "CorePanel">
-                <div className = "projectpic">
-                  <img className = "iot" src = {iot}></img>
-                </div>
-                <h3>CorePanel</h3>
-                <p>CorePanel is a C++/Qt desktop app with a C# backend that displays real-time CPU, GPU, RAM, and disk usage using live charts and system sensor data from LibreHardwareMonitor.
-                   
-    </p>
-                
-                </a>
-              </div>
+              
               <div className = "project">
                 <a href = "https://devpost.com/software/d-kh8jf4" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
                 <div className = "projectpic">

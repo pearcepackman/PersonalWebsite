@@ -9,6 +9,7 @@
 html, body {
   height: 100%;
   background: rgb(36,36,36);
+  scroll-behavior: smooth;
 }
 #tsparticles {
   position: fixed;
@@ -499,31 +500,65 @@ html, body {
     animation-duration: 2s;
     animation-name: contentdrop;
     display: flex;
-    margin-top: .75%;
+    margin-top: 0%;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    z-index: 10;
     gap: 20px;
     background-color: rgba(109, 109, 109, 0.26);
     position: fixed;
-    width: 80%;
-    height: 40px;
-    border-radius: 50px;
+    width: 100%;
+    height: 50px;
+    backdrop-filter: blur(4px);
+    border-bottom: solid 1px rgba(219, 219, 219, .2);
     
   }
+  .navbaroptions {
+  position: relative;
+  text-decoration: none;
+  color: #afafaf;
+  transition: transform 0.2s ease;
+  padding: 7px 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: all .15s ease;
+}
+
+.navbaroptions::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: #e0e0e0;
+  transition: width 0.24s ease;
+  border-radius: 2px;
+}
+
+.navbaroptions:hover {
+  color: #f7f7f7;
+}
+
+.navbaroptions:hover::after {
+  width: 100%;
+}
+
   .introsection{
 	  /*background-color: rgb(10, 50, 50);*/
 	  width: 85%;
 	  height: auto;
 	  
-	  margin-top:10%;
+	  margin-top:200px;
 	  display: flex;
-	  align-items:center;
+    flex-direction: column;
+	  
   }
   .namebox{
 	  /*background-color: orange;*/
 	  height: auto;
-	  width: 80%;
+	  width: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -538,34 +573,67 @@ html, body {
     -webkit-text-fill-color: transparent;
     margin: 0;
     padding: 0;
-    font-size: 65px;
-    line-height: 1.2;
+    font-size: 85px;
+    line-height: 1;
+    align-self: center;
     /*background-color: red;*/
   }
   .introdesc{
     /*background-color: blue;*/
-    color: grey;
+    color: #DBDBDB;
     line-height: 1.2;
     font-family: "Geist";
-    font-weight: 600;
-    font-size: 20px;
-    margin: .15%;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 5px;
     font-style: italic;
     padding: 0;
+    width: 650px;
+    align-self: center;
   }
   .introblurb{
-    color: grey;
+    color: #a8a8a8;
     line-height: 1.2;
     font-family: "Geist";
-    font-weight: 500;
+    font-weight: 700;
     font-size: 16px;
-    margin: .15%;
+    margin: 10px;
     font-style: italic;
     padding: 0;
     width: 400px;
     /*background-color: blue;*/
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 0;
+    margin-right: 0;
+    align-self: center;
+  }
+  .introbuttonbox{
+    margin-top: 20px;
+    /*background-color: red;*/
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .workbutton{
+    background: linear-gradient(103deg,rgba(45, 134, 181, 1) 0%, rgba(102, 45, 107, 1) 100%);    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    transition: all .15s ease;
+    font-family: "Geist";
+    font-weight: 700;
+    font-size: 15px;
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: solid 1px rgb(0, 14, 75);*/
+    box-shadow: 0px 0px 10px 0px rgba(177, 177, 177, 0.116);
+  }
+  .workbutton:hover{
+    transform: scale(1.03);
+    background: linear-gradient(103deg,rgba(17, 142, 209, 1) 0%, rgba(175, 28, 189, 1) 100%);
+    box-shadow: 0px 0px 25px 0px rgba(216, 216, 216, 0.219);
   }
   .profpic{
     width: 225px;
@@ -602,6 +670,7 @@ html, body {
     width: 80vw;
     display: flex;
     flex-direction: column;
+    scroll-margin-top: 150px;
     /*animation-duration: 2s;
     animation-name: contentdrop;*/
   }
@@ -612,7 +681,10 @@ html, body {
     margin-bottom:0;
     margin-left: 0%;
     text-align: left;
-    /*background-color: green;*/
+    font-size: 75px;
+    background: linear-gradient(180deg,rgba(230, 230, 230, 1) 0%, rgba(156, 204, 219, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     border-bottom:solid 1px #7b7b7b;
   }
   .projectarea{
