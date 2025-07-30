@@ -14,6 +14,8 @@ import backend from './assets/coding.png';
 import frontend from './assets/front-development.png';
 import embedded from './assets/integrated-system.png';
 import tools from './assets/tools.png';
+import softskills from './assets/interpersonal-skills.png';
+import corepanel from './assets/monitor.png';
 
 import React from "react";
 import ParticlesBackground from "./ParticlesBackground";
@@ -180,19 +182,29 @@ function App() {
                 
               </div>
 
-              
-
-
-              
-
-
-              
-              
-              
+              <div className = "skillcard skillsoft">
+                  <div className = "skilltag">
+                    Soft Skills
+                  </div>
+                  <div className="skillcardimg">
+                    <img className = "frontendimg" src = {softskills}></img>
+                  </div>
+                  <div className = "skillpointslayout">
+                    <ul className = "skillpoints">
+                      <li>Adaptability</li>
+                      <li>Discipline</li>
+                      <li>Leadership</li>
+                    </ul>
+                    <ul className = "skillpoints">
+                      <li>Accountability</li>
+                      <li>Initiative</li>
+                      <li>Collaboration</li>
+                      
+                    </ul>
+                  </div>
                 
-                
+              </div>
           
-            
             </div>
           </div>
           </ScrollFadeIn>
@@ -201,6 +213,36 @@ function App() {
           <div id="projects" className = "section">
             <h1>Projects</h1>
             <div className = "projectarea">
+
+              <div className= "projectcard projectcorepanel">
+                <a href = "https://github.com/pearcepackman/CorePanel" target = "_blank" rel="noopener noreferrer" alt = "CorePanel">
+                <div className = "projecttagarea">
+                  <div className = "projecttag">
+                    C++
+                  </div>
+                  <div className = "projecttag">
+                    C#
+                  </div>
+                  <div className = "projecttag">
+                    Qt
+                  </div>
+                </div>
+                <div className="skillcardimg">
+                    <img className = "corepanelimg" src = {corepanel}></img>
+                </div>
+                <div className = "projectdesclayout">
+                  <p className='projectname'>CorePanel </p><p> is a project</p>
+                </div>
+                </a>  
+              </div>
+
+
+              <div className= "projectcard projectcorepanel">
+                
+              </div>
+
+
+
               <div className = "project">
                 <a href = "https://github.com/pearcepackman/CorePanel" target = "_blank" rel="noopener noreferrer" alt = "CorePanel">
                 <div className = "projectpic">

@@ -727,7 +727,7 @@ html, body {
     margin-right: 0%;
     row-gap: 28px;
     column-gap: 28px;
-    margin-bottom: 35px;
+    margin-bottom: 80px;
     display: flex;
     justify-content: center;
     
@@ -912,25 +912,41 @@ html, body {
   box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
               0 0px 15px rgba(153, 141, 141, 0.445);
   }
-  .skilllanguage{
-background: radial-gradient(circle, rgba(157, 94, 255, 0.4) 0%, rgba(60, 20, 100, 0.95) 100%);
-  }
+.skillbackend {
+  background: radial-gradient(circle, rgba(125, 170, 255, 0.35) 0%, rgba(20, 60, 130, 0.95) 100%);
+  /* Blue: calm, common for languages */
+}
 
-  .skillbackend{
-background: radial-gradient(circle, rgba(66, 135, 245, 0.3) 0%, rgba(15, 32, 90, 0.95) 100%);
-  }
+.skilllanguage {
+  background: radial-gradient(circle, rgba(255, 120, 90, 0.35) 0%, rgba(130, 40, 20, 0.95) 100%);
+  /* Deep red/orange: strong & assertive */
+}
 
-  .skillfrontend{
-background: radial-gradient(circle, rgba(95, 230, 173, 0.3) 0%, rgba(0, 76, 61, 0.95) 100%);
-  }
+.skillfrontend {
+  background: radial-gradient(circle, rgba(120, 255, 150, 0.3) 0%, rgba(30, 100, 40, 0.95) 100%);
+  /* Bright green: energetic, visual */
+}
 
-  .skillembedded{
-background: radial-gradient(circle, rgba(255, 220, 120, 0.35) 0%, rgba(120, 90, 20, 0.95) 100%);
-  }
+.skillembedded {
+  background: radial-gradient(circle, rgba(255, 225, 100, 0.3) 0%, rgba(120, 90, 20, 0.95) 100%);
+  /* Mustard yellow: hardware/embedded feel */
+}
 
-  .skilltools{
-background: radial-gradient(circle, rgba(192, 192, 192, 0.3) 0%, rgba(70, 70, 70, 0.95) 100%);
-  }
+.skilltools {
+  background: radial-gradient(circle, rgba(190, 190, 190, 0.25) 0%, rgba(70, 70, 70, 0.95) 100%);
+  /* Neutral gray: for utilities/dev tools */
+}
+
+.skillsoft {
+  background: radial-gradient(circle, rgba(220, 140, 255, 0.25) 0%, rgba(90, 20, 120, 0.95) 100%);
+  /* Purple-pink: soft but confident tone */
+}
+
+
+
+
+
+
   .skilltag{
     position: absolute;
     top: 8px;
@@ -992,9 +1008,85 @@ background: radial-gradient(circle, rgba(192, 192, 192, 0.3) 0%, rgba(70, 70, 70
   }
   .skillpoints li:hover {
   color: white;
-  transform: translateX(8px);
+  transform: translateX(6px);
 }
 
+  .projectcard{
+    height: 300px;
+    width: 400px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    transition: all .2s ease;
+    border: solid 1px rgba(219, 219, 219, .2);
+    border-radius: 12px;
+    filter:brightness(80%);
+    position: relative;
+    margin-bottom: 0px;
+    overflow: hidden;
+    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
+              0 0px 10px rgba(153, 141, 141, 0.199);
+
+  }
+
+  .projecttagarea{
+    /*background-color: red;*/
+    height: 100%;
+    width: 100px;
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    left: auto;
+    right: 8px;
+    top: 8px;
+  }
+
+  .projecttag{
+    width: auto;
+    align-self: flex-end;
+    
+    height: auto;
+    flex: 0 0 auto;
+    font-family: "Geist";
+    font-weight: 700;
+    font-size: 18px;
+    background-color: rgba(109, 109, 109, 0.336);
+    border: solid 1px rgba(219, 219, 219, .2);
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 7px;
+    color: #e2e2f8;
+    transition: all .15s ease;
+  }
+
+    .projectdesclayout{
+    background-color: rgba(109, 109, 109, 0.336);
+    border-top: solid 1px rgba(219, 219, 219, .2);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    backdrop-filter: blur(2px);
+  }
+  .projectdesclayout p{
+    background-color: red;
+    text-decoration: none;
+    color:#e2e2f8;
+  }
+
+  .projectcorepanel{
+    background: radial-gradient(circle, rgba(125, 170, 255, 0.35) 0%, rgba(20, 60, 130, 0.95) 100%);
+  }
+  .corepanelimg{
+    filter: invert(1) brightness(.95);
+    height: 150px;
+    width: 150px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
 
 
   .acharea{
