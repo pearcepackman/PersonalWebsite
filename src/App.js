@@ -13,6 +13,7 @@ import terminal from './assets/terminal.png';
 import backend from './assets/coding.png';
 import frontend from './assets/front-development.png';
 import embedded from './assets/integrated-system.png';
+import tools from './assets/tools.png';
 
 import React from "react";
 import ParticlesBackground from "./ParticlesBackground";
@@ -77,241 +78,112 @@ function App() {
                   <div className="skillcardimg">
                     <img className = "languageimg" src = {terminal}></img>
                   </div>
-                  <div className = "skillcardtitle">
-                    <h3>C++</h3>
+                  <div className = "skillpointslayout">
+                    <ul className = "skillpoints">
+                      <li>C++</li>
+                      <li>JavaScript</li>
+                    </ul>
+                    <ul className = "skillpoints">
+                      <li>Bash/Shell</li>
+                      <li>Python</li>
+                    </ul>
                   </div>
+                
               </div>
 
-              <div className = "skillcard skilllanguage">
+              <div className = "skillcard skillbackend">
                   <div className = "skilltag">
-                    Languages
+                    Backend
                   </div>
                   <div className="skillcardimg">
-                    <img className = "languageimg" src = {terminal}></img>
+                    <img className = "backendimg" src = {backend}></img>
                   </div>
-                  <div className = "skillcardtitle">
-                    <h3>Bash/Shell</h3>
+                  <div className = "skillpointslayout">
+                    <ul className = "skillpoints">
+                      <li>Node.js</li>
+                      <li>Docker</li>
+                      <li>JWT</li>
+                    </ul>
+                    <ul className = "skillpoints">
+                      <li>Express.js</li>
+                      <li>REST APIs</li>
+                      <li>SQLite</li>
+                    </ul>
                   </div>
+                
               </div>
 
-              <div className = "skillcard skilllanguage">
+              <div className = "skillcard skillfrontend">
                   <div className = "skilltag">
-                    Languages
+                    Frontend
                   </div>
                   <div className="skillcardimg">
-                    <img className = "languageimg" src = {terminal}></img>
+                    <img className = "frontendimg" src = {frontend}></img>
                   </div>
-                  <div className = "skillcardtitle">
-                    <h3>JavaScript</h3>
+                  <div className = "skillpointslayout">
+                    <ul className = "skillpoints">
+                      <li>React</li>
+                      <li>Qt</li>
+                      <li>CSS</li>
+                    </ul>
+                    <ul className = "skillpoints">
+                      <li>React Native</li>
+                      <li>HTML</li>
+                      <li>Chart.js</li>
+                    </ul>
                   </div>
+                
               </div>
 
-              <div className = "skillcard skilllanguage">
+              <div className = "skillcard skillembedded">
                   <div className = "skilltag">
-                    Languages
+                    Embedded
                   </div>
                   <div className="skillcardimg">
-                    <img className = "languageimg" src = {terminal}></img>
+                    <img className = "frontendimg" src = {embedded}></img>
                   </div>
-                  <div className = "skillcardtitle">
-                    <h3>Python</h3>
+                  <div className = "skillpointslayout">
+                    <ul className = "skillpoints">
+                      <li>ESP32</li>
+                      <li>Serial</li>
+                      
+                    </ul>
+                    <ul className = "skillpoints">
+                      <li>ArduinoIDE</li>
+                      <li>JSON Data</li>
+                      
+                    </ul>
                   </div>
+                
               </div>
 
-
+              <div className = "skillcard skilltools">
+                  <div className = "skilltag">
+                    Dev Tools
+                  </div>
+                  <div className="skillcardimg">
+                    <img className = "frontendimg" src = {tools}></img>
+                  </div>
+                  <div className = "skillpointslayout">
+                    <ul className = "skillpoints">
+                      <li>Linux</li>
+                      <li>Git</li>
+                      <li>VSCode</li>
+                    </ul>
+                    <ul className = "skillpoints">
+                      <li>Windows</li>
+                      <li>GitHub</li>
+                      <li>NeoVim</li>
+                      
+                    </ul>
+                  </div>
+                
               </div>
-              <div className = "projectarea">
+
               
 
-              <div className = "skillcard skillbackend">
-                  <div className = "skilltag">
-                    Backend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "backendimg" src = {backend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>Node.js</h3>
-                  </div>
-              </div>
 
-              <div className = "skillcard skillbackend">
-                  <div className = "skilltag">
-                    Backend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "backendimg" src = {backend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>Express.js</h3>
-                  </div>
-              </div>
-
-              <div className = "skillcard skillbackend">
-                  <div className = "skilltag">
-                    Backend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "backendimg" src = {backend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>REST APIs</h3>
-                  </div>
-              </div>
-
-              <div className = "skillcard skillbackend">
-                  <div className = "skilltag">
-                    Backend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "backendimg" src = {backend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>Docker</h3>
-                  </div>
-              </div>
-
-              <div className = "skillcard skillbackend">
-                  <div className = "skilltag">
-                    Backend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "backendimg" src = {backend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>SQLite</h3>
-                  </div>
-              </div>
-
-              <div className = "skillcard skillbackend">
-                  <div className = "skilltag">
-                    Backend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "backendimg" src = {backend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>JWT</h3>
-                  </div>
-              </div>
-
-
-              </div>
-              <div className = "projectarea">
-
-
-                <div className = "skillcard skillfrontend">
-                  <div className = "skilltag">
-                    Frontend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "frontendimg" src = {frontend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>React</h3>
-                  </div>
-                </div>
-
-                <div className = "skillcard skillfrontend">
-                  <div className = "skilltag">
-                    Frontend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "frontendimg" src = {frontend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>React Native</h3>
-                  </div>
-                </div>
-
-                <div className = "skillcard skillfrontend">
-                  <div className = "skilltag">
-                    Frontend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "frontendimg" src = {frontend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>Qt</h3>
-                  </div>
-                </div>
-
-                <div className = "skillcard skillfrontend">
-                  <div className = "skilltag">
-                    Frontend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "frontendimg" src = {frontend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>HTML</h3>
-                  </div>
-                </div>
-
-                <div className = "skillcard skillfrontend">
-                  <div className = "skilltag">
-                    Frontend
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "frontendimg" src = {frontend}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>CSS</h3>
-                  </div>
-                </div>
-
-              </div>
-              <div className = "projectarea">
-
-
-                <div className = "skillcard skillembedded">
-                  <div className = "skilltag">
-                    Embedded/IoT
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "frontendimg" src = {embedded}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>ESP32</h3>
-                  </div>
-                </div>
-
-                <div className = "skillcard skillembedded">
-                  <div className = "skilltag">
-                    Embedded/IoT
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "frontendimg" src = {embedded}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>Arduino IDE</h3>
-                  </div>
-                </div>
-
-                <div className = "skillcard skillembedded">
-                  <div className = "skilltag">
-                    Embedded/IoT
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "frontendimg" src = {embedded}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>Serial Ports</h3>
-                  </div>
-                </div>
-
-                <div className = "skillcard skillembedded">
-                  <div className = "skilltag">
-                    Embedded/IoT
-                  </div>
-                  <div className="skillcardimg">
-                    <img className = "frontendimg" src = {embedded}></img>
-                  </div>
-                  <div className = "skillcardtitle">
-                    <h3>JSON Data</h3>
-                  </div>
-                </div>
-
+              
 
 
               

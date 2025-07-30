@@ -690,8 +690,8 @@ html, body {
   }
   .section{
     /*background-color: red;*/
-    min-width: 700px;
-    width: 75vw;
+    min-width: 850px;
+    width: 70vw;
     
     display: flex;
     flex-direction: column;
@@ -725,12 +725,20 @@ html, body {
     margin-top: 0px;
     margin-left: 0%;
     margin-right: 0%;
-    row-gap: 10px;
-    column-gap: 45px;
+    row-gap: 28px;
+    column-gap: 28px;
     margin-bottom: 35px;
     display: flex;
     justify-content: center;
     
+  }
+  .projectarea:hover .skillcard{
+    filter:brightness(70%);
+    
+  }
+  .projectarea:hover .skillcard:hover{
+    filter:brightness(100%);
+    transform: scale(1.05);
   }
   .project{
     height: 300px;
@@ -821,25 +829,26 @@ html, body {
   }
   .languageimg{
     filter: invert(1) brightness(.95);
-    height: 50px;
-    width: 50px;
-    margin-top: 20px;
+    height: 85px;
+    width: 85px;
+    margin-top: 0px;
+    /*background-color: red;*/
     
   }
   .backendimg{
     filter: invert(1) brightness(0.95);
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     margin-left: 10px;
-    margin-top: 32px;
+    margin-top: 10px;
     /*background-color: gray;*/
     
   }
   .frontendimg{
     filter: invert(1) brightness(0.95);
-    height: 50px;
-    width: 50px;
-    margin-top: 25px;
+    height: 80px;
+    width: 80px;
+    margin-top: 0px;
   }
   .project img{
     /*background-color: green;*/
@@ -857,19 +866,30 @@ html, body {
   }
 
   .skillcard{
-    height: 120px;
-    width: 150px;
+    height: 210px;
+    width: 368px;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
     transition: all .2s ease;
-    border: solid 1px rgba(161, 161, 161, 0.3);
+    border: solid 1px rgba(219, 219, 219, .2);
     border-radius: 12px;
     filter:brightness(80%);
     position: relative;
     margin-bottom: 0px;
     overflow: hidden;
+    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
+              0 0px 10px rgba(153, 141, 141, 0.199);
+
   }
+  .skillcard::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
   .skillcardimg{
     flex-grow: 1;
     display: flex;
@@ -877,34 +897,48 @@ html, body {
     justify-content: center;
     /*background-color: orange;*/
   }
+  .skillcardimg{
+  transition: transform 0.15s ease;
+}
+
+.skillcard:hover .skillcardimg,
+.skillcard:hover .skilltag{
+  transform: scale(1.08);
+}
+
   .skillcard:hover{
-    transform: scale(1.01);
-    filter:brightness(100%);
-    box-shadow: 0px 0px 35px rgba(228, 228, 228, 0.05);
+    transform: scale(1.02);
+  filter: brightness(1.05);
+  box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
+              0 0px 15px rgba(153, 141, 141, 0.445);
   }
   .skilllanguage{
-    background: radial-gradient(circle, rgba(130, 70, 200, 0.4) 0%, rgba(40, 20, 60, 0.9) 100%);
+background: radial-gradient(circle, rgba(157, 94, 255, 0.4) 0%, rgba(60, 20, 100, 0.95) 100%);
   }
 
   .skillbackend{
-    background: radial-gradient(circle,rgba(35, 57, 166, 0.4) 0%, rgba(17, 16, 105, 0.9) 100%);
+background: radial-gradient(circle, rgba(66, 135, 245, 0.3) 0%, rgba(15, 32, 90, 0.95) 100%);
   }
 
   .skillfrontend{
-    background: radial-gradient(circle,rgba(103, 166, 35, 0.4) 0%, rgba(16, 105, 38, 0.9) 100%);
+background: radial-gradient(circle, rgba(95, 230, 173, 0.3) 0%, rgba(0, 76, 61, 0.95) 100%);
   }
 
   .skillembedded{
-    background: radial-gradient(circle,rgba(204, 199, 102, 0.4) 0%, rgba(176, 148, 21, 0.9) 100%);
+background: radial-gradient(circle, rgba(255, 220, 120, 0.35) 0%, rgba(120, 90, 20, 0.95) 100%);
+  }
+
+  .skilltools{
+background: radial-gradient(circle, rgba(192, 192, 192, 0.3) 0%, rgba(70, 70, 70, 0.95) 100%);
   }
   .skilltag{
     position: absolute;
-    top: 5px;
+    top: 8px;
     left: auto;
-    right: 5px;
+    right: 8px;
     font-family: "Geist";
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 15px;
     background-color: rgba(109, 109, 109, 0.336);
     border: solid 1px rgba(219, 219, 219, .2);
     padding-left: 5px;
@@ -912,25 +946,56 @@ html, body {
     padding-top: 2px;
     padding-bottom: 2px;
     border-radius: 7px;
+    transition: all .15s ease;
   }
   .skillcard p {
     font-size: 16px;
     font-weight: 500;
     line-height: 200%;
   }
-  .skillcardtitle{
-    margin-top: auto;
-    font-size: 18px;
+
+  .skillpointslayout{
+    background-color: rgba(109, 109, 109, 0.336);
+    border-top: solid 1px rgba(219, 219, 219, .2);
+    
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    backdrop-filter: blur(2px);
+  }
+  .skillpoints{
     font-family: "Geist";
-    font-weight: 100;
-    line-height: 1.3;
-    margin-bottom: 5px;
-    /*background-color: red;*/
-    flex: 0 0 auto;
+    font-weight: 700;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /*background-color: orangered;*/
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
   }
-  .skillcardtitle h3{
-    margin: 0;
+  .skillpoints li::before {
+  content: "›";
+  color: #e2e2f8;
+  margin-right: 8px;
+  font-weight: bold;
+  font-size: 20px;
   }
+  .skillpoints li{
+    transition: all .1s ease;
+  }
+  .skillpoints li:hover {
+  color: white;
+  transform: translateX(8px);
+}
+
+
 
   .acharea{
     height: auto;
