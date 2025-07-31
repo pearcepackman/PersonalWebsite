@@ -17,6 +17,10 @@ html, body {
   top: 0;
   left: 0;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .App {
   text-align: center;
   background-color: red;
@@ -689,13 +693,16 @@ html, body {
     flex-direction: column;
   }
   .aboutinside{
-    background-color: olivedrab;
+    /*background-color: olivedrab;*/
     display: flex;
+    width: 870px;
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: row;
     justify-content: space-between;
   }
   .aboutleft{
-    background-color: orangered;
+    /*background-color: orangered;*/
     width:50%;
   }
   .picbox{
@@ -729,13 +736,13 @@ html, body {
     height: 225px;
     width: 225px;
     z-index: 2;
-    left: 235px;
+    left: 260px;
   }
   .coolpic{
     position: absolute;
     height: 225px;
     width: 225px;
-    left: 90px;
+    left: 100px;
     top: 5px;
     rotate: -8deg;
     z-index: 1;
@@ -749,29 +756,126 @@ html, body {
     top: 40px;
   }
   .aboutright{
-    background-color: cornflowerblue;
+    /*background-color: cornflowerblue;*/
     width: 42%;
+    height: 100%;
+    margin-top: 5px;
     display: flex;
+    filter: brightness(80%);
     flex-direction: column;
+    transition: all .2s ease;
   }
-  .aboutrighttitle{
-    background-color: orchid;
-    margin-top: 50px;
+  .aboutright:hover{
+    transform: scale(1.03);
+    filter:brightness(95%);
+  }
+  .aboutrighttitle p{
+    /*background-color: orchid;*/
+    margin-top: 90px;
+    margin-bottom: 0;
     line-height: 1;
     padding: 0;
     font-family: "Geist";
     font-weight: 800;
+    font-size: 45px;
   }
-  .aboutrightdesc{
-    background-color: burlywood;
+  .aboutrightdesc p{
+    /*background-color: burlywood;*/
     height: auto;
     width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
     font-family: "Geist";
     font-weight: 600;
     font-size: 16px;
+    color:#a3a3a3;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .aboutname h2{
+    /*background-color: orange;*/
+    padding: 0;
+    margin: 0;
+    margin-top: -15px;
+    font-family: "Geist";
+    font-weight: 850;
+    font-size: 55px;
+  }
+  .aboutnameadds p{
+    /*background-color: olive;*/
+    margin: 0;
+    font-style: italic;
+    font-family: "Geist";
+    font-size: 16px;
+    font-weight: 600;
+    color:#a3a3a3;
+  }
+  .aboutleftwords{
+    /*background-color: #7b7b7b;*/
+    filter: brightness(80%);
+    transition: all .2s ease;
+  }
+  .aboutleftwords:hover{
+    transform: scale(1.03);
+    filter:brightness(95%);
+  }
+  .aboutmelinks{
+    /*background-color: orange;*/
+    display: flex;
+    justify-content: space-around;
+    width: 870px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+  .aboutmelinks a{
+    display: flex;
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .githubbutton{
+    filter: brightness(.75);
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 47px;
+    width: 175px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    transition: all .15s ease;
+    cursor: pointer;
+    border: solid 1px rgba(219, 219, 219, .2);
+    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
+              0 0px 10px rgba(153, 141, 141, 0.199);
+    background: radial-gradient(circle, rgba(190, 190, 190, 0.25) 0%, rgba(70, 70, 70, 0.95) 100%);
+
+  }
+  .githubbutton:hover{
+    transform: translateY(-3px);
+    filter: brightness(.95);
+    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
+              0 0px 15px rgba(153, 141, 141, 0.445);
+  }
+  .githubbutton p{
+    /*background-color: green;*/
+    font-family: "Geist";
+    font-weight: 650;
+    font-size: 20px;
+    align-self: center;
+  }
+  .github{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 35px;
+    height: 35px;
+    filter: invert(1) brightness(.9);
+    margin-right: 10px;
   }
   .section{
-    background-color: red;
+    /*background-color: red;*/
     margin-bottom: 150px;
     min-width: 850px;
     width: 70vw;

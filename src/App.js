@@ -1,5 +1,5 @@
 import pictureofme from './assets/pictureofme.png';
-import github from './assets/github.png';
+import github from './assets/github-sign.png';
 import linkedin from './assets/linkedin.png';
 import resume from './assets/resume.png';
 import email from './assets/email.png';
@@ -40,8 +40,8 @@ function App() {
               
             </div>
             <div className = "navbaright">
+              <a href = "#aboutme" className = "navbaroptions">About Me</a>
               <a href = "#skills" className = "navbaroptions">Skills</a>
-              <a href = "#projects" className = "navbaroptions">Projects</a>
               <a href = "#projects" className = "navbaroptions">Projects</a>
               <a href = "#projects" className = "navbaroptions">Projects</a>
               <a href = "#projects" className = "navbaroptions">Projects</a>
@@ -65,8 +65,8 @@ function App() {
                   From embedded IoT systems to full-stack apps and real-time hardware monitoring tools, I enjoy building polished software that bridges low-level systems and user-facing design. 
                 </p>
                 <div className = "introbuttonbox">
-                  <a href = "#skills" className = "workbutton">
-                    Explore my work ▼
+                  <a href = "#aboutme" className = "workbutton">
+                    Learn About Me ▼
                   </a>
                 </div>
 	  	        </div>
@@ -82,11 +82,15 @@ function App() {
                     <img className='coolpic' src = {cool}></img>
                     <img className='snowboardpic' src = {snowboard}></img>
                   </div>
-                  <div className='aboutname'>
-                    <h2>MEOW</h2>
-                  </div>
-                  <div className='namebox'>
-                    <p>MEOWMEOWMEOW</p>
+                  <div className='aboutleftwords'>
+                    <div className='aboutname'>
+                      <h2>Hey, I'm Pearce!</h2>
+                    </div>
+                    <div className='aboutnameadds'>
+                      <p>Full-Stack Developer</p>
+                      <p>Research Assistant</p>
+                      <p>Student At UMBC</p>
+                    </div>
                   </div>
                 </div>
                 <div className='aboutright'>
@@ -94,10 +98,27 @@ function App() {
                     <p>Who Am I?</p>
                   </div>
                   <div className='aboutrightdesc'>
-                    <p>So i like to meow a heck of a lot, i'm just a meower!</p>
+                    <p>
+                      Hey, I'm Pearce — thanks for checking out my site!
+                      I’ve gone from working in the trades to studying Computer Science at UMBC,
+                      where I’ve been diving deep into full-stack development, embedded systems,
+                      and real-time projects. I love building things that blend software and hardware,
+                      and I'm currently contributing to an IoT research project through the DAMS Lab.
+                      Right now, I’m focused on refining my skills and earning a summer internship.
+                    </p>
+
                   </div>
                   
                 </div>
+              </div>
+              <div className='aboutmelinks'>
+                <a href = "https://github.com/pearcepackman" target = "_blank" rel="noopener noreferrer" alt = "github">
+                <div className='githubbutton'>
+                  <img className='github' src = { github }></img>
+                  <p>GitHub Page</p>
+                </div>
+                </a>
+                <p>GITHUB</p>
               </div>
             </div>
           </ScrollFadeIn>
