@@ -16,6 +16,9 @@ import embedded from './assets/integrated-system.png';
 import tools from './assets/tools.png';
 import softskills from './assets/interpersonal-skills.png';
 import corepanel from './assets/monitor.png';
+import grad from './assets/grad.jpg';
+import cool from './assets/cool.jpg';
+import snowboard from './assets/snowboard.jpg';
 
 import React from "react";
 import ParticlesBackground from "./ParticlesBackground";
@@ -67,6 +70,35 @@ function App() {
                   </a>
                 </div>
 	  	        </div>
+            </div>
+          </ScrollFadeIn>
+          <ScrollFadeIn>
+            <div id = "aboutme" className="section">
+              <h1>About Me</h1>
+              <div className='aboutinside'>
+                <div className='aboutleft'>
+                  <div className='picbox'>
+                    <img className='gradpic' src = {grad}></img>
+                    <img className='coolpic' src = {cool}></img>
+                    <img className='snowboardpic' src = {snowboard}></img>
+                  </div>
+                  <div className='aboutname'>
+                    <h2>MEOW</h2>
+                  </div>
+                  <div className='namebox'>
+                    <p>MEOWMEOWMEOW</p>
+                  </div>
+                </div>
+                <div className='aboutright'>
+                  <div className='aboutrighttitle'>
+                    <p>Who Am I?</p>
+                  </div>
+                  <div className='aboutrightdesc'>
+                    <p>So i like to meow a heck of a lot, i'm just a meower!</p>
+                  </div>
+                  
+                </div>
+              </div>
             </div>
           </ScrollFadeIn>
           <ScrollFadeIn>
@@ -206,7 +238,7 @@ function App() {
               </div>
           
             </div>
-          </div>
+            </div>
           </ScrollFadeIn>
             
           <ScrollFadeIn>
@@ -218,6 +250,9 @@ function App() {
                 <a href = "https://github.com/pearcepackman/CorePanel" target = "_blank" rel="noopener noreferrer" alt = "CorePanel">
                 <div className = "projecttagarea">
                   <div className = "projecttag">
+                    Backend
+                  </div>
+                  <div className = "projecttag">
                     C++
                   </div>
                   <div className = "projecttag">
@@ -227,114 +262,94 @@ function App() {
                     Qt
                   </div>
                 </div>
-                <div className="skillcardimg">
+                <div className="projectcardimg">
                     <img className = "corepanelimg" src = {corepanel}></img>
                 </div>
                 <div className = "projectdesclayout">
-                  <p className='projectname'>CorePanel </p><p> is a project</p>
+                  <p><span className='projectname'>CorePanel</span> is a C++/Qt desktop app with a C# backend that displays real-time CPU, GPU, RAM, and disk usage using live charts and system sensor data from LibreHardwareMonitor.</p>
                 </div>
                 </a>  
               </div>
 
 
-              <div className= "projectcard projectcorepanel">
-                
-              </div>
-
-
-
-              <div className = "project">
-                <a href = "https://github.com/pearcepackman/CorePanel" target = "_blank" rel="noopener noreferrer" alt = "CorePanel">
-                <div className = "projectpic">
-                  <img className = "iot" src = {iot}></img>
+              <div className= "projectcard projectsmarthome">
+                <a href = "https://github.com/pearcepackman/Smart-home-dashboard" target = "_blank" rel="noopener noreferrer" alt = "Smart Home Dashboard">
+                <div className = "projecttagarea">
+                  <div className = "projecttag">
+                    Full-Stack
+                  </div>
+                  <div className = "projecttag">
+                    ESP32
+                  </div>
+                  <div className = "projecttag">
+                    React Native
+                  </div>
+                  <div className = "projecttag">
+                    TypeScript
+                  </div>
                 </div>
-                <h3>CorePanel</h3>
-                <p>CorePanel is a C++/Qt desktop app with a C# backend that displays real-time CPU, GPU, RAM, and disk usage using live charts and system sensor data from LibreHardwareMonitor. 
-                </p>
-                
-                </a>
-              </div>
-              <div className = "project">
-                <a href = "https://github.com/pearcepackman/Smart-home-dashboard" target = "_blank" rel="noopener noreferrer" alt = "smart home sensor system">
-                <div className = "projectpic">
-                  <img className = "iot" src = {iot}></img>
+                <div className="projectcardimg">
+                    <img className = "iotimg" src = {iot}></img>
                 </div>
-                <h3>Smart Home Sensor System</h3>
-                <p>
-                   ESP32 firmware sends sensor data to a REST API backend, visualized in a React Native mobile app with Docker-based deployment.               </p>
-                
-                </a>
+                <div className = "projectdesclayout">
+                  <p><span className='projectname'>Smart Home Dashboard</span> is a full-stack IoT platform using ESP32, Node.js, and React Native to monitor real-time temperature, humidity, gas, and motion data.</p>
+                </div>
+                </a>  
               </div>
+
+              <div className= "projectcard projectsnapmotive">
+                <a href = "https://devpost.com/software/d-kh8jf4" target = "_blank" rel="noopener noreferrer" alt = "Smart Home Dashboard">
+                <div className = "projecttagarea">
+                  <div className = "projecttag">
+                    Hackathon Winner
+                  </div>
+                  <div className = "projecttag">
+                    React Native
+                  </div>
+                  <div className = "projecttag">
+                    UI/UX
+                  </div>
+                  <div className = "projecttag">
+                    TypeScript
+                  </div>
+                </div>
+                <div className="projectcardimg">
+                    <img className = "iotimg" src = {app}></img>
+                </div>
+                <div className = "projectdesclayout">
+                  <p><span className='projectname'>SnapMotive</span> is a gamified goal-tracking app built at HackHounds 2025 that uses computer vision to verify task completion through photos, letting users set daily goals and track progress.</p>
+                </div>
+                </a>  
+              </div>
+
+              <div className= "projectcard projectprojectssimplified">
+                <a href = "https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target = "_blank" rel="noopener noreferrer" alt = "Smart Home Dashboard">
+                <div className = "projecttagarea">
+                  <div className = "projecttag">
+                    Full-Stack
+                  </div>
+                  <div className = "projecttag">
+                    JavaScript
+                  </div>
+                  <div className = "projecttag">
+                    Express.JS
+                  </div>
+                  <div className = "projecttag">
+                    React
+                  </div>
+                </div>
+                <div className="projectcardimg">
+                    <img className = "psimg" src = {pslogo}></img>
+                </div>
+                <div className = "projectdesclayout">
+                  <p><span className='projectname'>Projects Simplified</span> is a full‑stack CRUD web app built with Node.js, Express, JavaScript, and SQL, featuring JWT‑based secure login and intuitive task & project organization.</p>
+                </div>
+                </a>  
+              </div>
+
+
+
               
-              <div className = "project">
-                <a href = "https://devpost.com/software/d-kh8jf4" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
-                <div className = "projectpic">
-                  <img className = "iot" src = {app}></img>
-                </div>
-                <h3>SnapMotive</h3>
-                <p>
-                  Winning Best Computer Vision at Loyola HackHounds 2025, SnapMotive is a goal tracking app developed in React Native that uses computer vision to track your progress. Collaborated in a team to deploy the app within 24 hours
-                </p>
-                
-                </a>
-              </div>
-              <div className = "project">
-                <a href = "https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
-                <div className = "projectpic">
-                  <img className = "pslogo" src = {pslogo}></img>
-                </div>
-                <h3>Projects Simplified</h3>
-                <p>
-                  
-                  Full-stack CRUD application for project and task management with a secure JWT-based login system. Built with JavaScript, Node.js, Express, SQL, and styled with HTML/CSS, the app is deployed on Heroku to ensure 24/7 accessibility
-                </p>
-                
-                </a>
-              </div>
-              <div className = "project">
-              <a href = "https://github.com/pearcepackman/Pearces_CLI" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
-                
-                <div className = "projectpic">
-
-
-                  <img className = "cli"src = {pcli}></img>
-                                                  
-                </div>
-                <h3>PCLI: Pearce's CLI</h3>
-                
-                <p>
-                  Python-based command-line interface (CLI) tool for intuitive file and directory management, supporting navigation, creation, editing, and deletion operations. Features a built-in help and error system for user-friendly interaction, utilizing Python's cmd and os libraries.
-                </p>
-                
-                
-                </a>
-              </div>
-              <div className = "project">
-                <a href = "https://github.com/pearcepackman/Library_Management_System" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
-                <div className = "projectpic">
-                  <img className = "bookimg" src = {library}></img>
-                </div>
-                <h3>Library Management System</h3>
-                <p>
-                  C++ library management system using object-oriented programming to manage books and customer records. Utilizes a command-line interface for efficiently adding, deleting, searching, and checking out books, making it easy to use
-                  
-                </p>
-                
-                </a>
-              </div>
-              <div className = "project">
-                <a href = "https://pearcescolognereview.netlify.app/" target = "_blank" rel="noopener noreferrer" alt = "pearce's cologne review">
-                <div className = "projectpic">
-                  <img className = "pcrlogo" src = {pcrlogo}></img>
-                </div>
-                <h3>Pearce's Cologne Review</h3>
-                <p>
-                  Responsive frontend application with React and Node.js to showcase a personal cologne collection, featuring smooth navigation across multiple pages. Created a clean, mobile-friendly UI and deployed the app on Netlify for stable public access
-                  
-                </p>
-                
-                </a>
-              </div>
 
             </div>
             
