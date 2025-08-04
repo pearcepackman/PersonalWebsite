@@ -25,10 +25,12 @@ a {
   text-align: center;
   background-color: red;
 }
+
 @media (max-width: 1023px) {
   .App-header {
     background: linear-gradient(180deg,rgba(16, 24, 31, 1) 0%, rgba(20, 7, 20, 1) 100%); 
     height: 100%;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +42,7 @@ a {
     /*background-color: rgb(47, 3, 3);*/
     
     margin-bottom: auto;
-    margin-top: 1%;
+    margin-top: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -125,7 +127,7 @@ a {
 	  width: 90vw;
 	  height: auto;
 	  
-	  margin-top:80px;
+	  margin-top:100px;
 	  display: flex;
     flex-direction: column;
 	  
@@ -133,6 +135,7 @@ a {
   .startsection{
     /*background-color: olive;*/
     height: 120vh;
+    margin-top: 0px;
   }
   .namebox{
 	  /*background-color: orange;*/
@@ -152,7 +155,7 @@ a {
     -webkit-text-fill-color: transparent;
     margin: 0;
     padding: 0;
-    font-size: 78px;
+    font-size: 60px;
     line-height: 1;
     align-self: center;
     /*background-color: red;*/
@@ -163,14 +166,14 @@ a {
     line-height: 1.2;
     font-family: "Geist";
     font-weight: 700;
-    font-size: 40px;
+    font-size: 20px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5px;
     margin-bottom: 5px;
     font-style: italic;
     padding: 0;
-    width: 650px;
+    width: 100%;
     align-self: center;
   }
   .introblurb{
@@ -182,7 +185,7 @@ a {
     margin: 10px;
     font-style: italic;
     padding: 0;
-    width: 400px;
+    width: 100%;
     /*background-color: blue;*/
     margin-left: auto;
     margin-right: auto;
@@ -286,7 +289,7 @@ a {
     /*background-color: cornflowerblue;*/
     width: 42%;
     height: 100%;
-    margin-top: 5px;
+    margin-top: 100px;
     display: flex;
     filter: brightness(80%);
     flex-direction: column;
@@ -418,7 +421,7 @@ a {
   .section h1{
     font-family: "Geist";
     font-weight: 800;
-    font-size: 40px;
+    font-size: 50px;
     margin-top: 0;
     margin-bottom:0;
     margin-left: 5%;
@@ -857,7 +860,7 @@ a {
     height: auto;
     margin-top: .5%;
     margin-left: 5%;
-    margin-right: 5%;
+    margin-right: 0%;
     margin-bottom: 0;
     display: flex;
     /*background-color: green;*/
@@ -986,6 +989,202 @@ a {
       opacity: 100%;
     }
   }
+}
+@media (max-width: 768px){
+  .navbar {
+    display: none;
+    background-color: green;
+  }
+  
+  .section h1{
+    justify-self: center;
+    margin: 0;
+    text-align: center;
+  }
+  .projectarea{
+    /*background-color: orangered;*/
+    margin: 0;
+    margin-top: 10px;
+  }
+  .introsection{
+    margin-top: 10px;
+  }
+  .workbutton{
+    padding: 0;
+    font-size: 12px;
+    width: 150px;
+    height: 40px;
+  }
+  .aboutinside{
+    flex-direction: column;
+  }
+  .aboutleft{
+    width: 100%;
+  }
+  .aboutright{
+    width: 100%;
+    margin-top: 0px;
+  }
+  .picbox {
+    margin-top: -50px;
+  display: flex;
+  /*background-color: #7b7b7b;*/
+  justify-content: center;
+  gap: 0px;
+  align-items: center;
+  flex-direction: row;
+  position: relative; /* or static, but keep if needed for hover styles */
+  height: auto;
+  flex-wrap: wrap; /* optional: lets them wrap if screen is narrow */
+}
+
+.picbox img {
+  position: static; /* override the absolute positioning */
+  
+  width: 100px;
+  height: 100px;
+  z-index: auto;
+}
+
+  
+  .gradpic {
+  
+  height: 140px;
+  width: 140px;
+  z-index: 2;
+  rotate: -10deg;
+  margin-top: 10px;
+}
+
+.coolpic {
+  
+  height: 140px;
+  width: 140px;
+  rotate: 2deg;
+  z-index: 1;
+}
+
+.snowboardpic {
+  margin-top: 10px;
+  rotate: 10deg;
+  height: 140px;
+  width: 140px;
+  
+}
+.aboutleftwords{
+  /*background-color: orangered;*/
+  margin-top: 150px;
+}
+  .aboutmelinks{
+    /*background-color: orange;*/
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+  .aboutmelinks a{
+    display: flex;
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .aboutmebutton{
+    filter: brightness(.75);
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 35px;
+    width: 115px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    transition: all .15s ease;
+    cursor: pointer;
+    border: solid 1px rgba(219, 219, 219, .2);
+    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
+              0 0px 10px rgba(153, 141, 141, 0.199);
+  }
+  .aboutmebutton:hover{
+    transform: translateY(-3px);
+    filter: brightness(.95);
+    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
+              0 0px 15px rgba(153, 141, 141, 0.445);
+  }
+  .aboutmebutton p{
+    /*background-color: green;*/
+    font-family: "Geist";
+    font-weight: 650;
+    font-size: 12px;
+    align-self: center;
+  }
+  .linkedinbutton{
+    background: radial-gradient(circle, rgba(120, 180, 230, 0.3) 0%, rgba(20, 40, 60, 0.95) 100%);
+  }
+  .githubbutton{
+    background: radial-gradient(circle, rgba(190, 190, 190, 0.25) 0%, rgba(70, 70, 70, 0.95) 100%);
+  }
+  .github{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 20px;
+    height: 20px;
+    filter: invert(1) brightness(.9);
+    margin-right: 10px;
+  }
+  .aboutname{
+    margin-top: -120px;
+  }
+  .aboutrighttitle{
+    margin-top: -70px;
+  }
+  .aboutrightdesc p{
+    /*background-color: gainsboro;*/
+    width: auto;
+  }
+  .educationarea{
+    height: auto;
+  }
+  .schoolanddates{
+    /*background-color: #7b7b7b;*/
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .schoolanddates h3{
+    width: 100%;
+    margin-bottom: 0;
+    /*background-color: green;*/
+    text-align: center;
+    font-weight: 800;
+  }
+  .schoolanddates h5{
+    font-weight: 700;
+    text-align: center;
+    /*background-color: orangered;*/
+  }
+  .schoolnotes{
+    /*background-color: yellowgreen;*/
+    margin: 0;
+    height: auto;
+  }
+  .schoolnotes p{
+    font-size: 14px;
+    font-family: "Geist";
+    font-weight: 600;
+  }
+  .footer{
+    color: var(--darkwhite);
+    font-family: "Geist";
+    font-weight: 600;
+    font-size: 12px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+
 }
 /*------------------------------------------------------------------Fullscreen------------------------------------------------------------------*/
 @media (min-width: 1024px) {

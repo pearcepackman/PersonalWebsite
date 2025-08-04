@@ -385,7 +385,7 @@ function App() {
           <ScrollFadeIn> 
           <div id = 'experience' className="section">
             <h1>Experience</h1>
-            <div className='acharea'>
+            <div className='educationarea'>
               
               <div className='school'>
                 <div className='schoolanddates'>
@@ -394,10 +394,10 @@ function App() {
                 </div>
                 <div className = "schoolnotes">
                   <p>
-                    > Contributed to the DAMS Lab’s IoT-based Smart Library project focused on scalable environmental sensor deployment<br></br>
-                    > Created a comprehensive Amazon-based buy sheet with cost analysis, redundancy planning, and sensor comparison<br></br>
-                    > Researched and selected embedded hardware based on capabilities: ESP32 boards, BME680, SDS011, LDR, and LM393 sensors<br></br>
-                    > Proposed a clean, minimal frontend UI mockup for a multi-room dashboard
+                    - Contributed to the DAMS Lab’s IoT-based Smart Library project focused on scalable environmental sensor deployment<br></br>
+                    - Created a comprehensive Amazon-based buy sheet with cost analysis, redundancy planning, and sensor comparison<br></br>
+                    - Researched and selected embedded hardware based on capabilities: ESP32 boards, BME680, SDS011, LDR, and LM393 sensors<br></br>
+                    - Proposed a clean, minimal frontend UI mockup for a multi-room dashboard
                   </p>
                   <br></br>
                 </div>
@@ -409,9 +409,9 @@ function App() {
                 </div>
                 <div className = "schoolnotes">
                   <p>
-                    > Awarded Best Computer Vision for developing a goal-tracking app using image recognition to monitor user progress<br></br>
-                    > Designed a clean, user-friendly UI in React Native to enhance app usability and engagement<br></br>
-                    > Learned React Native UI in 24 hours and collaborated with a team to meet tight deadlines<br></br>
+                    - Awarded Best Computer Vision for developing a goal-tracking app using image recognition to monitor user progress<br></br>
+                    - Designed a clean, user-friendly UI in React Native to enhance app usability and engagement<br></br>
+                    - Learned React Native UI in 24 hours and collaborated with a team to meet tight deadlines<br></br>
                     
                   </p>
                   <br></br>
@@ -458,13 +458,14 @@ function App() {
                 </div>
                 
               </div>
-              <p className='footer'>Thank you for reading! If you're interested to know more about me,
-                you can send me an email at pearcepackman@gmail.com.
-              </p>
             </div>
           </div>
+          
           </ScrollFadeIn>
         </div>
+        <p className='footer'>Thank you for reading! If you're interested to know more about me,
+                you can send me an email at pearcepackman@gmail.com.
+              </p>
       </header>
     </div>
   );
