@@ -822,7 +822,7 @@ a {
   .aboutmelinks{
     /*background-color: orange;*/
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 870px;
     margin-left: auto;
     margin-right: auto;
@@ -834,12 +834,12 @@ a {
     margin-top: auto;
     margin-bottom: auto;
   }
-  .githubbutton{
+  .aboutmebutton{
     filter: brightness(.75);
     margin-top: auto;
     margin-bottom: auto;
-    height: 47px;
-    width: 175px;
+    height: 42px;
+    width: 160px;
     display: flex;
     justify-content: space-evenly;
     padding-left: 10px;
@@ -850,27 +850,31 @@ a {
     border: solid 1px rgba(219, 219, 219, .2);
     box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
               0 0px 10px rgba(153, 141, 141, 0.199);
-    background: radial-gradient(circle, rgba(190, 190, 190, 0.25) 0%, rgba(70, 70, 70, 0.95) 100%);
-
   }
-  .githubbutton:hover{
+  .aboutmebutton:hover{
     transform: translateY(-3px);
     filter: brightness(.95);
     box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
               0 0px 15px rgba(153, 141, 141, 0.445);
   }
-  .githubbutton p{
+  .aboutmebutton p{
     /*background-color: green;*/
     font-family: "Geist";
     font-weight: 650;
-    font-size: 20px;
+    font-size: 16px;
     align-self: center;
+  }
+  .linkedinbutton{
+    background: radial-gradient(circle, rgba(120, 180, 230, 0.3) 0%, rgba(20, 40, 60, 0.95) 100%);
+  }
+  .githubbutton{
+    background: radial-gradient(circle, rgba(190, 190, 190, 0.25) 0%, rgba(70, 70, 70, 0.95) 100%);
   }
   .github{
     margin-top: auto;
     margin-bottom: auto;
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     filter: invert(1) brightness(.9);
     margin-right: 10px;
   }

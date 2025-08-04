@@ -112,13 +112,18 @@ function App() {
                 </div>
               </div>
               <div className='aboutmelinks'>
+                <a href = "https://www.linkedin.com/in/pearce-packman/" target = "_blank" rel="noopener noreferrer" alt = "linkedin">
+                <div className='aboutmebutton linkedinbutton'>
+                  <img className='github' src = { linkedin }></img>
+                  <p>LinkedIn Page</p>
+                </div>
+                </a>
                 <a href = "https://github.com/pearcepackman" target = "_blank" rel="noopener noreferrer" alt = "github">
-                <div className='githubbutton'>
+                <div className='aboutmebutton githubbutton'>
                   <img className='github' src = { github }></img>
                   <p>GitHub Page</p>
                 </div>
                 </a>
-                <p>GITHUB</p>
               </div>
             </div>
           </ScrollFadeIn>
