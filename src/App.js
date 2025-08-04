@@ -43,8 +43,8 @@ function App() {
               <a href = "#aboutme" className = "navbaroptions">About Me</a>
               <a href = "#skills" className = "navbaroptions">Skills</a>
               <a href = "#projects" className = "navbaroptions">Projects</a>
-              <a href = "#projects" className = "navbaroptions">Projects</a>
-              <a href = "#projects" className = "navbaroptions">Projects</a>
+              <a href = "#experience" className = "navbaroptions">Experience</a>
+              <a href = "#education" className = "navbaroptions">Education</a>
               
             </div>
             
@@ -104,7 +104,7 @@ function App() {
                       where I’ve been diving deep into full-stack development, embedded systems,
                       and real-time projects. I love building things that blend software and hardware,
                       and I'm currently contributing to an IoT research project through the DAMS Lab.
-                      Right now, I’m focused on refining my skills and earning a summer internship.
+                      Right now, I’m focused on refining my skills and landing a summer internship for 2026!
                     </p>
 
                   </div>
@@ -381,159 +381,37 @@ function App() {
             
           </div>
           </ScrollFadeIn>
-          <div className = "section">
-            <h1>Skills</h1>
-            <div className = "projectarea">
-              <div className = "skillcard">
-                <div className = "skillcardtitle">
-                  <h3>Full-Stack Development</h3>
-                </div>
-                <div className="skillcarddesc">
-                  <p>
-                    - Proficient in building responsive full-stack applications using React, React Native, Node.js, Express.js, JSON, SQL, HTML, and CSS<br></br>
-                    - Experience designing RESTful APIs and integrating JWT-based authentication for secure login systems<br></br>
-                    - Developed mobile and desktop UIs with intuitive navigation and live data visualizations <br></br>
-                    - Deployed applications using Heroku and Netlify for stable, public access
-                  </p>
-                </div>
-              </div>
-              
-                <div className = "skillcard">
-                  <div className = "skillcardtitle">
-                    <h3>Software Engineering and Programming</h3>
-                  </div>
-                  <div className="skillcarddesc">
-                    <p>
-                      - Write and maintain software in Python, C++, and JavaScript using object-oriented and modular principles<br></br>
-                      - Backend development with SQL and SQLite for CRUD operations<br></br>
-                      - Built CLI tools and embedded C++ firmware for ESP32 IoT devices with JSON serialization<br></br>
-                      - Version control using Git & GitHub; worked in fast-paced team environments for Hackathon<br></br>
-                      - Proficient with VSCode, Arduino IDE, and CLI tools
-                    </p>
-                  </div>
-                  
-                </div>
-                <div className = "skillcard">
-                <div className = "skillcardtitle">
-                  <h3>Collaboration and Problem Solving</h3>
-                </div>
-                <div className="skillcarddesc">
-                  <p>
-                    - Strong problem-solving skills demonstrated through end-to-end personal projects and hackathon challenges<br></br>
-                    - Thrive in collaborative settings like hackathons and engineering projects (UMBC Racing Team), contributing under pressure and tight deadlines<br></br>
-                    - Comfortable communicating technical concepts through tutoring, group work, and documentation<br></br>
-                    - Bring a strong work ethic and maturity from full-time experience in the trades prior to pursuing computer science<br></br>
-                    
-                  </p>
-                </div>
-              </div>
           
-            
-            </div>
-          </div>
           <ScrollFadeIn> 
-          <div className = "section">
-            <h1>Projects</h1>
-            <div className = "projectarea">
-              <div className = "project">
-                <a href = "https://github.com/pearcepackman/Smart-home-dashboard" target = "_blank" rel="noopener noreferrer" alt = "smart home sensor system">
-                <div className = "projectpic">
-                  <img className = "iot" src = {iot}></img>
-                </div>
-                <h3>Smart Home Sensor System</h3>
-                <p>
-                  Full-stack project with embedded C++ firmware for an ESP32 that transmits real-time sensor data as JSON to a Node.js + Express backend with a REST API and SQLite database. Designed a React Native mobile app using Expo to visualize live and historical data, ensuring a user-friendly experience
-                </p>
-                
-                </a>
-              </div>
-              <div className = "project">
-                <a href = "https://devpost.com/software/d-kh8jf4" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
-                <div className = "projectpic">
-                  <img className = "iot" src = {app}></img>
-                </div>
-                <h3>SnapMotive</h3>
-                <p>
-                  Winning Best Computer Vision at Loyola HackHounds 2025, SnapMotive is a goal tracking app developed in React Native that uses computer vision to track your progress. Collaborated in a team to deploy the app within 24 hours
-                </p>
-                
-                </a>
-              </div>
-              <div className = "project">
-                <a href = "https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
-                <div className = "projectpic">
-                  <img className = "pslogo" src = {pslogo}></img>
-                </div>
-                <h3>Projects Simplified</h3>
-                <p>
-                  
-                  Full-stack CRUD application for project and task management with a secure JWT-based login system. Built with JavaScript, Node.js, Express, SQL, and styled with HTML/CSS, the app is deployed on Heroku to ensure 24/7 accessibility
-                </p>
-                
-                </a>
-              </div>
-              <div className = "project">
-              <a href = "https://github.com/pearcepackman/Pearces_CLI" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
-                
-                <div className = "projectpic">
-
-
-                  <img className = "cli"src = {pcli}></img>
-                                                  
-                </div>
-                <h3>PCLI: Pearce's CLI</h3>
-                
-                <p>
-                  Python-based command-line interface (CLI) tool for intuitive file and directory management, supporting navigation, creation, editing, and deletion operations. Features a built-in help and error system for user-friendly interaction, utilizing Python's cmd and os libraries.
-                </p>
-                
-                
-                </a>
-              </div>
-              <div className = "project">
-                <a href = "https://github.com/pearcepackman/Library_Management_System" target = "_blank" rel="noopener noreferrer" alt = "projects simplified">
-                <div className = "projectpic">
-                  <img className = "bookimg" src = {library}></img>
-                </div>
-                <h3>Library Management System</h3>
-                <p>
-                  C++ library management system using object-oriented programming to manage books and customer records. Utilizes a command-line interface for efficiently adding, deleting, searching, and checking out books, making it easy to use
-                  
-                </p>
-                
-                </a>
-              </div>
-              <div className = "project">
-                <a href = "https://pearcescolognereview.netlify.app/" target = "_blank" rel="noopener noreferrer" alt = "pearce's cologne review">
-                <div className = "projectpic">
-                  <img className = "pcrlogo" src = {pcrlogo}></img>
-                </div>
-                <h3>Pearce's Cologne Review</h3>
-                <p>
-                  Responsive frontend application with React and Node.js to showcase a personal cologne collection, featuring smooth navigation across multiple pages. Created a clean, mobile-friendly UI and deployed the app on Netlify for stable public access
-                  
-                </p>
-                
-                </a>
-              </div>
-
-            </div>
-            
-          </div>
-          </ScrollFadeIn>
-          <div className="section">
-            <h1>Achievemenets</h1>
+          <div id = 'experience' className="section">
+            <h1>Experience</h1>
             <div className='acharea'>
+              
               <div className='school'>
                 <div className='schoolanddates'>
-                  <h3>Hackathon Winner - HackHounds 2025 Loyola University, MD</h3>
+                  <h3>Undergraduate Research Assistant</h3>
+                  <h5>June 2025 - Current</h5>
+                </div>
+                <div className = "schoolnotes">
+                  <p>
+                    > Contributed to the DAMS Lab’s IoT-based Smart Library project focused on scalable environmental sensor deployment<br></br>
+                    > Created a comprehensive Amazon-based buy sheet with cost analysis, redundancy planning, and sensor comparison<br></br>
+                    > Researched and selected embedded hardware based on capabilities: ESP32 boards, BME680, SDS011, LDR, and LM393 sensors<br></br>
+                    > Proposed a clean, minimal frontend UI mockup for a multi-room dashboard
+                  </p>
+                  <br></br>
+                </div>
+              </div>
+              <div className='school'>
+                <div className='schoolanddates'>
+                  <h3>Hackathon Winner</h3>
                   <h5>April 2025</h5>
                 </div>
                 <div className = "schoolnotes">
                   <p>
-                    - Awarded Best Computer Vision for developing a goal-tracking app using image recognition to monitor user progress<br></br>
-                    - Designed a clean, user-friendly UI in React Native to enhance app usability and engagement<br></br>
-                    - Learned React Native UI in 24 hours and collaborated with a team to meet tight deadlines<br></br>
+                    > Awarded Best Computer Vision for developing a goal-tracking app using image recognition to monitor user progress<br></br>
+                    > Designed a clean, user-friendly UI in React Native to enhance app usability and engagement<br></br>
+                    > Learned React Native UI in 24 hours and collaborated with a team to meet tight deadlines<br></br>
                     
                   </p>
                   <br></br>
@@ -541,7 +419,9 @@ function App() {
               </div>
             </div>
           </div>
-          <div className = "section">
+          </ScrollFadeIn>
+          <ScrollFadeIn>
+          <div id = "education" className = "section">
             <h1>Education</h1>
             <div className = "educationarea">
               <div className = "school">
@@ -583,7 +463,7 @@ function App() {
               </p>
             </div>
           </div>
-          
+          </ScrollFadeIn>
         </div>
       </header>
     </div>

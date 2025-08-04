@@ -27,7 +27,7 @@ a {
 }
 @media (max-width: 1023px) {
   .App-header {
-    background: linear-gradient(173deg, rgba(36,36,36,1) 0%, rgba(15,15,15,1) 100%);
+    background: linear-gradient(180deg,rgba(16, 24, 31, 1) 0%, rgba(20, 7, 20, 1) 100%); 
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -47,134 +47,369 @@ a {
     justify-content: space-between;
     align-items: center;
   }
-  .navbar{
+    .navbar{
     animation-duration: 2s;
     animation-name: contentdrop;
     display: flex;
-    justify-content: column;
-    flex-direction: column;
-    /*background-color: green;*/
-    width: 95%;
-    height: 100%;
-  }
-  .topnav{
-    /*background-color: rgb(111, 83, 48);*/
-    display: flex;
+    margin-top: 0%;
     flex-direction: row;
+    align-items: center;
+    z-index: 10;
     justify-content: space-between;
-    border-bottom:solid 1px #7b7b7b;
-    height: 110px;
+    background-color: rgba(109, 109, 109, 0.082);
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    backdrop-filter: blur(5px);
+    border-bottom: solid 1px rgba(219, 219, 219, .2);
     
   }
-  
-  .lefthandnav{
+  .navbaright{
+    margin-right: 0%;
+    /*background-color: red;*/
     display: flex;
-    /*background-color: aqua;*/
-    margin-left: 2%;
+    width: auto;
+    gap: 30px;
+  }
+  .navhome{
+    text-decoration: none;
+    color: #afafaf;
+    font-family: "Geist";
+    font-weight: 500;
+    font-size: 16px;
+    transition: all .2s ease;
+    
+  }
+  .navhome:hover{
+    color: #e0e0e0;
+  }
+  .navbarleft{
+    /*background-color: rgb(37, 89, 148);*/
+    display: flex;
+    margin-left: 3%;
+  }
+  .navbaroptions {
+  font-family: "Geist";
+  position: relative;
+  text-decoration: none;
+  color: #afafaf;
+  transition: transform 0.2s ease;
+  padding: 7px 15px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: all .15s ease;
+  font-size: 12px;
+}
+
+  .navbaroptions::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background: #e0e0e0;
+    transition: width 0.24s ease;
+    border-radius: 2px;
+  }
+
+  .navbaroptions:hover {
+    color: #f7f7f7;
+  }
+
+  .navbaroptions:hover::after {
+    width: 100%;
+  }
+  .introsection{
+	  /*background-color: rgb(10, 50, 50);*/
+	  width: 90vw;
+	  height: auto;
+	  
+	  margin-top:80px;
+	  display: flex;
+    flex-direction: column;
+	  
+  }
+  .startsection{
+    /*background-color: olive;*/
+    height: 120vh;
+  }
+  .namebox{
+	  /*background-color: orange;*/
+	  height: auto;
+	  width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+	  margin-left: auto;
+	  margin-right: auto;
+  }
+  .introtext{
+    font-family: "Geist";
+    font-weight: 900;
+    background: linear-gradient(180deg,rgba(230, 230, 230, 1) 0%, rgba(156, 204, 219, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    padding: 0;
+    font-size: 78px;
+    line-height: 1;
+    align-self: center;
+    /*background-color: red;*/
+  }
+  .introdesc{
+    /*background-color: blue;*/
+    color: #DBDBDB;
+    line-height: 1.2;
+    font-family: "Geist";
+    font-weight: 700;
+    font-size: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-style: italic;
+    padding: 0;
+    width: 650px;
+    align-self: center;
+  }
+  .introblurb{
+    color: #a8a8a8;
+    line-height: 1.2;
+    font-family: "Geist";
+    font-weight: 700;
+    font-size: 16px;
+    margin: 10px;
+    font-style: italic;
+    padding: 0;
+    width: 400px;
+    /*background-color: blue;*/
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+  }
+  .introbuttonbox{
+    margin-top: 20px;
+    /*background-color: red;*/
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .workbutton{
+    background: linear-gradient(103deg,rgba(45, 134, 181, 1) 0%, rgba(102, 45, 107, 1) 100%);    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    transition: all .15s ease;
+    font-family: "Geist";
+    font-weight: 700;
+    font-size: 15px;
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: solid 1px rgb(0, 14, 75);*/
+    box-shadow: 0px 0px 10px 0px rgba(177, 177, 177, 0.116);
+  }
+  .workbutton:hover{
+    transform: scale(1.03);
+    background: linear-gradient(103deg,rgba(17, 142, 209, 1) 0%, rgba(175, 28, 189, 1) 100%);
+    box-shadow: 0px 0px 25px 0px rgba(216, 216, 216, 0.219);
+  }
+
+  .aboutinside{
+    /*background-color: olivedrab;*/
+    display: flex;
+    width: 870px;
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: row;
-    width: 65%;
+    justify-content: space-between;
+  }
+  .aboutleft{
+    /*background-color: orangered;*/
+    width:50%;
+  }
+  .picbox{
+    position: relative;
+    height: 300px;
+    
+  }
+  .picbox img{
+    border-radius: 15px;
+    border: solid 1px rgba(219, 219, 219, .2);
+    transition: filter 0.2s ease, transform 0.2s ease;
+    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
+              0 0px 10px rgba(153, 141, 141, 0.199);
+    filter: brightness(.8);
+  }
+  .picbox img:hover ~ img,
+  .picbox img:has(~ img:hover) {
+  filter: brightness(0.6);
+  transform: translateY(8px);
+  }
+  .picbox img:hover{
+    filter:brightness(.95);
+    transform: scale(1.07) translateY(-10px);
+    z-index: 2;
+    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
+              0 0px 15px rgba(153, 141, 141, 0.445);
+  }
+  .gradpic{
+    position: absolute;
+    rotate: 5deg;
+    height: 150px;
+    width: 150px;
+    z-index: 2;
+    left: 170px;
+  }
+  .coolpic{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    left: 75px;
+    top: 5px;
+    rotate: -8deg;
+    z-index: 1;
+  }
+  .snowboardpic{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    rotate: -18deg;
+    left: -10px;
+    top: 40px;
+  }
+  .aboutright{
+    /*background-color: cornflowerblue;*/
+    width: 42%;
+    height: 100%;
+    margin-top: 5px;
+    display: flex;
+    filter: brightness(80%);
+    flex-direction: column;
+    transition: all .2s ease;
+  }
+  .aboutright:hover{
+    transform: scale(1.03);
+    filter:brightness(95%);
+  }
+  .aboutrighttitle p{
+    /*background-color: orchid;*/
+    margin-top: 90px;
+    margin-bottom: 0;
+    line-height: 1;
+    padding: 0;
+    font-family: "Geist";
+    font-weight: 800;
+    font-size: 45px;
+  }
+  .aboutrightdesc p{
+    /*background-color: burlywood;*/
+    height: auto;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Geist";
+    font-weight: 600;
+    font-size: 16px;
+    color:#a3a3a3;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .aboutname h2{
+    /*background-color: orange;*/
+    padding: 0;
+    margin: 0;
+    margin-top: -80px;
+    font-family: "Geist";
+    font-weight: 850;
+    font-size: 55px;
+  }
+  .aboutnameadds p{
+    /*background-color: olive;*/
+    margin: 0;
+    font-style: italic;
+    font-family: "Geist";
+    font-size: 16px;
+    font-weight: 600;
+    color:#a3a3a3;
+  }
+  .aboutleftwords{
+    /*background-color: #7b7b7b;*/
     filter: brightness(80%);
     transition: all .2s ease;
   }
-  .lefthandnav:hover{
-    transform: scale(1.02);
+  .aboutleftwords:hover{
+    transform: scale(1.03);
     filter:brightness(95%);
   }
-  .lefthandnav *{
-    margin-top: auto;
-    margin-bottom: auto;
-    align-items: left;
-    width: 100%;
-    /*background-color: pink;
-    border:1px solid #303030;*/
-  }
-  .picofme{
-    border-radius: 100px;
-    height: 70px;
-    width: 70px;
-  }
-  .nametext{
-    font-family: "Geist";
-    
-    height: auto;
-    /*background-color: blue;*/
-    margin-left: 1%;
+  .aboutmelinks{
+    /*background-color: orange;*/
     display: flex;
-    flex-direction: column;
-    width: auto;
-    flex-wrap: wrap;
-    justify-content: left;
-  }
-  .nametext h2{
-    margin: 0;
-    color: var(--impwhite);
-    font-weight: 800;
-    text-align: left;
-    font-size: 20px;
-    /*background-color: pink;*/
-  }
-  .nametext p{
-    font-size: 14px;
-    color: var(--darkwhite);
-    margin: 0;
-    text-align: left;
-  }
-  .righthandnav{
-    width: 22%;
-    height: 60%;
-    margin-right: 0;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 2%;
-    margin-top: 20px;
-    gap: 10px;
-    /*background-color: blue;*/
-    flex-wrap: wrap;
-  }
-  .righthandnav *{
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 25px;
-    width: 25px;
-    filter: grayscale(100%) brightness(1) invert(.70);
-    box-shadow: 0px 0px 10px 1px #ffffff;
-    transition: all .2s ease;
-  }
-  .righthandnav a{
-    all: unset;
-    display: inherit;
-    color: inherit;
-  }
-  .righthandnav * :hover{
-    filter: grayscale(100%) brightness(1) invert(.90);
-    transform: scale(1.05);
-    box-shadow: 0px 0px 18px 1px #a3a3a3;
-    cursor: pointer;
-  }
-  .navdesc{
-    /*background-color: blue;*/
-    width: 70%;
+    justify-content: space-evenly;
+    width: 870px;
     margin-left: auto;
     margin-right: auto;
-    font-family: "Geist";
-    color: var(--darkwhite);
-    font-size: 12px;
-    font-weight: 400;
-    font-style: italic;
-    filter:brightness(70%);
-    transition: all .2s ease;
-    animation-duration: 1s;
-    animation-name: contentdrop;
+    margin-top: 50px;
   }
-  .navdesc:hover{
-    transform: scale(1.02);
-    filter: brightness(90%);
+  .aboutmelinks a{
+    display: flex;
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .aboutmebutton{
+    filter: brightness(.75);
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 42px;
+    width: 160px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    transition: all .15s ease;
+    cursor: pointer;
+    border: solid 1px rgba(219, 219, 219, .2);
+    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
+              0 0px 10px rgba(153, 141, 141, 0.199);
+  }
+  .aboutmebutton:hover{
+    transform: translateY(-3px);
+    filter: brightness(.95);
+    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
+              0 0px 15px rgba(153, 141, 141, 0.445);
+  }
+  .aboutmebutton p{
+    /*background-color: green;*/
+    font-family: "Geist";
+    font-weight: 650;
+    font-size: 16px;
+    align-self: center;
+  }
+  .linkedinbutton{
+    background: radial-gradient(circle, rgba(120, 180, 230, 0.3) 0%, rgba(20, 40, 60, 0.95) 100%);
+  }
+  .githubbutton{
+    background: radial-gradient(circle, rgba(190, 190, 190, 0.25) 0%, rgba(70, 70, 70, 0.95) 100%);
+  }
+  .github{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 32px;
+    height: 32px;
+    filter: invert(1) brightness(.9);
+    margin-right: 10px;
   }
   .section{
-    /*background-color: red;*/
+    background-color: red;
     width: 90vw;
     display: flex;
     flex-direction: column;
+    scroll-margin-top: 150px;
     animation-duration: 2s;
     animation-name: contentdrop;
   }
@@ -529,9 +764,10 @@ a {
     text-decoration: none;
     color: #afafaf;
     font-family: "Geist";
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 16px;
     transition: all .2s ease;
+    
   }
   .navhome:hover{
     color: #e0e0e0;
@@ -542,11 +778,12 @@ a {
     margin-left: 10%;
   }
   .navbaroptions {
+  font-family: "Geist";
   position: relative;
   text-decoration: none;
   color: #afafaf;
   transition: transform 0.2s ease;
-  padding: 7px 20px;
+  padding: 7px 15px;
   border: 1px solid transparent;
   border-radius: 10px;
   transition: all .15s ease;
@@ -1433,6 +1670,9 @@ a {
   }
   .schoolnotes{
     /*background-color: green;*/
+    line-height: 1.5;
+    font-family: "Geist";
+    font-weight: 500;
     color:var(--darkwhite);
     text-align: left;
     margin-top: 0px;
