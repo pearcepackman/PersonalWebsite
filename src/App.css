@@ -909,13 +909,13 @@ a {
     filter:brightness(80%);
   }
   .school h5{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     /*background-color: #383838;*/
     color: var(--darkwhite);
     width: auto;
     margin-top: 0px;
-    margin-bottom: auto;
+    margin-bottom: 10px;
     font-style: italic;
   }
   .school * {
@@ -995,10 +995,18 @@ a {
     display: none;
     background-color: green;
   }
+  .startsection{
+    margin-top: 35%;
+    /*background-color: orange;*/
+  }
+  .section{
+    scroll-margin-top: 60px;
+  }
   
   .section h1{
     justify-self: center;
     margin: 0;
+    font-size: 55px;
     text-align: center;
   }
   .projectarea{
@@ -1017,6 +1025,7 @@ a {
   }
   .aboutinside{
     flex-direction: column;
+    margin-bottom: -50px;
   }
   .aboutleft{
     width: 100%;
@@ -1024,6 +1033,9 @@ a {
   .aboutright{
     width: 100%;
     margin-top: 0px;
+  }
+  .aboutrighttitle p{
+    font-size: 35px;
   }
   .picbox {
     margin-top: -50px;
@@ -1137,13 +1149,44 @@ a {
   .aboutname{
     margin-top: -120px;
   }
+  .aboutnameadds{
+    margin-top: -5px;
+  }
   .aboutrighttitle{
     margin-top: -70px;
   }
   .aboutrightdesc p{
     /*background-color: gainsboro;*/
+    font-size: 14px;
+    margin-top: 2px;
     width: auto;
   }
+  .skillcard{
+    width: 280px;
+    height: 165px;
+  }
+  .skillpoints{
+    line-height: .25;
+    font-size: 14px;
+  }
+  .projectcard{
+    width: 270px;
+    height: 280px;
+  }
+  .projectname{
+    font-size: 16px;
+  }
+  .projectdesclayout{
+    margin-top: -30px;
+    margin-bottom: auto;
+  }
+  .projectdesclayout p{
+    font-size: 14px;
+  }
+  .projecttag{
+    font-size: 12px;
+  }
+  
   .educationarea{
     height: auto;
   }

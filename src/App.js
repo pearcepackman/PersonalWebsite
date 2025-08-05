@@ -95,7 +95,7 @@ function App() {
                 </div>
                 <div className='aboutright'>
                   <div className='aboutrighttitle'>
-                    <p>Who Am I?</p>
+                    <p>So, Who Am I?</p>
                   </div>
                   <div className='aboutrightdesc'>
                     <p>
@@ -343,7 +343,7 @@ function App() {
                     <img className = "iotimg" src = {app}></img>
                 </div>
                 <div className = "projectdesclayout">
-                  <p><span className='projectname'>SnapMotive</span> is a gamified goal-tracking app built at HackHounds 2025 that uses computer vision to verify task completion through photos, letting users set daily goals and track progress.</p>
+                  <p><span className='projectname'>SnapMotive</span> is a gamified goal-tracking app built at HackHounds 2025 that uses computer vision to verify task completion through photos, letting users set goals and track progress.</p>
                 </div>
                 </a>  
               </div>
@@ -395,7 +395,7 @@ function App() {
                 <div className = "schoolnotes">
                   <p>
                     - Contributed to the DAMS Lab’s IoT-based Smart Library project focused on scalable environmental sensor deployment<br></br>
-                    - Created a comprehensive Amazon-based buy sheet with cost analysis, redundancy planning, and sensor comparison<br></br>
+                    - Created a comprehensive buy sheet with cost analysis, redundancy planning, and sensor comparison<br></br>
                     - Researched and selected embedded hardware based on capabilities: ESP32 boards, BME680, SDS011, LDR, and LM393 sensors<br></br>
                     - Proposed a clean, minimal frontend UI mockup for a multi-room dashboard
                   </p>
@@ -427,7 +427,7 @@ function App() {
               <div className = "school">
                 <div className = "schoolanddates">
                   <h3>University of Maryland, Baltimore County (UMBC)</h3>
-                  <h5>August 2024 - Current</h5>
+                  <h5>August 2024 - December 2026</h5>
                 </div>
                 <div className = "schoolnotes">
                   <p>
