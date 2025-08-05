@@ -387,6 +387,7 @@ function App() {
             <h1>Experience</h1>
             <div className='educationarea'>
               
+              <a href = "https://damslabumbc.github.io/" target = "_blank" rel="noopener noreferrer" alt = "DAMS Link">
               <div className='school'>
                 <div className='schoolanddates'>
                   <h3>Undergraduate Research Assistant</h3>
@@ -402,6 +403,9 @@ function App() {
                   <br></br>
                 </div>
               </div>
+              </a>
+
+              <a href = "https://devpost.com/software/d-kh8jf4" target = "_blank" rel="noopener noreferrer" alt = "DAMS Link">
               <div className='school'>
                 <div className='schoolanddates'>
                   <h3>Hackathon Winner</h3>
@@ -417,6 +421,7 @@ function App() {
                   <br></br>
                 </div>
               </div>
+              </a>
             </div>
           </div>
           </ScrollFadeIn>
@@ -460,13 +465,39 @@ function App() {
               </div>
             </div>
           </div>
-          
           </ScrollFadeIn>
         </div>
-        <p className='footer'>Thank you for reading! If you're interested to know more about me,
-                you can send me an email at pearcepackman@gmail.com.
-              </p>
       </header>
+      
+            <div className='footer'>
+              <div className='footertop'>
+                <div className='footersitelinks'>
+                  <h5>Quick Links</h5>
+                  <a href = '#aboutme' ><p>About Me</p></a>
+                  <a href = '#skills' ><p>Skills</p></a>
+                  <a href = '#projects' ><p>Projects</p></a>
+                  <a href = '#experience' ><p>Experience</p></a>
+                  <a href = '#education' ><p>Education</p></a>
+                </div>
+                <div className='footerresources'>
+                  <h5>Resources</h5>
+                  <a href = "https://github.com/pearcepackman" target = "_blank" rel="noopener noreferrer" alt = "linkedin">
+                  <p>GitHub</p>
+                  </a>
+                  <a href = "https://www.linkedin.com/in/pearce-packman/" target = "_blank" rel="noopener noreferrer" alt = "linkedin">
+                  <p>LinkedIn</p>
+                  </a>
+                  <a href = "https://drive.google.com/file/d/151GyXMqMP7wq571OO6Mu-xP-C8lHL283/view" target = "_blank" rel="noopener noreferrer" alt = "linkedin">
+                  <p>Resume</p>
+                  </a>
+
+                </div>
+              </div>
+              <div className='footerbottom'>
+                <p>Designed and Developed by Pearce Packman :)</p>
+              </div>
+            </div>
+          
     </div>
   );
 }

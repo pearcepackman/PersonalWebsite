@@ -10,6 +10,7 @@ html, body {
   height: 100%;
   background: rgb(36,36,36);
   scroll-behavior: smooth;
+  
 }
 #tsparticles {
   position: fixed;
@@ -23,7 +24,7 @@ a {
 }
 .App {
   text-align: center;
-  background-color: red;
+  /*background-color: red;*/
 }
 
 @media (max-width: 1023px) {
@@ -1232,7 +1233,7 @@ a {
 /*------------------------------------------------------------------Fullscreen------------------------------------------------------------------*/
 @media (min-width: 1024px) {
   .App-header {
-   background: linear-gradient(180deg,rgba(16, 24, 31, 1) 0%, rgba(20, 7, 20, 1) 100%); 
+    background: radial-gradient(circle,rgba(16, 24, 31, 1) 74%, rgba(12, 7, 20, 1) 100%); 
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -1266,7 +1267,7 @@ a {
     position: fixed;
     width: 100%;
     height: 50px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px) brightness(70%);
     border-bottom: solid 1px rgba(219, 219, 219, .2);
     
   }
@@ -1349,7 +1350,7 @@ a {
   .introtext{
     font-family: "Geist";
     font-weight: 900;
-    background: linear-gradient(180deg,rgba(230, 230, 230, 1) 0%, rgba(156, 204, 219, 1) 100%);
+    background: linear-gradient(184deg,rgba(207, 215, 230, 1) 0%, rgba(207, 222, 232, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
@@ -1653,8 +1654,8 @@ a {
     line-height: 1;
     margin-left: 0%;
     text-align: left;
-    font-size: 75px;
-    background: linear-gradient(180deg,rgba(230, 230, 230, 1) 0%, rgba(156, 204, 219, 1) 100%);
+    font-size: 68px;
+    background: linear-gradient(184deg,rgba(207, 215, 230, 1) 0%, rgba(207, 222, 232, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     border-bottom:solid 1px #7b7b7b;
@@ -2128,12 +2129,79 @@ a {
     animation-name: contentdrop;
   }
   .footer{
-    filter:brightness(70%);
-    transition: all .2s ease;
+    background: radial-gradient(circle,rgba(16, 24, 31, 1) 0%, rgba(12, 7, 20, 1) 77%);
+    height: 170px;
+    border-top: solid 1px #7b7b7b44;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
-  .footer:hover{
-    transform: scale(1.02);
-    filter: brightness(90%);
+  .footertop{
+    height: 90%;
+    /*background-color: orangered;*/
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+  }
+  .footersitelinks{
+    /*background-color: #7b7b7b;*/
+    height: 100%;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Geist";
+    text-align: center;
+  }
+  .footertop h5{
+    color: var(--impwhite);
+    margin-bottom: 2px;
+    margin-top: 10px;
+    font-weight: 800;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1;
+    font-size: 18px;
+  }
+  .footertop p{
+    /*background-color: goldenrod;*/
+    width: 100px;
+    color: #afafaf;
+    margin: 0;
+    line-height: 1.5;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all .15s ease;
+  }
+  .footer p:hover{
+    transform: scale(1.05);
+    color: #f7f7f7;
+  }
+  .footerresources{
+    /*background-color: plum;*/
+    height: 100%;
+    width: 170px;
+  }
+  .footerbottom{
+    height: 10%;
+    /*background-color: blue;*/
+    display: flex;
+    margin-left: 10px;
+    width: auto;
+  }
+  .footerbottom p{
+    line-height: 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--darkwhite);
+    font-family: "Geist";
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    transition: all .15s ease;
   }
   .school{
     /*background-color: gray;*/
