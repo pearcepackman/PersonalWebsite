@@ -1,12 +1,8 @@
-import pictureofme from './assets/pictureofme.png';
+
 import github from './assets/github-sign.png';
 import linkedin from './assets/linkedin.png';
 import resume from './assets/resume.png';
-import email from './assets/email.png';
 import pslogo from './assets/pslogo.png';
-import pcrlogo from './assets/pcrlogo.png';
-import pcli from './assets/pcli.png';
-import library from './assets/book.png';
 import iot from './assets/iot.png';
 import app from './assets/app-store.png';
 import terminal from './assets/terminal.png';
