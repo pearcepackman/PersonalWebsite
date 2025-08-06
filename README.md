@@ -3,25 +3,30 @@
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white" />
   <img src="https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify&logoColor=white" />
+  <img src="https://img.shields.io/badge/Responsive_Design-2196F3?style=flat" />
 </p>
 
+# Personal Portfolio Website
+Hello! I'm Pearce, and this is my personal portfolio website — fully designed and developed by me using React, JavaScript, and CSS.
 
+The goal of this site is to showcase my projects, skills, and experience in a clean, responsive, and visually engaging format.
 
-# PearcePackman.com - Personal Portfolio Website
-Hello! I'm Pearce, and this is my personal portfolio repo. This stie was built by me using React, JavaScript, and CSS. 
-**Live Site: https://pearcepackman.com/**
+## Live Site
+[pearcepackman.com](https://pearcepackman.com/)
+
 ## Tech Stack
-- **React** - React based site for easy building/deployment
-- **JavaScript** - Core functionality and scroll animations
-- **CSS** - All of the styling
-- **Netlify** - For easy domain management and deployment
+- **React** – Component-based structure for modular development
+- **JavaScript** – Interactive functionality, animations, and DOM control
+- **CSS** – All custom styling with modern layout, hover, and animation effects
+- **Netlify** – Hosting and domain management with continuous deployment
   
 ## Features
-- Fully responsive UI (desktop, tablet, mobile)
-- Custom project and skill card components with hover animations
-- About Me, Skills, Projects, Experience, and Education sections
-- Scroll animations, smooth layout, consistent color theme, and modern design
-- Includes resume link, contact info, and external project links
+- Fully responsive layout for desktop, tablet, and mobile
+- Custom project and skill cards with layered hover animations
+- Clear section structure: About Me, Skills, Projects, Experience, Education
+- Smooth scroll transitions, consistent theming, and soft gradients
+- Contact section with external links to resume, email, and socials
   
 ## Update History
 - 8/6/2025 - Cleaned up CSS
