@@ -1,43 +1,47 @@
-# Pearce Packman - Personal Portfolio Website
-This is the code for my personal portfolio website. Built with React, JavaScript, and CSS. It shows my projects, skills, experience, and education.  
-**Link: https://pearcepackman.com/**
+<p align="left">
+  <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white" />
+</p>
+
+
+
+# PearcePackman.com - Personal Portfolio Website
+Hello! I'm Pearce, and this is my personal portfolio repo. This stie was built by me using React, JavaScript, and CSS. 
+**Live Site: https://pearcepackman.com/**
+## Tech Stack
+- **React** - React based site for easy building/deployment
+- **JavaScript** - Core functionality and scroll animations
+- **CSS** - All of the styling
+- **Netlify** - For easy domain management and deployment
+  
 ## Features
-- Clean, responsive, dark mode UI
-- Project and skill cards with links
-- Personal statements, information, and contacts
-- Deployed on Netlify
-- Updated README
-## Future Plans:
-- Dark mode / light mode would be super cool
-- ~~Color if it looks nice? Dark theme with bright blue/pink/purple gradient~~
-- ~~Remove some projects in favor for others~~
-- ~~Expand skills section~~
-- ~~Better animations/UX stuff, fade in?~~
-- Maybe a bit smaller text/sections
-- More verbose project information? Like tech stack, if it fits
-- Different project containers based on stack??? Or maybe 'stickers'? This would be super cool
-- Something with multiple resumes, maybe allow user to pick one?
-- Aiming for slick, modern, clean, techy 
-- If you're reading this hello :)
-## Version History:
-### Version 1.06 - 5/28/2025:
-- Changed personal description
-- Changed styling of skills and projects
-- Added new projects
-- Updated education
-### Version 1.05 - 4/08/2025:
-- New achievements section!
-- Showing HackHounds 2025 win
-- Updated project styling
-### Version 1.04 - 4/03/2025:
-- Updated projects and resume
-- Fixed small CSS visual bugs
-- Updated some styling
-### Version 1.02 & 1.03 - 3/31/2025:
-- Small visual and CSS fixes
-### Version 1.0 - 3/30/2025:
-- First commit, most info up
-## Deployment (if you're interested)
-1. Clone the repo: `git clone https://github.com/pearcepackman/PersonalWebsite.git`
-2. Install any dependencies: `npm install`
-3. Start dev server: `npm start`
+- Fully responsive UI (desktop, tablet, mobile)
+- Custom project and skill card components with hover animations
+- About Me, Skills, Projects, Experience, and Education sections
+- Scroll animations, smooth layout, consistent color theme, and modern design
+- Includes resume link, contact info, and external project links
+  
+## Update History
+- 8/6/2025 - Cleaned up CSS
+- 8/5/2025 - DEPLOYED! + footer design, and mobile styling
+- 8/4/2025 - Test deployment, mobile styling
+- 7/31/2025 - Started About Me section, projects section done
+- 7/30/2025 - Skills section, starting project section
+- 7/29/2025 - Starting Skills section
+- 7/28/2025 - Updated landing page
+- 7/25/2025 - Beginning overhaul :)
+- 5/28/2025 - Updated projects
+- 4/8/2025 - Updated Hackathon win, new section
+- 4/3/2025 - Updated projects, resume, styling
+- 3/31/2025 - Mobile functionality added, fixed visual bug
+- 3/30/2025 - DEPLOYED! 
+
+## Contact
+<p align="center">
+  If you like this project and want to chat with me, here's some of my links! :)<br><br>
+  <a href="https://pearcepackman.com/" target="_blank">🌐 Portfolio Website</a> |
+  <a href="https://www.linkedin.com/in/pearce-packman/" target="_blank">🔗 LinkedIn</a> |
+  <a href="mailto:pearcepackman@gmail.com">📧 Email</a>
+</p>
