@@ -29,6 +29,7 @@ The goal of this site is to showcase my projects, skills, and experience in a cl
 - Contact section with external links to resume, email, and socials
   
 ## Update History
+- 8/29/2025 - Fixed GPA after data structures
 - 8/6/2025 - Cleaned up CSS
 - 8/5/2025 - DEPLOYED! + footer design, and mobile styling
 - 8/4/2025 - Test deployment, mobile styling
