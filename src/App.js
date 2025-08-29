@@ -440,8 +440,8 @@ function App() {
                   <p>
                     - Obtaining Bachelor's of Science in Computer Science<br></br>
                     - Graduating in December of 2026<br></br>
-                    - GPA: 3.79<br></br>
-                    - Coursework: Data Structures, Principles of Programming Languages, Computer Organazation and Assembly Language<br></br>
+                    - GPA: 3.81<br></br>
+                    - Coursework: Operating Systems, Data Structures, Computer Architecture, Principles of Programming Languages, Computer Organazation and Assembly Language<br></br>
                     - Extra Curricular Activities: UMBC Racing Team Member
                   </p>
                   <br></br>
