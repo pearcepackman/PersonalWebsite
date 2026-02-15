@@ -1645,149 +1645,129 @@ background: radial-gradient(circle,rgb(72, 98, 124) 0%, rgb(2, 49, 150) 100%);  
     margin-left:auto;
     margin-right: auto;
   }
-  .skillcard{
-    height: 210px;
-    width: 368px;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-    transition: filter .3s ease, transform 0.2s ease;
-    border: solid 1px rgba(219, 219, 219, .2);
-    border-radius: 12px;
-    filter:brightness(80%);
-    position: relative;
-    margin-bottom: 0px;
-    overflow: hidden;
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
-              0 0px 10px rgba(153, 141, 141, 0.199);
+.skillcard {
+  height: 210px;
+  width: 368px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  
+  /* Modern Matte Dark Look */
+  background: #121212; 
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  
+  /* Smooth transitions */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.8);
+}
 
-  }
-  .skillcard:hover ~ .skillcard,
-  .skillcard:has(~ .skillcard:hover) {
-    filter: brightness(0.6);
-  }
-  .skillcard::before {
+/* The "Accent Border" - Hidden by default at the top */
+.skillcard::after {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Thin, sharp accent line */
+  transform: scaleX(0); /* Hidden */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: left;
+  z-index: 10;
 }
 
-  .skillcardimg{
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*background-color: orange;*/
-  }
-  .skillcardimg{
-  transition: transform 0.15s ease;
+/* Hover State */
+.skillcard:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.1);
+  background: #161616;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-.skillcard:hover .skillcardimg,
-.skillcard:hover .skilltag{
-  transform: scale(1.08);
+/* Activate the border on hover */
+.skillcard:hover::after {
+  transform: scaleX(1);
 }
 
-  .skillcard:hover{
-    transform: scale(1.04);
-  filter: brightness(.9);
-  box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
-              0 0px 15px rgba(153, 141, 141, 0.445);
-  }
+/* Dim surrounding cards */
+.skillcard:hover ~ .skillcard,
+.skillcard:has(~ .skillcard:hover) {
+  filter: brightness(0.5);
+  transform: scale(0.98);
+}
 
-  .skillbackend {
-    background: radial-gradient(circle,rgb(72, 98, 124) 0%, rgb(2, 49, 150) 100%);  /* Cool blue — structured and backend-feeling */
-    }
+/* Specific Accent Colors for the Top Border and subtle Glow */
+.skillbackend:hover { box-shadow: 0 10px 30px -10px rgba(58, 134, 255, 0.3); }
+.skillbackend::after { background: #3a86ff; }
 
-  .skilllanguage {
-    background: radial-gradient(circle, rgba(139, 81, 82, 0.8) 0%, rgba(168, 42, 46, 0.95) 100%);
-  /* Bold red — expressive, direct, language-focused */
-  } 
+.skilllanguage:hover { box-shadow: 0 10px 30px -10px rgba(255, 0, 110, 0.3); }
+.skilllanguage::after { background: #ff006e; }
 
-  .skillfrontend {
-    background: radial-gradient(circle, rgba(125, 211, 144, 0.8) 0%, rgba(5, 126, 69, 0.932) 100%);
-  /* Bright green — visual, energetic, dynamic */
-  }
+.skillfrontend:hover { box-shadow: 0 10px 30px -10px rgba(58, 240, 174, 0.3); }
+.skillfrontend::after { background: #3af0ae; }
 
-  .skillembedded {
-    background: radial-gradient(circle, rgba(219, 195, 128, 0.8) 0%, rgba(211, 148, 11, 0.95) 100%);
-  /* Yellow-gold — embedded systems / signal / hardware */
-  }
+.skillembedded:hover { box-shadow: 0 10px 30px -10px rgba(255, 190, 11, 0.3); }
+.skillembedded::after { background: #ffbe0b; }
 
-  .skilltools {
-    background: radial-gradient(circle, rgba(124, 124, 124, 0.8) 0%, rgba(71, 71, 71, 0.95) 100%);
-  /* Deep purple — understated, behind-the-scenes tools */
-  }
+.skilltools:hover { box-shadow: 0 10px 30px -10px rgba(131, 56, 236, 0.3); }
+.skilltools::after { background: #8338ec; }
 
-  .skillsoft {
-    background: radial-gradient(circle, rgba(143, 108, 192, 0.8) 0%, rgba(89, 4, 146, 0.9) 100%);
-  /* Purple-to-gold — confident and warm for soft skills */
-  }
-  .skilltag{
-    position: absolute;
-    top: 8px;
-    left: auto;
-    right: 8px;
-    font-family: "Geist";
-    font-weight: 700;
-    font-size: 15px;
-    background-color: rgba(109, 109, 109, 0.336);
-    border: solid 1px rgba(219, 219, 219, .2);
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 7px;
-    transition: all .15s ease;
-  }
-  .skillcard p {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 200%;
-  }
+.skillsoft:hover { box-shadow: 0 10px 30px -10px rgba(251, 86, 7, 0.3); }
+.skillsoft::after { background: #fb5607; }
 
-  .skillpointslayout{
-    background-color: rgba(109, 109, 109, 0.336);
-    border-top: solid 1px rgba(219, 219, 219, .2);
-    
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0px;
-    backdrop-filter: blur(2px);
-  }
-  .skillpoints{
-    font-family: "Geist";
-    font-weight: 600;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 100%;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    /*background-color: orangered;*/
-    list-style-type: none;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: left;
-  }
-  .skillpoints li::before {
-  content: "›";
-  color: #e2e2f8;
+/* Refined Skill Tag - Darker and stealthier */
+.skilltag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: "Geist";
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Skill Points Area */
+.skillpointslayout {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-top: solid 1px rgba(255, 255, 255, 0.05);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.skillpoints {
+  list-style-type: none;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skillpoints li {
+  font-family: "Geist";
+  font-size: 15px;
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+.skillcard:hover .skillpoints li {
+  color: #ddd;
+}
+
+.skillpoints li::before {
+  content: "•";
   margin-right: 8px;
-  font-weight: bold;
-  font-size: 20px;
-  }
-  .skillpoints li{
-    transition: all .1s ease;
-  }
-  .skillpoints li:hover {
-  color: white;
-  transform: translateX(6px);
-  }
+  opacity: 0.5;
+}
   .projectcard{
     height: 300px;
     width: 400px;
