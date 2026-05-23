@@ -42,11 +42,11 @@ function App() {
               Pearce Packman
             </p>
             <p style={{ color: '#c8d8e0', fontWeight: 500, fontSize: 'clamp(18px, 3vw, 36px)', fontStyle: 'italic', marginTop: 12, marginBottom: 8, maxWidth: 620 }}>
-              Building systems that bridge hardware and software.
+              Building systems that matter.
             </p>
             <p style={{ color: '#8a9aaa', fontSize: 15, lineHeight: 1.7, fontWeight: 500, fontStyle: 'italic', marginTop: 8, maxWidth: 480 }}>
-              From BLE indoor navigation to real-time hardware monitors and full-stack web apps,
-              I build polished software that connects low-level systems with user-facing design.
+              Full-stack dev, embedded tinkerer, CS student at UMBC.
+              Currently shipping production software at Occams Group.
             </p>
             <div style={{ marginTop: 28 }}>
               <a href="#aboutme" style={{
@@ -83,18 +83,18 @@ function App() {
                 <div className="aboutme-right">
                   <div className="aboutme-nameblock">
                     <h2>Hey, I'm Pearce!</h2>
-                    <p>Full-Stack Developer</p>
+                    <p>Software Engineer Intern</p>
                     <p>Research Assistant</p>
                     <p>Student at UMBC</p>
                   </div>
                   <div className="aboutme-biocard">
                     <h3>So, Who Am I?</h3>
                     <p>
-                      Hey, I'm Pearce — thanks for checking out my site!
-                      I've gone from working in the trades to studying Computer Science at UMBC,
-                      where I focus on full-stack development, embedded systems, and real-time projects.
-                      Right now I'm building an indoor navigation app using Bluetooth beacons through
-                      the DAMS Lab, and actively looking for a summer 2026 internship!
+                      I'm a CS student at UMBC graduating December 2026. Before I wrote code I was a mechanic
+                      and did construction work. I love to bring that same work ethic and mentality to software. Most of my
+                      work has been full-stack development, with some embedded and IoT work through the DAMS Lab,
+                      and now building production software at Occams Group. I love putting together end-to-end
+                      systems, and even implementing hardware into my projects as well!
                     </p>
                   </div>
                 </div>
@@ -133,11 +133,13 @@ function App() {
               <h1 className="section-title">Skills</h1>
               <div className="skillarea">
                 {[
-                  { cls: 'skilllanguage', label: 'Languages',         chips: ['C++','C','JavaScript','Python','TypeScript','SQL','Bash'] },
-                  { cls: 'skillfrontend', label: 'Frontend',          chips: ['React','React Native','Qt / C++','HTML','CSS','Chart.js'] },
-                  { cls: 'skillbackend',  label: 'Backend',           chips: ['Node.js','Express.js','REST APIs','SQLite','JWT Auth','Docker'] },
-                  { cls: 'skillembedded', label: 'Embedded & Systems',chips: ['ESP32','MQTT','BLE','Sensor I/O','Serial Comm','LibreHardwareMonitor'] },
-                  { cls: 'skilltools',    label: 'Dev Tools & OS',    chips: ['Linux','Git','GitHub','Docker','VSCode','NeoVim','Expo Go','Windows','MacOS'] },
+                  { cls: 'skilllanguage', label: 'Languages',        chips: ['C++','C','JavaScript','TypeScript','Python','SQL','Bash'] },
+                  { cls: 'skillfrontend', label: 'Frontend',         chips: ['React','React Native','Qt / C++','HTML','CSS','Tailwind CSS'] },
+                  { cls: 'skillbackend',  label: 'Backend',          chips: ['Node.js','Express.js','REST APIs','PostgreSQL','Prisma','SQLite'] },
+                  { cls: 'skillcloud',    label: 'Cloud & DevOps',   chips: ['Azure','Docker','GitHub Actions','CI/CD','Neon'] },
+                  { cls: 'skillauthapi', label: 'AI & Auth',         chips: ['Claude API','Clerk','JWT'] },
+                  { cls: 'skillembedded', label: 'Embedded & Systems',chips: ['ESP32','MQTT','BLE','IoT','Sensor I/O','LibreHardwareMonitor'] },
+                  { cls: 'skilltools',    label: 'Tools & OS',       chips: ['Git','GitHub','Jira','VSCode','NeoVim','Linux','Windows','macOS'] },
                 ].map(({ cls, label, chips }) => (
                   <div key={label} className={`skillcard ${cls}`}>
                     <div className="skillcategoryname">{label}</div>
@@ -217,19 +219,43 @@ function App() {
             <div className="section-inner">
               <h1 className="section-title">Experience</h1>
               <div className="educationarea">
+                <a href="https://www.occamsgroup.com/" target="_blank" rel="noopener noreferrer">
+                  <div className="school">
+                    <div className="schoolanddates">
+                      <h3>Software Engineer Intern — Occams Group</h3>
+                      <h5>May 2026 – Present</h5>
+                    </div>
+                    <div className="schoolnotes">
+                      <ul>
+                        <li>Sole developer building internal automation tools at a technology consultancy serving Fortune 100–500 clients</li>
+                        <li>Full-stack development with React, Node.js, PostgreSQL, Prisma, and Azure</li>
+                        <li>Integrated AI capabilities using the Claude API for intelligent data processing and automation</li>
+                        <li>Built and deployed production systems to Azure with CI/CD pipelines via GitHub Actions</li>
+                        <li>Worked with full autonomy; presented work directly to C-suite</li>
+                      </ul>
+                      <div className="schoolchips">
+                        {['React','Node.js','PostgreSQL','Prisma','Azure','Claude API','Clerk','GitHub Actions','Chrome Extension','CI/CD'].map(t => <span key={t} className="projectchip">{t}</span>)}
+                      </div>
+                    </div>
+                  </div>
+                </a>
                 <a href="https://damslabumbc.github.io/" target="_blank" rel="noopener noreferrer">
                   <div className="school">
                     <div className="schoolanddates">
-                      <h3>Undergraduate Research Assistant</h3>
+                      <h3>Undergraduate Research Assistant — DAMS Lab</h3>
                       <h5>June 2025 – Present</h5>
                     </div>
                     <div className="schoolnotes">
                       <ul>
-                        <li>Built an indoor navigation app using Bluetooth beacons for real-time positioning and directions</li>
+                        <li>Built an indoor navigation app using Bluetooth beacons to provide real-time positioning and directions</li>
                         <li>Implemented BLE beacon detection including signal processing and device ranging</li>
-                        <li>Designed and implemented a pathfinding algorithm supporting multiple floors</li>
-                        <li>Designed and developed frontend UI for live user position, pathfinding, and turn-by-turn directions</li>
+                        <li>Designed and implemented the pathfinding algorithm for multiple floors</li>
+                        <li>Designed and developed frontend UI components for live user position, pathfinding, and directions</li>
+                        <li>Developing an IoT hardware curriculum for the SPACES course launching in 2027, including embedded systems guides and tutorials</li>
                       </ul>
+                      <div className="schoolchips">
+                        {['React Native','BLE','JavaScript','Expo','Pathfinding','IoT'].map(t => <span key={t} className="projectchip">{t}</span>)}
+                      </div>
                     </div>
                   </div>
                 </a>
@@ -245,6 +271,9 @@ function App() {
                         <li>Designed a clean, user-friendly UI in React Native</li>
                         <li>Learned React Native UI in 24 hours and collaborated with a team under tight deadlines</li>
                       </ul>
+                      <div className="schoolchips">
+                        {['React Native','TypeScript','Computer Vision','Expo'].map(t => <span key={t} className="projectchip">{t}</span>)}
+                      </div>
                     </div>
                   </div>
                 </a>

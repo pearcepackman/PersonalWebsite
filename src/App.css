@@ -300,6 +300,10 @@
 .skillbackend:hover                { border-left-color: #60a5fa; }
 .skillembedded .skillcategoryname  { color: #fbbf24; }
 .skillembedded:hover               { border-left-color: #fbbf24; }
+.skillcloud    .skillcategoryname  { color: #22d3ee; }
+.skillcloud:hover                  { border-left-color: #22d3ee; }
+.skillauthapi  .skillcategoryname  { color: #fb923c; }
+.skillauthapi:hover                { border-left-color: #fb923c; }
 .skilltools    .skillcategoryname  { color: #a78bfa; }
 .skilltools:hover                  { border-left-color: #a78bfa; }
 
@@ -446,6 +450,12 @@
   content: '–';
   position: absolute;
   left: 0;
+}
+.schoolchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
 }
 
 @media (max-width: 768px) {
