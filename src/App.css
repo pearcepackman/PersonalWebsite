@@ -1,1554 +1,264 @@
-:root{
-  --impwhite: #dedede;
-  --darkwhite: #c5c4c4;
+/* ── Glow background ── */
+@keyframes glow-pulse {
+  0%   { opacity: 0.20; }
+  50%  { opacity: 0.40; }
+  100% { opacity: 0.20; }
 }
-@font-face {
-  font-family: 'Geist';
-  src: url('/public/fonts/Geist-VariableFont_wght.ttf');
-}
-html, body {
-  height: 100%;
-  background: rgb(36,36,36);
-  scroll-behavior: smooth;
-  
-}
-#tsparticles {
+
+.bg-glow {
   position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-.App {
-  text-align: center;
-  /*background-color: red;*/
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 60% 36% at 50% 0%, #2563a8 0%, transparent 100%);
+  animation: glow-pulse 8s ease-in-out infinite;
 }
 
-@media (max-width: 1023px) {
-  .App-header {
-    background: linear-gradient(180deg,rgba(16, 24, 31, 1) 0%, rgba(20, 7, 20, 1) 100%); 
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  .Nav{
-    /*background-color: rgb(47, 3, 3);*/
-    margin-bottom: auto;
-    margin-top: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-    .navbar{
-    animation-duration: 2s;
-    animation-name: contentdrop;
-    display: flex;
-    margin-top: 0%;
-    flex-direction: row;
-    align-items: center;
-    z-index: 10;
-    justify-content: space-between;
-    background-color: rgba(109, 109, 109, 0.082);
-    position: fixed;
-    width: 100%;
-    height: 50px;
-    backdrop-filter: blur(5px);
-    border-bottom: solid 1px rgba(219, 219, 219, .2);
-    
-  }
-  .navbaright{
-    margin-right: 0%;
-    /*background-color: red;*/
-    display: flex;
-    width: auto;
-    gap: 30px;
-  }
-  .navhome{
-    text-decoration: none;
-    color: #afafaf;
-    font-family: "Geist";
-    font-weight: 500;
-    font-size: 16px;
-    transition: all .2s ease;
-    
-  }
-  .navhome:hover{
-    color: #e0e0e0;
-  }
-  .navbarleft{
-    /*background-color: rgb(37, 89, 148);*/
-    display: flex;
-    margin-left: 3%;
-  }
-  .navbaroptions {
+/* ── Secondary glow (bottom-right accent) ── */
+@keyframes glow-pulse-2 {
+  0%   { opacity: 0.12; }
+  50%  { opacity: 0.22; }
+  100% { opacity: 0.12; }
+}
+
+.bg-glow-2 {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 45% 35% at 90% 100%, #6d28d9 0%, transparent 100%);
+  animation: glow-pulse-2 11s ease-in-out infinite;
+}
+
+/* ── Dot grid ── */
+.bg-dots {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── Grain overlay ── */
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,<svg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ── Hero title ── */
+.hero-title {
+  font-weight: 900;
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: 1;
+  margin: 0;
+  background: linear-gradient(160deg, #ffffff 0%, #7ec8e3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section title ── */
+.section-title {
   font-family: "Geist";
-  position: relative;
-  text-decoration: none;
-  color: #afafaf;
-  transition: transform 0.2s ease;
-  padding: 7px 15px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  transition: all .15s ease;
-  font-size: 12px;  
+  font-weight: 800;
+  font-size: 68px;
+  margin: 0 0 20px 0;
+  line-height: 1;
+  background: linear-gradient(135deg, #f0f5ff 0%, #5da8d0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 10px;
 }
-  .navbaroptions::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 0%;
-    background: #e0e0e0;
-    transition: width 0.24s ease;
-    border-radius: 2px;
-  }
-  .navbaroptions:hover {
-    color: #f7f7f7;
-  }
-  .navbaroptions:hover::after {
-    width: 100%;
-  }
-  .introsection{
-	  /*background-color: rgb(10, 50, 50);*/
-	  width: 90vw;
-	  height: auto;
-	  margin-top:100px;
-	  display: flex;
-    flex-direction: column;
-  }
-  .startsection{
-    /*background-color: olive;*/
-    height: 120vh;
-    margin-top: 0px;
-  }
-  .namebox{
-	  /*background-color: orange;*/
-	  height: auto;
-	  width: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-	  margin-left: auto;
-	  margin-right: auto;
-  }
-  .introtext{
-    font-family: "Geist";
-    font-weight: 900;
-    background: linear-gradient(180deg,rgba(230, 230, 230, 1) 0%, rgba(156, 204, 219, 1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
-    padding: 0;
-    font-size: 60px;
-    line-height: 1;
-    align-self: center;
-    /*background-color: red;*/
-  }
-  .introdesc{
-    /*background-color: blue;*/
-    color: #DBDBDB;
-    line-height: 1.2;
-    font-family: "Geist";
-    font-weight: 700;
-    font-size: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-style: italic;
-    padding: 0;
-    width: 100%;
-    align-self: center;
-  }
-  .introblurb{
-    color: #a8a8a8;
-    line-height: 1.2;
-    font-family: "Geist";
-    font-weight: 700;
-    font-size: 16px;
-    margin: 10px;
-    font-style: italic;
-    padding: 0;
-    width: 100%;
-    /*background-color: blue;*/
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-  }
-  .introbuttonbox{
-    margin-top: 20px;
-    /*background-color: red;*/
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .workbutton{
-    background: linear-gradient(103deg,rgba(45, 134, 181, 1) 0%, rgba(102, 45, 107, 1) 100%);    padding-right: 10px;
-    padding-left: 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    transition: all .15s ease;
-    font-family: "Geist";
-    font-weight: 700;
-    font-size: 15px;
-    height: 50px;
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*border: solid 1px rgb(0, 14, 75);*/
-    box-shadow: 0px 0px 10px 0px rgba(177, 177, 177, 0.116);
-  }
-  .workbutton:hover{
-    transform: scale(1.03);
-    background: linear-gradient(103deg,rgba(17, 142, 209, 1) 0%, rgba(175, 28, 189, 1) 100%);
-    box-shadow: 0px 0px 25px 0px rgba(216, 216, 216, 0.219);
-  }
-
-  .aboutinside{
-    /*background-color: olivedrab;*/
-    display: flex;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .aboutleft{
-    margin-top: 70px;
-    /*background-color: orangered;*/
-    width:50%;
-  }
-  .picbox{
-    position: relative;
-    height: 300px;
-    
-  }
-  .picbox img{
-    border-radius: 15px;
-    border: solid 1px rgba(219, 219, 219, .2);
-    transition: filter 0.2s ease, transform 0.2s ease;
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
-              0 0px 10px rgba(153, 141, 141, 0.199);
-    filter: brightness(.8);
-  }
-  .picbox img:hover ~ img,
-  .picbox img:has(~ img:hover) {
-  filter: brightness(0.6);
-  transform: translateY(8px);
-  }
-  .picbox img:hover{
-    filter:brightness(.95);
-    transform: scale(1.07) translateY(-10px);
-    z-index: 2;
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
-              0 0px 15px rgba(153, 141, 141, 0.445);
-  }
-  .gradpic{
-    position: absolute;
-    rotate: 5deg;
-    height: 150px;
-    width: 150px;
-    z-index: 2;
-    left: 170px;
-  }
-  .coolpic{
-    position: absolute;
-    height: 150px;
-    width: 150px;
-    left: 75px;
-    top: 5px;
-    rotate: -8deg;
-    z-index: 1;
-  }
-  .snowboardpic{
-    position: absolute;
-    height: 150px;
-    width: 150px;
-    rotate: -18deg;
-    left: -10px;
-    top: 40px;
-  }
-  .aboutright{
-    /*background-color: cornflowerblue;*/
-    width: 42%;
-    height: 100%;
-    margin-top: 100px;
-    display: flex;
-    filter: brightness(80%);
-    flex-direction: column;
-    transition: all .2s ease;
-  }
-  .aboutright:hover{
-    transform: scale(1.03);
-    filter:brightness(95%);
-  }
-  .aboutrighttitle p{
-    /*background-color: orchid;*/
-    margin-top: 90px;
-    margin-bottom: 0;
-    line-height: 1;
-    padding: 0;
-    font-family: "Geist";
-    font-weight: 800;
-    font-size: 45px;
-  }
-  .aboutrightdesc p{
-    /*background-color: burlywood;*/
-    height: auto;
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-family: "Geist";
-    font-weight: 600;
-    font-size: 16px;
-    color:#a3a3a3;
-    line-height: 1.5;
-    font-style: italic;
-  }
-  .aboutname h2{
-    /*background-color: orange;*/
-    padding: 0;
-    margin: 0;
-    margin-top: -80px;
-    font-family: "Geist";
-    font-weight: 850;
-    font-size: 40px;
-  }
-  .aboutnameadds p{
-    /*background-color: olive;*/
-    margin: 0;
-    font-style: italic;
-    font-family: "Geist";
-    font-size: 16px;
-    font-weight: 600;
-    color:#a3a3a3;
-  }
-  .aboutleftwords{
-    /*background-color: #7b7b7b;*/
-    filter: brightness(80%);
-    transition: all .2s ease;
-  }
-  .aboutleftwords:hover{
-    transform: scale(1.03);
-    filter:brightness(95%);
-  }
-  .aboutmelinks{
-    /*background-color: orange;*/
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-  }
-  .aboutmelinks a{
-    display: flex;
-    height: 50px;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .aboutmebutton{
-    filter: brightness(.75);
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 42px;
-    width: 160px;
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 8px;
-    transition: all .15s ease;
-    cursor: pointer;
-    border: solid 1px rgba(219, 219, 219, .2);
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
-              0 0px 10px rgba(153, 141, 141, 0.199);
-  }
-  .aboutmebutton:hover{
-    transform: translateY(-3px);
-    filter: brightness(.95);
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
-              0 0px 15px rgba(153, 141, 141, 0.445);
-  }
-  .aboutmebutton p{
-    /*background-color: green;*/
-    font-family: "Geist";
-    font-weight: 650;
-    font-size: 16px;
-    align-self: center;
-  }
-  .linkedinbutton{
-    background: radial-gradient(circle, rgba(120, 180, 230, 0.3) 0%, rgba(20, 40, 60, 0.95) 100%);
-  }
-  .githubbutton{
-    background: radial-gradient(circle, rgba(190, 190, 190, 0.25) 0%, rgba(70, 70, 70, 0.95) 100%);
-  }
-  .github{
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 32px;
-    height: 32px;
-    filter: invert(1) brightness(.9);
-    margin-right: 10px;
-  }
-  .section{
-    /*background-color: red;*/
-    width: 90vw;
-    display: flex;
-    flex-direction: column;
-    scroll-margin-top: 150px;
-    margin-bottom: 150px;
-    animation-duration: 2s;
-    animation-name: contentdrop;
-  }
-  .section h1{
-    font-family: "Geist";
-    font-weight: 800;
-    font-size: 50px;
-    margin-top: 0;
-    margin-bottom:0;
-    margin-left: 5%;
-    text-align: left;
-    background: linear-gradient(135deg, #f0f5ff 0%, #5da8d0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /*background-color: green;*/
-    border-bottom: solid 1px rgba(255,255,255,0.1);
-    padding-bottom: 6px;
-  }
-  .projectarea{
-    height: 100%;
-    /*background-color: blue;*/
-    width: auto;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    column-gap: 15px;
-    margin-top: 1.5%;
-    margin-left: 5%;
-    margin-right: 0%;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .skillarea {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-    margin-bottom: 30px;
-  }
-  .skillcard {
-    width: 260px;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #111115;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    filter: brightness(0.85);
-    transition: filter 0.25s ease, transform 0.25s ease;
-  }
-  .skillcard:hover {
-    filter: brightness(1.05);
-    transform: translateY(-3px);
-  }
-  .skillcategoryname {
-    font-family: "Geist";
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
-    padding: 11px 14px 9px;
-    display: block;
-  }
-  .skilllanguage .skillcategoryname { background: linear-gradient(110deg, #b91c3c 0%, #7f1128 100%); }
-  .skillfrontend .skillcategoryname { background: linear-gradient(110deg, #0d9373 0%, #065c47 100%); }
-  .skillbackend  .skillcategoryname { background: linear-gradient(110deg, #1d5fc4 0%, #0f3a85 100%); }
-  .skillembedded .skillcategoryname { background: linear-gradient(110deg, #b07d00 0%, #7a5400 100%); }
-  .skilltools    .skillcategoryname { background: linear-gradient(110deg, #5b36c4 0%, #361e8a 100%); }
-  .skillchips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    padding: 10px 12px 12px;
-  }
-  .skillchip {
-    font-family: "Geist";
-    font-size: 11px;
-    font-weight: 500;
-    color: #7a8295;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    padding: 3px 10px;
-    border-radius: 20px;
-  }
-  .skillcard:hover .skillchip { color: #bdc8da; }
-  .projectcard{
-    height: 300px;
-    width: 305px;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-    transition: all .2s ease;
-    border: solid 1px rgba(219, 219, 219, .2);
-    border-radius: 12px;
-    filter:brightness(80%);
-    position: relative;
-    margin-bottom: 0px;
-    overflow: hidden;
-    transition: filter .3s ease, transform 0.2s ease;
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
-              0 0px 10px rgba(153, 141, 141, 0.199);
-
-  }
-  .projectcard a{
-    text-decoration: none;
-    color: inherit;
-  }
-  .projectcard:hover ~ .projectcard,
-  .projectcard:has(~ .projectcard:hover) {
-  filter: brightness(0.6);
-}
-  .projectcard:hover{
-    transform: scale(1.05);
-  filter: brightness(90%);
-  box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
-              0 0px 15px rgba(153, 141, 141, 0.445);
-  }
-  .projectcardimg{
-    transition: all .15s ease;
-  }
-
-  .projectcard:hover .projectcardimg{
-    transform: scale(1.05);
-  }
-  
-  .projectcard:hover .projecttag{
-    transform: scale(1.10);
-  }
-
-  .projecttagarea{
-    /*background-color: red;*/
-    width: 140px;
-    position:absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    left: auto;
-    right: 8px;
-    top: 8px;
-  }
-
-  .projecttag{
-    width: auto;
-    align-self: flex-end;
-    
-    height: auto;
-    flex: 0 0 auto;
-    font-family: "Geist";
-    font-weight: 700;
-    font-size: 12px;
-    background-color: rgba(109, 109, 109, 0.336);
-    border: solid 1px rgba(219, 219, 219, .2);
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 7px;
-    color: #e2e2f8;
-    transition: all .15s ease;
-  }
-
-    .projectdesclayout{
-    background-color: rgba(109, 109, 109, 0.336);
-    border-top: solid 1px rgba(219, 219, 219, .2);
-    height: 100%;
-    display: flex;
-    
-    justify-content: center;
-    backdrop-filter: blur(2px);
-  }
-  .projectdesclayout p{
-    /*background-color: red;*/
-    height: auto;
-    width: 92%;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    text-decoration: none;
-    color:#e2e2f8;
-    font-family: "Geist";
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.4;
-  }
-  .projectname{
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  .projectcorepanel {
-background: radial-gradient(circle,rgb(72, 98, 124) 0%, rgb(2, 49, 150) 100%);  /* Cool blue — structured and backend-feeling */
+@media (max-width: 768px) {
+  .section-title { font-size: 48px; text-align: center; }
 }
 
-  .projectsmarthome {
-  background: radial-gradient(circle, rgba(212, 185, 109, 0.8) 0%, rgba(211, 148, 11, 0.95) 100%);
+/* ── Photo grid ── */
+.picbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  width: 100%;
+  padding: 8px;
 }
-
-
-  .projectsnapmotive {
-  background: radial-gradient(circle, rgba(125, 211, 144, 0.8) 0%, rgba(5, 126, 69, 0.932) 100%);
-}
-
-
-  .projectprojectssimplified {
-  background: radial-gradient(circle, rgba(139, 81, 82, 0.8) 0%, rgba(168, 42, 46, 0.95) 100%);
-}
-
-
-  .corepanelimg{
-    filter: invert(1) brightness(.95);
-    height: 100px;
-    width: 100px;
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-  .iotimg{
-    filter: invert(1) brightness(.95);
-    height: 100px;
-    width: 100px;
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-  .psimg{
-    height: 80px;
-    width: 250px;
-    margin-top: 45px;
-    margin-bottom: 45px;
-  }
-  .educationarea{
-    height: 450px;;
-    margin-top: .5%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 0;
-    display: flex;
-    /*background-color: green;*/
-    flex-direction: column;
-    
-  }
-  .educationarea p{
-    color: var(--darkwhite);
-    font-style:italic;
-    margin-top: auto;
-    font-size: 16px;
-    font-weight: 400;
-    animation-duration: 1s;
-    animation-name: contentdrop;
-  }
-  .footer{
-    filter:brightness(70%);
-    transition: all .2s ease;
-  }
-  .footer:hover{
-    transform: scale(1.02);
-    filter: brightness(90%);
-  }
-  .school{
-    /*background-color: gray;*/
-    
-    margin-bottom: 10px;
-    width: 100%;
-    height: auto;
-    transition: all .2s ease;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    font-family: "Geist";
-    filter:brightness(80%);
-  }
-  .school h5{
-    font-size: 16px;
-    font-weight: 700;
-    /*background-color: #383838;*/
-    color: var(--darkwhite);
-    width: auto;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    font-style: italic;
-  }
-  .school * {
-    margin-top: 0;
-    /*background-color: red;
-    border: 1px solid black;*/
-    margin-bottom: 0;
-  }
-  .schoolanddates{
-    /*background-color: purple;*/
-    text-align: left;
-    display: flex;
-    
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    height: 100%;
-    width: 100%;
-  }
-  .schoolanddates p{
-    display: flex;
-    margin-right: 0;
-    margin-left: 0;
-    /*background-color: red;*/
-    width: 30%;
-    justify-content: flex-end;
-    text-align: right;
-    font-weight: 600;
-    font-size: 22px;
-  }
-  .schoolnotes{
-    /*background-color: green;*/
-    line-height: 1.5;
-    font-family: "Geist";
-    font-weight: 500;
-    color:var(--darkwhite);
-    text-align: left;
-    margin-top: 0px;
-    
-    font-style: italic;
-    font-size: 16px;
-    
-  }
-  .school h3{
-    /*background-color: green;*/
-    width: 56%;
-    font-size: 26px;
-    margin-bottom: 10px;
-    color:var(--impwhite);
-  }
-  .school p{
-    color:var(--darkwhite);
-    display: flex;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-right: 0;
-  }
-  .school:hover{
-    transform: scale(1.02);
-    filter:brightness(100%);
-  }
-}
-@media (max-width: 768px){
-  .navbar {
-    display: none;
-    background-color: green;
-  }
-  .startsection{
-    margin-top: 35%;
-    /*background-color: orange;*/
-  }
-  .section{
-    scroll-margin-top: 60px;
-  }
-  
-  .section h1{
-    justify-self: center;
-    margin: 0;
-    font-size: 55px;
-    text-align: center;
-  }
-  .projectarea{
-    /*background-color: orangered;*/
-    margin: 0;
-    margin-top: 10px;
-  }
-  .introsection{
-    margin-top: 10px;
-  }
-  .workbutton{
-    padding: 0;
-    font-size: 12px;
-    width: 150px;
-    height: 40px;
-  }
-  .aboutinside{
-    flex-direction: column;
-    margin-bottom: -50px;
-  }
-  .aboutleft{
-    width: 100%;
-  }
-  .aboutright{
-    width: 100%;
-    margin-top: 0px;
-  }
-  .aboutrighttitle p{
-    font-size: 35px;
-  }
-  .picbox {
-    margin-top: -50px;
-  display: flex;
-  /*background-color: #7b7b7b;*/
-  justify-content: center;
-  gap: 0px;
-  align-items: center;
-  flex-direction: row;
-  position: relative; /* or static, but keep if needed for hover styles */
-  height: auto;
-  flex-wrap: wrap; /* optional: lets them wrap if screen is narrow */
-}
-
 .picbox img {
-  position: static; /* override the absolute positioning */
-  
-  width: 100px;
-  height: 100px;
-  z-index: auto;
-}
-
-  
-  .gradpic {
-  
+  border-radius: 12px;
+  border: 1px solid rgba(219,219,219,0.2);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  filter: brightness(0.8);
+  width: 100%;
   height: 140px;
-  width: 140px;
-  z-index: 2;
-  rotate: -10deg;
-  margin-top: 10px;
+  object-fit: cover;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+.picbox img:hover { filter: brightness(0.95); transform: scale(1.04); z-index: 2; }
+.gradpic      { grid-column: 1; grid-row: 1; transform: rotate(-2deg); }
+.coolpic      { grid-column: 2; grid-row: 1; transform: rotate(2.5deg); }
+.snowboardpic { grid-column: 1 / span 2; grid-row: 2; height: 200px; transform: rotate(-1deg); object-position: center 35%; }
+
+@media (max-width: 768px) {
+  .picbox { padding: 4px; gap: 8px; }
+  .picbox img { height: 165px; transform: none; }
+  .snowboardpic { height: 190px; transform: none; object-position: center 20%; }
 }
 
-.coolpic {
-  
-  height: 140px;
-  width: 140px;
-  rotate: 2deg;
-  z-index: 1;
+/* ── About Me layout ── */
+.aboutme-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .aboutme-grid { flex-direction: column; }
 }
 
-.snowboardpic {
-  margin-top: 10px;
-  rotate: 10deg;
-  height: 140px;
-  width: 140px;
-  
+.aboutme-left {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
 }
-.aboutleftwords{
-  /*background-color: orangered;*/
-  margin-top: 150px;
-}
-  .aboutmelinks{
-    /*background-color: orange;*/
-    flex-direction: column;
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    align-items: center;
-  }
-  .aboutmelinks a{
-    display: flex;
-    height: 50px;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .aboutmebutton{
-    filter: brightness(.75);
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 32px;
-    width: 115px;
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 8px;
-    transition: all .15s ease;
-    cursor: pointer;
-    border: solid 1px rgba(219, 219, 219, .2);
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
-              0 0px 10px rgba(153, 141, 141, 0.199);
-  }
-  .aboutmebutton:hover{
-    transform: translateY(-3px);
-    filter: brightness(.95);
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
-              0 0px 15px rgba(153, 141, 141, 0.445);
-  }
-  .aboutmebutton p{
-    /*background-color: green;*/
-    font-family: "Geist";
-    font-weight: 650;
-    font-size: 12px;
-    align-self: center;
-  }
-  .linkedinbutton{
-    background: radial-gradient(circle, rgba(120, 180, 230, 0.3) 0%, rgba(20, 40, 60, 0.95) 100%);
-  }
-  .githubbutton{
-    background: radial-gradient(circle, rgba(190, 190, 190, 0.25) 0%, rgba(70, 70, 70, 0.95) 100%);
-  }
-  .github{
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 20px;
-    height: 20px;
-    filter: invert(1) brightness(.9);
-    margin-right: 10px;
-  }
-  .aboutname{
-    margin-top: -120px;
-  }
-  .aboutnameadds{
-    margin-top: -5px;
-  }
-  .aboutrighttitle{
-    margin-top: -70px;
-  }
-  .aboutrightdesc p{
-    /*background-color: gainsboro;*/
-    font-size: 14px;
-    margin-top: 2px;
-    width: auto;
-  }
-  .skillcard {
-    width: 88vw;
-  }
-  .projectcard{
-    width: 270px;
-    height: 280px;
-  }
-  .projectname{
-    font-size: 16px;
-  }
-  .projectdesclayout{
-    margin-top: -30px;
-    margin-bottom: auto;
-  }
-  .projectdesclayout p{
-    font-size: 14px;
-  }
-  .projecttag{
-    font-size: 12px;
-  }
-  
-  .educationarea{
-    height: auto;
-  }
-  .schoolanddates{
-    /*background-color: #7b7b7b;*/
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .schoolanddates h3{
-    width: 100%;
-    margin-bottom: 0;
-    /*background-color: green;*/
-    text-align: center;
-    font-weight: 800;
-  }
-  .schoolanddates h5{
-    font-weight: 700;
-    text-align: center;
-    /*background-color: orangered;*/
-  }
-  .schoolnotes{
-    /*background-color: yellowgreen;*/
-    margin: 0;
-    height: auto;
-  }
-  .schoolnotes p{
-    font-size: 14px;
-    font-family: "Geist";
-    font-weight: 600;
-  }
-    .footer{
-    background: rgba(12, 7, 20, 1) 100%;
-    height: 170px;
-    border-top: solid 1px #7b7b7b44;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .footertop{
-    height: 90%;
-    /*background-color: orangered;*/
-    display: flex;
-    justify-content: center;
-    gap: 5%;
-  }
-  .footersitelinks{
-    /*background-color: #7b7b7b;*/
-    height: 100%;
-    width: 170px;
-    display: flex;
-    flex-direction: column;
-    font-family: "Geist";
-    text-align: center;
-  }
-  .footertop h5{
-    color: var(--impwhite);
-    margin-bottom: 2px;
-    margin-top: 10px;
-    font-weight: 800;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1;
-    font-size: 18px;
-  }
-  .footertop p{
-    /*background-color: goldenrod;*/
-    width: 100px;
-    color: #afafaf;
-    margin: 0;
-    line-height: 1.5;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all .15s ease;
-  }
-  .footer p:hover{
-    transform: scale(1.05);
-    color: #f7f7f7;
-  }
-  .footerresources{
-    /*background-color: plum;*/
-    height: 100%;
-    width: 170px;
-  }
-  .footerbottom{
-    height: 10%;
-    /*background-color: blue;*/
-    display: flex;
-    margin-left: 10px;
-    width: auto;
-  }
-  .footerbottom p{
-    line-height: 1;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-    color: var(--darkwhite);
-    font-family: "Geist";
-    font-size: 10px;
-    font-weight: 700;
-    text-align: center;
-    transition: all .15s ease;
-  }
-  
 
+.aboutme-nameblock {
+  filter: brightness(0.82);
+  transition: filter 0.2s ease, transform 0.2s ease;
+  padding-left: 4px;
 }
-/*------------------------------------------------------------------Fullscreen------------------------------------------------------------------*/
-@media (min-width: 1024px) {
-  .App-header {
-    background: radial-gradient(circle,rgba(16, 24, 31, 1) 74%, rgba(12, 7, 20, 1) 100%); 
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  .Nav{
-  /*background: linear-gradient(180deg,rgba(16, 24, 31, 1) 0%, rgba(20, 7, 20, 1) 100%);  
-    background-color: rgb(47, 3, 3);*/
-    margin-bottom: auto;
-    margin-top: 0%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .navbar{
-    animation-duration: 2s;
-    animation-name: contentdrop;
-    display: flex;
-    margin-top: 0%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-    gap: 20px;
-    background-color: rgba(109, 109, 109, 0.082);
-    position: fixed;
-    width: 100%;
-    height: 50px;
-    backdrop-filter: blur(5px) brightness(70%);
-    border-bottom: solid 1px rgba(219, 219, 219, .2);
-    
-  }
-  .navbaright{
-    margin-right: 10%;
-    /*background-color: red;*/
-    display: flex;
-    width: auto;
-    gap: 30px;
-  }
-  .navhome{
-    text-decoration: none;
-    color: #afafaf;
-    font-family: "Geist";
-    font-weight: 500;
-    font-size: 16px;
-    transition: all .2s ease;
-    
-  }
-  .navhome:hover{
-    color: #e0e0e0;
-  }
-  .navbarleft{
-    /*background-color: rgb(37, 89, 148);*/
-    display: flex;
-    margin-left: 10%;
-  }
-  .navbaroptions {
+.aboutme-nameblock:hover { filter: brightness(1); transform: scale(1.02); }
+.aboutme-nameblock h2 {
   font-family: "Geist";
-  position: relative;
-  text-decoration: none;
-  color: #afafaf;
-  transition: transform 0.2s ease;
-  padding: 7px 15px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  transition: all .15s ease;
+  font-weight: 850;
+  font-size: 46px;
+  line-height: 1;
+  margin: 0 0 8px 0;
+  color: #e8eaf0;
+}
+.aboutme-nameblock p {
+  margin: 2px 0;
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 600;
+  color: #7a8295;
 }
 
-  .navbaroptions::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 0%;
-    background: #e0e0e0;
-    transition: width 0.24s ease;
-    border-radius: 2px;
-  }
+.aboutme-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
 
-  .navbaroptions:hover {
-    color: #f7f7f7;
-  }
+.aboutme-biocard {
+  padding: 28px 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(16px);
+  filter: brightness(0.82);
+  transition: filter 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.aboutme-biocard:hover { filter: brightness(1); background: rgba(255,255,255,0.05); transform: scale(1.01); }
+.aboutme-biocard h3 {
+  font-family: "Geist";
+  font-weight: 800;
+  font-size: 26px;
+  color: #e0e4f0;
+  margin: 0 0 14px 0;
+}
+.aboutme-biocard p {
+  font-family: "Geist";
+  font-size: 14px;
+  font-weight: 500;
+  color: #8a95a8;
+  font-style: italic;
+  line-height: 1.75;
+  margin: 0;
+}
 
-  .navbaroptions:hover::after {
-    width: 100%;
-  }
+/* ── About link buttons ── */
+.aboutme-link {
+  flex: 1;
+  min-width: 140px;
+}
 
-  .introsection{
-	  /*background-color: rgb(10, 50, 50);*/
-	  width: 85%;
-	  height: auto;
-	  
-	  margin-top:200px;
-	  display: flex;
-    flex-direction: column;
-	  
-  }
-  .namebox{
-	  /*background-color: orange;*/
-	  height: auto;
-	  width: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-	  margin-left: auto;
-	  margin-right: auto;
-  }
-  .introtext{
-    font-family: "Geist";
-    font-weight: 900;
-    background: linear-gradient(160deg, #ffffff 0%, #7ec8e3 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
-    padding: 0;
-    font-size: 85px;
-    line-height: 1;
-    align-self: center;
-    /*background-color: red;*/
-  }
-  .introdesc{
-    /*background-color: blue;*/
-    color: #c8d8e0;
-    line-height: 1.2;
-    font-family: "Geist";
-    font-weight: 500;
-    font-size: 36px;
-    margin: 8px;
-    font-style: italic;
-    padding: 0;
-    width: 620px;
-    align-self: center;
-  }
-  .introblurb{
-    color: #8a9aaa;
-    line-height: 1.5;
-    font-family: "Geist";
-    font-weight: 500;
-    font-size: 15px;
-    margin: 10px;
-    font-style: italic;
-    padding: 0;
-    width: 480px;
-    max-width: 90%;
-    /*background-color: blue;*/
-    margin-left: 0;
-    margin-right: 0;
-    align-self: center;
-  }
-  .introbuttonbox{
-    margin-top: 20px;
-    /*background-color: red;*/
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .workbutton{
-    background: linear-gradient(103deg,rgba(45, 134, 181, 1) 0%, rgba(102, 45, 107, 1) 100%);    padding-right: 10px;
-    padding-left: 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    transition: all .15s ease;
-    font-family: "Geist";
-    font-weight: 700;
-    font-size: 15px;
-    height: 50px;
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*border: solid 1px rgb(0, 14, 75);*/
-    box-shadow: 0px 0px 10px 0px rgba(177, 177, 177, 0.116);
-  }
-  .workbutton:hover{
-    transform: scale(1.03);
-    background: linear-gradient(103deg,rgba(17, 142, 209, 1) 0%, rgba(175, 28, 189, 1) 100%);
-    box-shadow: 0px 0px 25px 0px rgba(216, 216, 216, 0.219);
-  }
-  .profpic{
-    width: 225px;
-    height: 225px;
-    border-radius: 10px;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    transition: all .175s ease;
-    filter: brightness(70%);
-  }
+.aboutme-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.aboutmebutton {
+  height: 44px;
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(16px);
+  filter: brightness(0.8);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.aboutmebutton:hover {
+  transform: translateY(-2px);
+  filter: brightness(1);
+  background: rgba(255,255,255,0.09);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.aboutmebutton p { font-family: "Geist"; font-weight: 600; font-size: 14px; margin: 0; color: #c5d0e0; }
+.aboutmebutton img { width: 22px; height: 22px; filter: invert(1) brightness(0.85); }
 
-  .profpic:hover{
-    transform: scale(1.015);
-    filter:brightness(80%);
-    box-shadow: 0px 0px 20px 0px rgb(235, 235, 235, 0.175);
-
-  }
-  .navbaroptions{
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .startsection{
-    /*background-color: rgb(43, 43, 43);*/
-    width: 90vw;
-    height: 125vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  .aboutinside{
-    /*background-color: olivedrab;*/
-    display: flex;
-    width: 870px;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .aboutleft{
-    /*background-color: orangered;*/
-    width:50%;
-  }
-  .picbox{
-    position: relative;
-    height: 300px;
-    
-  }
-  .picbox img{
-    border-radius: 15px;
-    border: solid 1px rgba(219, 219, 219, .2);
-    transition: filter 0.2s ease, transform 0.2s ease;
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
-              0 0px 10px rgba(153, 141, 141, 0.199);
-    filter: brightness(.8);
-  }
-  .picbox img:hover ~ img,
-  .picbox img:has(~ img:hover) {
-  filter: brightness(0.6);
-  transform: translateY(8px);
-  }
-  .picbox img:hover{
-    filter:brightness(.95);
-    transform: scale(1.07) translateY(-10px);
-    z-index: 2;
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
-              0 0px 15px rgba(153, 141, 141, 0.445);
-  }
-  .gradpic{
-    position: absolute;
-    rotate: 5deg;
-    height: 225px;
-    width: 225px;
-    z-index: 2;
-    left: 260px;
-  }
-  .coolpic{
-    position: absolute;
-    height: 225px;
-    width: 225px;
-    left: 100px;
-    top: 5px;
-    rotate: -8deg;
-    z-index: 1;
-  }
-  .snowboardpic{
-    position: absolute;
-    height: 225px;
-    width: 225px;
-    rotate: -18deg;
-    left: -40px;
-    top: 40px;
-  }
-  .aboutright{
-    /*background-color: cornflowerblue;*/
-    width: 42%;
-    height: 100%;
-    margin-top: 5px;
-    display: flex;
-    filter: brightness(80%);
-    flex-direction: column;
-    transition: all .2s ease;
-  }
-  .aboutright:hover{
-    transform: scale(1.03);
-    filter:brightness(95%);
-  }
-  .aboutrighttitle p{
-    /*background-color: orchid;*/
-    margin-top: 90px;
-    margin-bottom: 0;
-    line-height: 1;
-    padding: 0;
-    font-family: "Geist";
-    font-weight: 800;
-    font-size: 45px;
-  }
-  .aboutrightdesc p{
-    /*background-color: burlywood;*/
-    height: auto;
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-family: "Geist";
-    font-weight: 600;
-    font-size: 16px;
-    color:#a3a3a3;
-    line-height: 1.5;
-    font-style: italic;
-  }
-  .aboutname h2{
-    /*background-color: orange;*/
-    padding: 0;
-    margin: 0;
-    margin-top: -15px;
-    font-family: "Geist";
-    font-weight: 850;
-    font-size: 55px;
-  }
-  .aboutnameadds p{
-    /*background-color: olive;*/
-    margin: 0;
-    font-style: italic;
-    font-family: "Geist";
-    font-size: 16px;
-    font-weight: 600;
-    color:#a3a3a3;
-  }
-  .aboutleftwords{
-    /*background-color: #7b7b7b;*/
-    filter: brightness(80%);
-    transition: all .2s ease;
-  }
-  .aboutleftwords:hover{
-    transform: scale(1.03);
-    filter:brightness(95%);
-  }
-  .aboutmelinks{
-    /*background-color: orange;*/
-    display: flex;
-    justify-content: space-evenly;
-    width: 870px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-  }
-  .aboutmelinks a{
-    display: flex;
-    height: 50px;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .aboutmebutton{
-    filter: brightness(.75);
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 42px;
-    width: 160px;
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 8px;
-    transition: all .15s ease;
-    cursor: pointer;
-    border: solid 1px rgba(219, 219, 219, .2);
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
-              0 0px 10px rgba(153, 141, 141, 0.199);
-  }
-  .aboutmebutton:hover{
-    transform: translateY(-3px);
-    filter: brightness(.95);
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
-              0 0px 15px rgba(153, 141, 141, 0.445);
-  }
-  .aboutmebutton p{
-    /*background-color: green;*/
-    font-family: "Geist";
-    font-weight: 650;
-    font-size: 16px;
-    align-self: center;
-  }
-  .linkedinbutton{
-    background: radial-gradient(circle, rgba(120, 180, 230, 0.3) 0%, rgba(20, 40, 60, 0.95) 100%);
-  }
-  .githubbutton{
-    background: radial-gradient(circle, rgba(190, 190, 190, 0.25) 0%, rgba(70, 70, 70, 0.95) 100%);
-  }
-  .github{
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 32px;
-    height: 32px;
-    filter: invert(1) brightness(.9);
-    margin-right: 10px;
-  }
-  .section{
-    /*background-color: red;*/
-    margin-bottom: 150px;
-    min-width: 850px;
-    width: 70vw;
-    
-    display: flex;
-    flex-direction: column;
-    scroll-margin-top: 100px;
-    /*
-    animation-duration: 2s;
-    animation-name: contentdrop;*/
-  }
-  .section h1{
-    font-family: "Geist";
-    font-weight: 800;
-    margin-top: 0;
-    margin-bottom: 20px;
-    line-height: 1;
-    margin-left: 0%;
-    text-align: left;
-    font-size: 68px;
-    background: linear-gradient(135deg, #f0f5ff 0%, #5da8d0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-bottom: solid 1px rgba(255,255,255,0.1);
-    padding-bottom: 10px;
-  }
-  .projectarea{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 14px;
-    overflow: hidden;
-    margin-top: 4px;
-    margin-bottom: 80px;
-    filter: brightness(0.82);
-    transition: filter 0.25s ease;
-  }
-  .projectarea:hover {
-    filter: brightness(1);
-  }
-/* ── Skill area: stacked row strips ── */
+/* ── Skill rows ── */
 .skillarea {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
   overflow: hidden;
   margin-top: 4px;
   margin-bottom: 80px;
   filter: brightness(0.82);
   transition: filter 0.25s ease;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.02);
 }
+.skillarea:hover { filter: brightness(1); }
 
-.skillarea:hover {
-  filter: brightness(1.0);
-}
-
-/* ── Each skill row ── */
 .skillcard {
   display: flex;
   flex-direction: row;
   align-items: center;
-  min-height: 96px;
-  padding: 22px 36px;
-  background: rgba(255, 255, 255, 0.015);
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 0;
+  min-height: 88px;
+  padding: 20px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   border-left: 3px solid transparent;
-  filter: none;
-  transition: background 0.2s ease, border-left-color 0.2s ease;
-  overflow: visible;
-  width: auto;
+  transition: background 0.2s ease, border-left-color 0.2s ease, transform 0.2s ease;
 }
+.skillcard:first-child { border-radius: 16px 16px 0 0; }
+.skillcard:last-child  { border-bottom: none; border-radius: 0 0 16px 16px; }
+.skillcard:hover { background: rgba(255,255,255,0.04); transform: scale(1.01); }
 
-.skillcard:last-child {
-  border-bottom: none;
-}
-
-.skillcard:hover {
-  background: rgba(255, 255, 255, 0.04);
-  filter: none;
-  transform: none;
-}
-
-.skillcard:hover ~ .skillcard,
-.skillcard:has(~ .skillcard:hover) {
-  filter: none;
-  transform: none;
-}
-
-/* ── Category label ── */
 .skillcategoryname {
   width: 175px;
   flex-shrink: 0;
@@ -1557,310 +267,418 @@ background: radial-gradient(circle,rgb(72, 98, 124) 0%, rgb(2, 49, 150) 100%);  
   font-size: 13px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  padding: 0;
-  background: none;
 }
-
-/* ── Divider + chip area ── */
 .skillchips {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 0 0 0 36px;
-  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  gap: 8px;
+  padding-left: 32px;
+  border-left: 1px solid rgba(255,255,255,0.07);
   align-items: center;
 }
-
-/* ── Individual chip ── */
 .skillchip {
   font-family: "Geist";
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: #8a95a8;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 7px 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 6px 14px;
   border-radius: 20px;
   transition: color 0.15s ease, background 0.15s ease;
   white-space: nowrap;
+  backdrop-filter: blur(8px);
 }
+.skillcard:hover .skillchip { color: #c5d0e0; background: rgba(255,255,255,0.09); }
 
-.skillcard:hover .skillchip {
-  color: #c5d0e0;
-  background: rgba(255, 255, 255, 0.09);
-}
-
-/* ── Per-category accent colors ── */
 .skilllanguage .skillcategoryname { color: #f87171; }
 .skilllanguage:hover               { border-left-color: #f87171; }
-
 .skillfrontend .skillcategoryname  { color: #34d399; }
 .skillfrontend:hover               { border-left-color: #34d399; }
-
-.skillbackend .skillcategoryname   { color: #60a5fa; }
+.skillbackend  .skillcategoryname  { color: #60a5fa; }
 .skillbackend:hover                { border-left-color: #60a5fa; }
-
 .skillembedded .skillcategoryname  { color: #fbbf24; }
 .skillembedded:hover               { border-left-color: #fbbf24; }
-
-.skilltools .skillcategoryname     { color: #a78bfa; }
+.skilltools    .skillcategoryname  { color: #a78bfa; }
 .skilltools:hover                  { border-left-color: #a78bfa; }
-  .projectrow {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    min-height: 100px;
-    padding: 22px 36px;
-    background: rgba(255,255,255,0.015);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    border-left: 3px solid transparent;
-    text-decoration: none;
-    color: inherit;
-    transition: background 0.2s ease, border-left-color 0.2s ease;
-  }
-  .projectrow:last-child { border-bottom: none; }
 
-  .projectrowleft {
-    width: 200px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .projectrowname {
-    font-family: "Geist";
-    font-weight: 700;
-    font-size: 16px;
-  }
-  .projectrowaward {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #6b7280;
-  }
-  .projectrowcontent {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border-left: 1px solid rgba(255,255,255,0.07);
-    padding-left: 36px;
-  }
-  .projectrowdesc {
-    font-family: "Geist";
-    font-size: 14px;
-    color: #8a95a8;
-    line-height: 1.55;
-    margin: 0;
-  }
-  .projectrowchips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .projectchip {
-    font-size: 12px;
-    font-weight: 500;
-    color: #7a8295;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 4px 12px;
-    border-radius: 20px;
-  }
-  .projectrowarrow {
-    font-size: 20px;
-    color: #5a6070;
-    flex-shrink: 0;
-    margin-left: 20px;
-    transition: color 0.2s ease, transform 0.2s ease;
-  }
-  .projectrow:hover .projectrowarrow {
-    color: #a0aab8;
-    transform: translate(2px, -2px);
+@media (max-width: 768px) {
+  .skillcard { flex-direction: column; align-items: flex-start; padding: 16px 20px; }
+  .skillcategoryname { width: auto; margin-bottom: 10px; }
+  .skillchips { border-left: none; padding-left: 0; }
+}
+
+/* ── Project rows ── */
+.projectarea {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 4px;
+  margin-bottom: 80px;
+  filter: brightness(0.82);
+  transition: filter 0.25s ease;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.02);
+}
+.projectarea:hover { filter: brightness(1); }
+
+.projectrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100px;
+  padding: 22px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease, border-left-color 0.2s ease, transform 0.2s ease;
+}
+.projectrow:first-child { border-radius: 16px 16px 0 0; }
+.projectrow:last-child  { border-bottom: none; border-radius: 0 0 16px 16px; }
+
+.projectrowleft {
+  width: 200px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.projectrowname  { font-family: "Geist"; font-weight: 700; font-size: 16px; }
+.projectrowaward { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #6b7280; }
+
+.projectrowcontent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 1px solid rgba(255,255,255,0.07);
+  padding-left: 32px;
+}
+.projectrowdesc { font-family: "Geist"; font-size: 14px; color: #8a95a8; line-height: 1.6; margin: 0; }
+.projectrowchips { display: flex; flex-wrap: wrap; gap: 8px; }
+.projectchip {
+  font-size: 12px;
+  font-weight: 500;
+  color: #7a8295;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 4px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+.projectrowarrow {
+  font-size: 20px;
+  color: #5a6070;
+  flex-shrink: 0;
+  margin-left: 20px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.projectrow:hover { transform: scale(1.01); }
+.projectrow:hover .projectrowarrow { color: #a0aab8; transform: translate(2px, -2px); }
+
+.projectcorepanel .projectrowname          { color: #60a5fa; }
+.projectcorepanel:hover                    { background: rgba(96,165,250,0.04); border-left-color: #60a5fa; }
+.projectsmarthome .projectrowname          { color: #fbbf24; }
+.projectsmarthome:hover                    { background: rgba(251,191,36,0.04); border-left-color: #fbbf24; }
+.projectsnapmotive .projectrowname         { color: #34d399; }
+.projectsnapmotive:hover                   { background: rgba(52,211,153,0.04); border-left-color: #34d399; }
+.projectprojectssimplified .projectrowname { color: #f87171; }
+.projectprojectssimplified:hover           { background: rgba(248,113,113,0.04); border-left-color: #f87171; }
+
+@media (max-width: 768px) {
+  .projectrow { flex-direction: column; align-items: flex-start; padding: 16px 20px; }
+  .projectrowleft { width: auto; margin-bottom: 8px; }
+  .projectrowcontent { border-left: none; padding-left: 0; }
+  .projectrowarrow { display: none; }
+}
+
+/* ── Experience / Education ── */
+.educationarea {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+.school {
+  font-family: "Geist";
+  filter: brightness(0.8);
+  transition: all 0.2s ease;
+  padding: 24px 28px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(12px);
+}
+.school:hover { filter: brightness(1); transform: scale(1.01); background: rgba(255,255,255,0.04); }
+.school * { margin-top: 0; margin-bottom: 0; }
+.school h3 { font-size: 24px; font-weight: 700; color: #dedede; }
+.school h5 { font-size: 14px; font-weight: 600; color: #c5c4c4; font-style: italic; margin-bottom: 10px !important; }
+.school p  { color: #c5c4c4; }
+.schoolanddates {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.schoolnotes {
+  line-height: 1.6;
+  font-family: "Geist";
+  font-weight: 500;
+  color: #a0a0a0;
+  font-style: italic;
+  font-size: 14px;
+}
+.schoolnotes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.schoolnotes li {
+  position: relative;
+  padding-left: 16px;
+}
+.schoolnotes li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .schoolanddates { flex-direction: column; gap: 4px; }
+  .school h3 { font-size: 18px; }
+}
+
+/* ── Section inner container ── */
+.section-inner {
+  width: 70vw;
+  min-width: 850px;
+  font-family: "Geist", sans-serif;
+}
+
+/* ── Footer ── */
+.site-footer {
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(12px);
+  filter: brightness(0.75);
+  transition: filter 0.2s ease;
+  padding: 48px 0 0;
+}
+.site-footer:hover { filter: brightness(1); }
+
+.site-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 70vw;
+  min-width: 0;
+  margin: 0 auto;
+  gap: 48px;
+  padding-bottom: 40px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-brand {
+  font-family: "Geist";
+  font-weight: 700;
+  font-size: 16px;
+  color: #c5d0e0;
+  margin: 0;
+}
+.footer-tagline {
+  font-family: "Geist";
+  font-size: 13px;
+  font-weight: 500;
+  color: #5a6478;
+  font-style: italic;
+  margin: 0;
+  max-width: 280px;
+  line-height: 1.6;
+}
+.footer-socials {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.footer-social-link {
+  font-family: "Geist";
+  font-size: 12px;
+  font-weight: 500;
+  color: #8a95a8;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  transition: color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+.footer-social-link:hover {
+  color: #c5d0e0;
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-1px);
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.footer-col-heading {
+  font-family: "Geist";
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4a5568;
+  margin: 0 0 6px 0;
+}
+.footer-nav-link {
+  font-family: "Geist";
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  transition: color 0.15s ease;
+  display: block;
+}
+.footer-nav-link:hover { color: #c5d0e0; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 16px 0;
+  text-align: center;
+}
+.footer-bottom p {
+  font-family: "Geist";
+  font-size: 11px;
+  font-weight: 500;
+  color: #3a4050;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .site-footer-inner { flex-direction: column; min-width: unset; width: 90vw; gap: 32px; }
+}
+
+/* ── Navbar ── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  z-index: 50;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  filter: brightness(0.82);
+  transition: filter 0.2s ease;
+}
+.navbar:hover { filter: brightness(1); }
+
+.navbar-logo {
+  font-family: "Geist";
+  font-size: 15px;
+  font-weight: 600;
+  color: #c5d0e0;
+  letter-spacing: 0.01em;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 4px;
+}
+
+/* ── Nav links ── */
+.nav-link {
+  font-family: "Geist";
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a95a8;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nav-link:hover {
+  color: #c5d0e0;
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.1);
+  transform: translateY(-1px);
+}
+
+/* ════════════════════════════════
+   Mobile — max-width: 768px
+   ════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Section containers */
+  .section-inner {
+    width: 90vw;
+    min-width: 0;
+    padding: 0 4px;
   }
 
-  .projectcorepanel .projectrowname { color: #60a5fa; }
-  .projectcorepanel:hover { background: rgba(96,165,250,0.04); border-left-color: #60a5fa; }
+  /* Sections spacing */
+  section { margin-bottom: 80px !important; }
 
-  .projectsmarthome .projectrowname { color: #fbbf24; }
-  .projectsmarthome:hover { background: rgba(251,191,36,0.04); border-left-color: #fbbf24; }
+  /* Navbar — hide links, just show logo */
+  .navbar { padding: 0 6%; }
+  .navbar-links { display: none; }
 
-  .projectsnapmotive .projectrowname { color: #34d399; }
-  .projectsnapmotive:hover { background: rgba(52,211,153,0.04); border-left-color: #34d399; }
+  /* Hero */
+  .hero-desc { font-size: 13px !important; }
 
-  .projectprojectssimplified .projectrowname { color: #f87171; }
-  .projectprojectssimplified:hover { background: rgba(248,113,113,0.04); border-left-color: #f87171; }
+  /* About Me */
+  .aboutme-grid { flex-direction: column; gap: 28px; }
+  .aboutme-left { flex: none; width: 100%; }
+  .aboutme-nameblock { text-align: center; padding-left: 0; }
+  .aboutme-nameblock h2 { font-size: 34px; }
+  .aboutme-right { align-items: center; }
+  .aboutme-biocard { width: 100%; }
+  .aboutme-buttons { gap: 10px; }
+  .aboutmebutton { min-width: 0; }
 
-  .educationarea{
-    height: 450px;;
-    margin-top: .5%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 0;
-    display: flex;
-    /*background-color: green;*/
+  /* Skills */
+  .skillcard { flex-direction: column; align-items: flex-start; padding: 16px 20px; }
+  .skillcategoryname { width: auto; margin-bottom: 10px; }
+  .skillchips { border-left: none; padding-left: 0; }
+
+  /* Projects */
+  .projectrow { flex-direction: column; align-items: flex-start; padding: 16px 20px; }
+  .projectrowleft { width: auto; margin-bottom: 8px; }
+  .projectrowcontent { border-left: none; padding-left: 0; }
+  .projectrowarrow { display: none; }
+
+  /* Experience / Education */
+  .schoolanddates { flex-direction: column; gap: 4px; }
+  .school h3 { font-size: 18px; }
+  .school { padding: 18px 20px; }
+  .school:hover { transform: none; }
+
+  /* Footer */
+  .site-footer-inner {
     flex-direction: column;
-    
+    width: 90vw;
+    gap: 28px;
+    padding-bottom: 28px;
   }
-  .educationarea p{
-    color: var(--darkwhite);
-    font-style:italic;
-    margin-top: auto;
-    font-size: 16px;
-    font-weight: 400;
-    animation-duration: 1s;
-    animation-name: contentdrop;
-  }
-  .footer{
-    background: radial-gradient(circle,rgba(16, 24, 31, 1) 0%, rgba(12, 7, 20, 1) 77%);
-    height: 170px;
-    border-top: solid 1px #7b7b7b44;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .footertop{
-    height: 90%;
-    /*background-color: orangered;*/
-    display: flex;
-    justify-content: center;
-    gap: 5%;
-  }
-  .footersitelinks{
-    /*background-color: #7b7b7b;*/
-    height: 100%;
-    width: 170px;
-    display: flex;
-    flex-direction: column;
-    font-family: "Geist";
-    text-align: center;
-  }
-  .footertop h5{
-    color: var(--impwhite);
-    margin-bottom: 2px;
-    margin-top: 10px;
-    font-weight: 800;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1;
-    font-size: 18px;
-  }
-  .footertop p{
-    /*background-color: goldenrod;*/
-    width: 100px;
-    color: #afafaf;
-    margin: 0;
-    line-height: 1.5;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all .15s ease;
-  }
-  .footer p:hover{
-    transform: scale(1.05);
-    color: #f7f7f7;
-  }
-  .footerresources{
-    /*background-color: plum;*/
-    height: 100%;
-    width: 170px;
-  }
-  .footerbottom{
-    height: 10%;
-    /*background-color: blue;*/
-    display: flex;
-    margin-left: 10px;
-    width: auto;
-  }
-  .footerbottom p{
-    line-height: 1;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-    color: var(--darkwhite);
-    font-family: "Geist";
-    font-size: 12px;
-    font-weight: 700;
-    text-align: center;
-    transition: all .15s ease;
-  }
-  .school{
-    /*background-color: gray;*/
-    
-    margin-bottom: 10px;
-    width: 100%;
-    height: auto;
-    transition: all .2s ease;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    font-family: "Geist";
-    filter:brightness(80%);
-  }
-  .school h5{
-    color: var(--darkwhite);
-  }
-  .school * {
-    margin-top: 0;
-    /*background-color: red;
-    border: 1px solid black;*/
-    margin-bottom: 0;
-  }
-  .schoolanddates{
-    /*background-color: purple;*/
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    height: 100%;
-    width: 100%;
-  }
-  .schoolanddates h3{
-    width:66%;
-    /*background-color: orange;*/
-  }
-  .schoolanddates p{
-    display: flex;
-    margin-right: 0;
-    margin-left: 0;
-    /*background-color: red;*/
-    width: 30%;
-    justify-content: flex-end;
-    text-align: right;
-    font-weight: 600;
-    font-size: 22px;
-  }
-  .schoolnotes{
-    /*background-color: green;*/
-    line-height: 1.5;
-    font-family: "Geist";
-    font-weight: 500;
-    color:var(--darkwhite);
-    text-align: left;
-    margin-top: 0px;
-    font-style: italic;
-    font-size: 16px;
-  }
-  .school h3{
-    font-size: 28px;
-    color:var(--impwhite);
-  }
-  .school p{
-    color:var(--darkwhite);
-    display: flex;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-right: 0;
-  }
-  .school:hover{
-    transform: scale(1.02);
-    filter:brightness(100%);
-  }
+  .footer-tagline { max-width: 100%; }
 }

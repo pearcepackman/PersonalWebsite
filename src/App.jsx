@@ -1,87 +1,94 @@
-
-import github from './assets/github-sign.png';
-import linkedin from './assets/linkedin.png';
-import resume from './assets/resume.png';
+import React from "react";
+import './App.css';
+import ScrollFadeIn from './ScrollFadeIn';
 import grad from './assets/grad.jpg';
 import cool from './assets/cool.jpg';
 import snowboard from './assets/snowboard.jpg';
-
-import React from "react";
-import ScrollFadeIn from './ScrollFadeIn';
-
-import './App.css';
+import github from './assets/github-sign.png';
+import linkedin from './assets/linkedin.png';
+import resume from './assets/resume.png';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-    
-        <div className = "Nav">
-             
-          <div className = "navbar">
-            <div className = "navbarleft">
-              <a href = "#" className = "navhome">PearcePackman.com</a>
-              
-            </div>
-            <div className = "navbaright">
-              <a href = "#aboutme" className = "navbaroptions">About Me</a>
-              <a href = "#skills" className = "navbaroptions">Skills</a>
-              <a href = "#projects" className = "navbaroptions">Projects</a>
-              <a href = "#experience" className = "navbaroptions">Experience</a>
-              <a href = "#education" className = "navbaroptions">Education</a>
-              
-            </div>
-            
-            
+    <>
+      {/* Background effects */}
+      <div className="bg-glow" aria-hidden="true" />
+      <div className="bg-glow-2" aria-hidden="true" />
+      <div className="bg-dots" aria-hidden="true" />
+      <div className="bg-grain" aria-hidden="true" />
+
+      {/* All page content sits above background */}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+
+        {/* Navbar */}
+        <nav className="navbar">
+          <a href="#" className="navbar-logo">PearcePackman.com</a>
+          <div className="navbar-links">
+            {[['About Me', '#aboutme'], ['Skills', '#skills'], ['Projects', '#projects'], ['Experience', '#experience'], ['Education', '#education']].map(([label, href]) => (
+              <a key={href} href={href} className="nav-link">{label}</a>
+            ))}
           </div>
-          <ScrollFadeIn>
-            <div className="startsection">
-              <div className = "introsection">
-                <div className = "namebox">
-                  <p className = "introtext">
-                    Pearce Packman
-                  </p>
-                  <p className = "introdesc">
-                    Building systems that bridge hardware and software.
-                  </p>
-                </div>
-                <p className="introblurb">
-                  From BLE indoor navigation to real-time hardware monitors and full-stack web apps, I build polished software that connects low-level systems with user-facing design.
-                </p>
-                <div className = "introbuttonbox">
-                  <a href = "#aboutme" className = "workbutton">
-                    Learn About Me ▼
-                  </a>
-                </div>
-	  	        </div>
+        </nav>
+
+        {/* Hero */}
+        <section style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 24px', marginTop: 50 }}>
+            <p className="hero-title">
+              Pearce Packman
+            </p>
+            <p style={{ color: '#c8d8e0', fontWeight: 500, fontSize: 'clamp(18px, 3vw, 36px)', fontStyle: 'italic', marginTop: 12, marginBottom: 8, maxWidth: 620 }}>
+              Building systems that bridge hardware and software.
+            </p>
+            <p style={{ color: '#8a9aaa', fontSize: 15, lineHeight: 1.7, fontWeight: 500, fontStyle: 'italic', marginTop: 8, maxWidth: 480 }}>
+              From BLE indoor navigation to real-time hardware monitors and full-stack web apps,
+              I build polished software that connects low-level systems with user-facing design.
+            </p>
+            <div style={{ marginTop: 28 }}>
+              <a href="#aboutme" style={{
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                height: 50, padding: '0 28px',
+                background: 'linear-gradient(103deg, rgba(45,134,181,1) 0%, rgba(102,45,107,1) 100%)',
+                borderRadius: 10, color: 'white', fontWeight: 700, fontSize: 15,
+                fontFamily: 'Geist, sans-serif',
+                transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+              }}>
+                Learn About Me ▼
+              </a>
             </div>
-          </ScrollFadeIn>
-          <ScrollFadeIn>
-            <div id = "aboutme" className="section">
-              <h1>About Me</h1>
-              <div className='aboutinside'>
-                <div className='aboutleft'>
-                  <div className='picbox'>
-                    <img className='gradpic' src = {grad}></img>
-                    <img className='coolpic' src = {cool}></img>
-                    <img className='snowboardpic' src = {snowboard}></img>
-                  </div>
-                  <div className='aboutleftwords'>
-                    <div className='aboutname'>
-                      <h2>Hey, I'm Pearce!</h2>
-                    </div>
-                    <div className='aboutnameadds'>
-                      <p>Full-Stack Developer</p>
-                      <p>Research Assistant</p>
-                      <p>Student At UMBC</p>
-                    </div>
+          </div>
+        </section>
+
+        {/* About Me */}
+        <ScrollFadeIn>
+          <section id="aboutme" style={{ display: 'flex', justifyContent: 'center', marginBottom: 150, scrollMarginTop: 100 }}>
+            <div className="section-inner">
+              <h1 className="section-title">About Me</h1>
+
+              <div className="aboutme-grid">
+                {/* Left — photos only */}
+                <div className="aboutme-left">
+                  <div className="picbox">
+                    <img className="gradpic" src={grad} alt="graduation" />
+                    <img className="coolpic" src={cool} alt="casual" />
+                    <img className="snowboardpic" src={snowboard} alt="snowboarding" />
                   </div>
                 </div>
-                <div className='aboutright'>
-                  <div className='aboutrighttitle'>
-                    <p>So, Who Am I?</p>
+
+                {/* Right — name block + bio card */}
+                <div className="aboutme-right">
+                  <div className="aboutme-nameblock">
+                    <h2>Hey, I'm Pearce!</h2>
+                    <p>Full-Stack Developer</p>
+                    <p>Research Assistant</p>
+                    <p>Student at UMBC</p>
                   </div>
-                  <div className='aboutrightdesc'>
+                  <div className="aboutme-biocard">
+                    <h3>So, Who Am I?</h3>
                     <p>
                       Hey, I'm Pearce — thanks for checking out my site!
                       I've gone from working in the trades to studying Computer Science at UMBC,
@@ -89,299 +96,228 @@ function App() {
                       Right now I'm building an indoor navigation app using Bluetooth beacons through
                       the DAMS Lab, and actively looking for a summer 2026 internship!
                     </p>
-
                   </div>
-                  
                 </div>
               </div>
-              <div className='aboutmelinks'>
-                <a href = "https://www.linkedin.com/in/pearce-packman/" target = "_blank" rel="noopener noreferrer" alt = "linkedin">
-                <div className='aboutmebutton githubbutton'>
-                  <img className='github' src = { linkedin }></img>
-                  <p>LinkedIn Page</p>
-                </div>
+
+              {/* Link buttons */}
+              <div className="aboutme-buttons">
+                <a href="https://www.linkedin.com/in/pearce-packman/" target="_blank" rel="noopener noreferrer" className="aboutme-link">
+                  <div className="aboutmebutton">
+                    <img src={linkedin} alt="linkedin" />
+                    <p>LinkedIn</p>
+                  </div>
                 </a>
-                <a href = "https://github.com/pearcepackman" target = "_blank" rel="noopener noreferrer" alt = "github">
-                <div className='aboutmebutton githubbutton'>
-                  <img className='github' src = { github }></img>
-                  <p>GitHub Page</p>
-                </div>
+                <a href="https://github.com/pearcepackman" target="_blank" rel="noopener noreferrer" className="aboutme-link">
+                  <div className="aboutmebutton">
+                    <img src={github} alt="github" />
+                    <p>GitHub</p>
+                  </div>
                 </a>
-                <a href = "https://drive.google.com/file/d/151GyXMqMP7wq571OO6Mu-xP-C8lHL283/view" target = "_blank" rel="noopener noreferrer" alt = "github">
-                <div className='aboutmebutton githubbutton'>
-                  <img className='github' src = { resume }></img>
-                  <p>My Resume</p>
-                </div>
+                <a href="https://drive.google.com/file/d/151GyXMqMP7wq571OO6Mu-xP-C8lHL283/view" target="_blank" rel="noopener noreferrer" className="aboutme-link">
+                  <div className="aboutmebutton">
+                    <img src={resume} alt="resume" />
+                    <p>Resume</p>
+                  </div>
                 </a>
-              </div>
-            </div>
-          </ScrollFadeIn>
-          <ScrollFadeIn>
-            <div id = "skills" className = "section">
-            <h1>Skills</h1>
-            <div className = "skillarea">
-
-              <div className = "skillcard skilllanguage">
-                <div className = "skillcategoryname">Languages</div>
-                <div className = "skillchips">
-                  <span className="skillchip">C++</span>
-                  <span className="skillchip">C</span>
-                  <span className="skillchip">JavaScript</span>
-                  <span className="skillchip">Python</span>
-                  <span className="skillchip">TypeScript</span>
-                  <span className="skillchip">SQL</span>
-                  <span className="skillchip">Bash</span>
-                </div>
-              </div>
-
-              <div className = "skillcard skillfrontend">
-                <div className = "skillcategoryname">Frontend</div>
-                <div className = "skillchips">
-                  <span className="skillchip">React</span>
-                  <span className="skillchip">React Native</span>
-                  <span className="skillchip">Qt / C++</span>
-                  <span className="skillchip">HTML</span>
-                  <span className="skillchip">CSS</span>
-                  <span className="skillchip">Chart.js</span>
-                </div>
-              </div>
-
-              <div className = "skillcard skillbackend">
-                <div className = "skillcategoryname">Backend</div>
-                <div className = "skillchips">
-                  <span className="skillchip">Node.js</span>
-                  <span className="skillchip">Express.js</span>
-                  <span className="skillchip">REST APIs</span>
-                  <span className="skillchip">SQLite</span>
-                  <span className="skillchip">JWT Auth</span>
-                  <span className="skillchip">Docker</span>
-                </div>
-              </div>
-
-              <div className = "skillcard skillembedded">
-                <div className = "skillcategoryname">Embedded &amp; Systems</div>
-                <div className = "skillchips">
-                  <span className="skillchip">ESP32</span>
-                  <span className="skillchip">MQTT</span>
-                  <span className="skillchip">BLE</span>
-                  <span className="skillchip">Sensor I/O</span>
-                  <span className="skillchip">Serial Comm</span>
-                  <span className="skillchip">LibreHardwareMonitor</span>
-                </div>
-              </div>
-
-              <div className = "skillcard skilltools">
-                <div className = "skillcategoryname">Dev Tools &amp; OS</div>
-                <div className = "skillchips">
-                  <span className="skillchip">Linux</span>
-                  <span className="skillchip">Git</span>
-                  <span className="skillchip">GitHub</span>
-                  <span className="skillchip">Docker</span>
-                  <span className="skillchip">VSCode</span>
-                  <span className="skillchip">NeoVim</span>
-                  <span className="skillchip">Expo Go</span>
-                  <span className="skillchip">Windows</span>
-                  <span className="skillchip">MacOS</span>
-                </div>
               </div>
 
             </div>
+          </section>
+        </ScrollFadeIn>
+
+        {/* Skills */}
+        <ScrollFadeIn>
+          <section id="skills" style={{ display: 'flex', justifyContent: 'center', marginBottom: 150, scrollMarginTop: 100 }}>
+            <div className="section-inner">
+              <h1 className="section-title">Skills</h1>
+              <div className="skillarea">
+                {[
+                  { cls: 'skilllanguage', label: 'Languages',         chips: ['C++','C','JavaScript','Python','TypeScript','SQL','Bash'] },
+                  { cls: 'skillfrontend', label: 'Frontend',          chips: ['React','React Native','Qt / C++','HTML','CSS','Chart.js'] },
+                  { cls: 'skillbackend',  label: 'Backend',           chips: ['Node.js','Express.js','REST APIs','SQLite','JWT Auth','Docker'] },
+                  { cls: 'skillembedded', label: 'Embedded & Systems',chips: ['ESP32','MQTT','BLE','Sensor I/O','Serial Comm','LibreHardwareMonitor'] },
+                  { cls: 'skilltools',    label: 'Dev Tools & OS',    chips: ['Linux','Git','GitHub','Docker','VSCode','NeoVim','Expo Go','Windows','MacOS'] },
+                ].map(({ cls, label, chips }) => (
+                  <div key={label} className={`skillcard ${cls}`}>
+                    <div className="skillcategoryname">{label}</div>
+                    <div className="skillchips">
+                      {chips.map(s => <span key={s} className="skillchip">{s}</span>)}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </ScrollFadeIn>
-            
-          <ScrollFadeIn>
-          <div id="projects" className="section">
-            <h1>Projects</h1>
-            <div className="projectarea">
+          </section>
+        </ScrollFadeIn>
 
-              <a href="https://github.com/pearcepackman/CorePanel" target="_blank" rel="noopener noreferrer" className="projectrow projectcorepanel">
-                <div className="projectrowleft">
-                  <span className="projectrowname">CorePanel</span>
-                </div>
-                <div className="projectrowcontent">
-                  <p className="projectrowdesc">Desktop system monitor built with Qt — visualizes live CPU, GPU, RAM, and disk metrics via real-time charts using LibreHardwareMonitor sensor data.</p>
-                  <div className="projectrowchips">
-                    <span className="projectchip">C++</span>
-                    <span className="projectchip">C#</span>
-                    <span className="projectchip">Qt</span>
-                    <span className="projectchip">QtCharts</span>
-                    <span className="projectchip">LibreHardwareMonitor</span>
+        {/* Projects */}
+        <ScrollFadeIn>
+          <section id="projects" style={{ display: 'flex', justifyContent: 'center', marginBottom: 150, scrollMarginTop: 100 }}>
+            <div className="section-inner">
+              <h1 className="section-title">Projects</h1>
+              <div className="projectarea">
+                <a href="https://github.com/pearcepackman/CorePanel" target="_blank" rel="noopener noreferrer" className="projectrow projectcorepanel">
+                  <div className="projectrowleft">
+                    <span className="projectrowname">CorePanel</span>
+                  </div>
+                  <div className="projectrowcontent">
+                    <p className="projectrowdesc">Desktop system monitor built with Qt — visualizes live CPU, GPU, RAM, and disk metrics via real-time charts using LibreHardwareMonitor sensor data.</p>
+                    <div className="projectrowchips">
+                      {['C++','C#','Qt','QtCharts','LibreHardwareMonitor'].map(t => <span key={t} className="projectchip">{t}</span>)}
+                    </div>
+                  </div>
+                  <span className="projectrowarrow">&#8599;</span>
+                </a>
+                <a href="https://github.com/pearcepackman/Smart-home-dashboard" target="_blank" rel="noopener noreferrer" className="projectrow projectsmarthome">
+                  <div className="projectrowleft">
+                    <span className="projectrowname">Smart Home Dashboard</span>
+                  </div>
+                  <div className="projectrowcontent">
+                    <p className="projectrowdesc">Full-stack IoT platform using ESP32, Node.js, and React Native to monitor real-time temperature, humidity, gas, and motion data over MQTT.</p>
+                    <div className="projectrowchips">
+                      {['ESP32','MQTT','React Native','Node.js','TypeScript'].map(t => <span key={t} className="projectchip">{t}</span>)}
+                    </div>
+                  </div>
+                  <span className="projectrowarrow">&#8599;</span>
+                </a>
+                <a href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer" className="projectrow projectsnapmotive">
+                  <div className="projectrowleft">
+                    <span className="projectrowname">SnapMotive</span>
+                    <span className="projectrowaward">HackHounds 2025 Winner</span>
+                  </div>
+                  <div className="projectrowcontent">
+                    <p className="projectrowdesc">Gamified goal-tracking app using computer vision to verify task completion through photos — built in 24 hours at HackHounds 2025.</p>
+                    <div className="projectrowchips">
+                      {['React Native','TypeScript','Computer Vision','UI/UX'].map(t => <span key={t} className="projectchip">{t}</span>)}
+                    </div>
+                  </div>
+                  <span className="projectrowarrow">&#8599;</span>
+                </a>
+                <a href="https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target="_blank" rel="noopener noreferrer" className="projectrow projectprojectssimplified">
+                  <div className="projectrowleft">
+                    <span className="projectrowname">Projects Simplified</span>
+                  </div>
+                  <div className="projectrowcontent">
+                    <p className="projectrowdesc">Full-stack CRUD web app for task and project management with JWT-based auth, built on Node.js, Express, and SQL.</p>
+                    <div className="projectrowchips">
+                      {['React','Node.js','Express.js','SQL','JWT'].map(t => <span key={t} className="projectchip">{t}</span>)}
+                    </div>
+                  </div>
+                  <span className="projectrowarrow">&#8599;</span>
+                </a>
+              </div>
+            </div>
+          </section>
+        </ScrollFadeIn>
+
+        {/* Experience */}
+        <ScrollFadeIn>
+          <section id="experience" style={{ display: 'flex', justifyContent: 'center', marginBottom: 150, scrollMarginTop: 100 }}>
+            <div className="section-inner">
+              <h1 className="section-title">Experience</h1>
+              <div className="educationarea">
+                <a href="https://damslabumbc.github.io/" target="_blank" rel="noopener noreferrer">
+                  <div className="school">
+                    <div className="schoolanddates">
+                      <h3>Undergraduate Research Assistant</h3>
+                      <h5>June 2025 – Present</h5>
+                    </div>
+                    <div className="schoolnotes">
+                      <ul>
+                        <li>Built an indoor navigation app using Bluetooth beacons for real-time positioning and directions</li>
+                        <li>Implemented BLE beacon detection including signal processing and device ranging</li>
+                        <li>Designed and implemented a pathfinding algorithm supporting multiple floors</li>
+                        <li>Designed and developed frontend UI for live user position, pathfinding, and turn-by-turn directions</li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+                <a href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer">
+                  <div className="school">
+                    <div className="schoolanddates">
+                      <h3>Hackathon Winner — HackHounds 2025</h3>
+                      <h5>April 2025</h5>
+                    </div>
+                    <div className="schoolnotes">
+                      <ul>
+                        <li>Awarded Best Computer Vision for developing a goal-tracking app using image recognition to monitor user progress</li>
+                        <li>Designed a clean, user-friendly UI in React Native</li>
+                        <li>Learned React Native UI in 24 hours and collaborated with a team under tight deadlines</li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+        </ScrollFadeIn>
+
+        {/* Education */}
+        <ScrollFadeIn>
+          <section id="education" style={{ display: 'flex', justifyContent: 'center', marginBottom: 150, scrollMarginTop: 100 }}>
+            <div className="section-inner">
+              <h1 className="section-title">Education</h1>
+              <div className="educationarea">
+                <div className="school">
+                  <div className="schoolanddates">
+                    <h3>University of Maryland, Baltimore County (UMBC)</h3>
+                    <h5>August 2024 – December 2026</h5>
+                  </div>
+                  <div className="schoolnotes">
+                    <ul>
+                      <li>B.S. Computer Science — Expected December 2026</li>
+                      <li>GPA: 3.62</li>
+                      <li>Coursework: Software Engineering, Operating Systems, Computer Security, Data Structures, Algorithms, Malware Analysis, Computer Architecture, Assembly Language, Principles of Programming Languages</li>
+                      <li>Extra Curricular: UMBC Racing Team</li>
+                    </ul>
                   </div>
                 </div>
-                <span className="projectrowarrow">&#8599;</span>
-              </a>
-
-              <a href="https://github.com/pearcepackman/Smart-home-dashboard" target="_blank" rel="noopener noreferrer" className="projectrow projectsmarthome">
-                <div className="projectrowleft">
-                  <span className="projectrowname">Smart Home Dashboard</span>
-                </div>
-                <div className="projectrowcontent">
-                  <p className="projectrowdesc">Full-stack IoT platform using ESP32, Node.js, and React Native to monitor real-time temperature, humidity, gas, and motion data over MQTT.</p>
-                  <div className="projectrowchips">
-                    <span className="projectchip">ESP32</span>
-                    <span className="projectchip">MQTT</span>
-                    <span className="projectchip">React Native</span>
-                    <span className="projectchip">Node.js</span>
-                    <span className="projectchip">TypeScript</span>
+                <div className="school">
+                  <div className="schoolanddates">
+                    <h3>Carroll Community College</h3>
+                    <h5>August 2022 – May 2024</h5>
+                  </div>
+                  <div className="schoolnotes">
+                    <ul>
+                      <li>Associate's Degree in Arts and Sciences</li>
+                      <li>GPA: 3.83 (Magna Cum Laude)</li>
+                      <li>Coursework: Introduction to Python, Introduction to C++</li>
+                      <li>Extra Curricular: PTK Honor's Society</li>
+                    </ul>
                   </div>
                 </div>
-                <span className="projectrowarrow">&#8599;</span>
-              </a>
+              </div>
+            </div>
+          </section>
+        </ScrollFadeIn>
 
-              <a href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer" className="projectrow projectsnapmotive">
-                <div className="projectrowleft">
-                  <span className="projectrowname">SnapMotive</span>
-                  <span className="projectrowaward">HackHounds 2025 Winner</span>
-                </div>
-                <div className="projectrowcontent">
-                  <p className="projectrowdesc">Gamified goal-tracking app using computer vision to verify task completion through photos — built in 24 hours at HackHounds 2025.</p>
-                  <div className="projectrowchips">
-                    <span className="projectchip">React Native</span>
-                    <span className="projectchip">TypeScript</span>
-                    <span className="projectchip">Computer Vision</span>
-                    <span className="projectchip">UI/UX</span>
-                  </div>
-                </div>
-                <span className="projectrowarrow">&#8599;</span>
-              </a>
-
-              <a href="https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target="_blank" rel="noopener noreferrer" className="projectrow projectprojectssimplified">
-                <div className="projectrowleft">
-                  <span className="projectrowname">Projects Simplified</span>
-                </div>
-                <div className="projectrowcontent">
-                  <p className="projectrowdesc">Full-stack CRUD web app for task and project management with JWT-based auth, built on Node.js, Express, and SQL.</p>
-                  <div className="projectrowchips">
-                    <span className="projectchip">React</span>
-                    <span className="projectchip">Node.js</span>
-                    <span className="projectchip">Express.js</span>
-                    <span className="projectchip">SQL</span>
-                    <span className="projectchip">JWT</span>
-                  </div>
-                </div>
-                <span className="projectrowarrow">&#8599;</span>
-              </a>
-
+        {/* Footer */}
+        <footer className="site-footer">
+          <div className="site-footer-inner">
+            <div className="footer-left">
+              <p className="footer-brand">PearcePackman.com</p>
+              <p className="footer-tagline">Building systems that bridge hardware and software.</p>
+              <div className="footer-socials">
+                <a href="https://github.com/pearcepackman" target="_blank" rel="noopener noreferrer" className="footer-social-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/pearce-packman/" target="_blank" rel="noopener noreferrer" className="footer-social-link">LinkedIn</a>
+                <a href="https://drive.google.com/file/d/151GyXMqMP7wq571OO6Mu-xP-C8lHL283/view" target="_blank" rel="noopener noreferrer" className="footer-social-link">Resume</a>
+              </div>
+            </div>
+            <div className="footer-right">
+              <p className="footer-col-heading">Quick Links</p>
+              {[['About Me','#aboutme'],['Skills','#skills'],['Projects','#projects'],['Experience','#experience'],['Education','#education']].map(([label, href]) => (
+                <a key={href} href={href} className="footer-nav-link">{label}</a>
+              ))}
             </div>
           </div>
-          </ScrollFadeIn>
-          
-          <ScrollFadeIn> 
-          <div id = 'experience' className="section">
-            <h1>Experience</h1>
-            <div className='educationarea'>
-              
-              <a href = "https://damslabumbc.github.io/" target = "_blank" rel="noopener noreferrer" alt = "DAMS Link">
-              <div className='school'>
-                <div className='schoolanddates'>
-                  <h3>Undergraduate Research Assistant</h3>
-                  <h5>June 2025 - Current</h5>
-                </div>
-                <div className = "schoolnotes">
-                  <p>
-                    - Built an indoor navigation app using Bluetooth beacons for real-time positioning and directions<br></br>
-                    - Implemented BLE beacon detection including signal processing and device ranging<br></br>
-                    - Designed and implemented a pathfinding algorithm supporting multiple floors<br></br>
-                    - Designed and developed frontend UI components for live user position, pathfinding, and turn-by-turn directions
-                  </p>
-                  <br></br>
-                </div>
-              </div>
-              </a>
-
-              <a href = "https://devpost.com/software/d-kh8jf4" target = "_blank" rel="noopener noreferrer" alt = "DAMS Link">
-              <div className='school'>
-                <div className='schoolanddates'>
-                  <h3>Hackathon Winner</h3>
-                  <h5>April 2025</h5>
-                </div>
-                <div className = "schoolnotes">
-                  <p>
-                    - Awarded Best Computer Vision for developing a goal-tracking app using image recognition to monitor user progress<br></br>
-                    - Designed a clean, user-friendly UI in React Native to enhance app usability and engagement<br></br>
-                    - Learned React Native UI in 24 hours and collaborated with a team to meet tight deadlines<br></br>
-                    
-                  </p>
-                  <br></br>
-                </div>
-              </div>
-              </a>
-            </div>
+          <div className="footer-bottom">
+            <p>Designed and developed by Pearce Packman</p>
           </div>
-          </ScrollFadeIn>
-          <ScrollFadeIn>
-          <div id = "education" className = "section">
-            <h1>Education</h1>
-            <div className = "educationarea">
-              <div className = "school">
-                <div className = "schoolanddates">
-                  <h3>University of Maryland, Baltimore County (UMBC)</h3>
-                  <h5>August 2024 - December 2026</h5>
-                </div>
-                <div className = "schoolnotes">
-                  <p>
-                    - Bachelor of Science in Computer Science — Expected December 2026<br></br>
-                    - GPA: 3.62<br></br>
-                    - Coursework: Software Engineering, Operating Systems, Computer Security, Data Structures, Algorithms, Malware Analysis, Computer Architecture, Assembly Language, Principles of Programming Languages<br></br>
-                    - Extra Curricular Activities: UMBC Racing Team Member
-                  </p>
-                  <br></br>
-                </div>
-                
-              </div>
+        </footer>
 
-              <div className = "school">
-                <div className = "schoolanddates">
-                  <h3>Carroll Community College</h3>
-                  <h5>August 2022 - May 2024</h5>
-                </div>
-                <div className = "schoolnotes">
-                  <p>
-                    - Obtained Associate's Degree in Arts and Sciences<br></br>
-                    
-                    - GPA: 3.83 (Magna Cum Laude)<br></br>
-                    - Coursework: Introduction to Python Programming, Introduction to C++ Programming<br></br>
-                    - Extra Curricular Activities: PTK Honor's Society Member
-                  </p>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-          </ScrollFadeIn>
-        </div>
-      </header>
-      
-            <div className='footer'>
-              <div className='footertop'>
-                <div className='footersitelinks'>
-                  <h5>Quick Links</h5>
-                  <a href = '#aboutme' ><p>About Me</p></a>
-                  <a href = '#skills' ><p>Skills</p></a>
-                  <a href = '#projects' ><p>Projects</p></a>
-                  <a href = '#experience' ><p>Experience</p></a>
-                  <a href = '#education' ><p>Education</p></a>
-                </div>
-                <div className='footerresources'>
-                  <h5>Resources</h5>
-                  <a href = "https://github.com/pearcepackman" target = "_blank" rel="noopener noreferrer" alt = "linkedin">
-                  <p>GitHub</p>
-                  </a>
-                  <a href = "https://www.linkedin.com/in/pearce-packman/" target = "_blank" rel="noopener noreferrer" alt = "linkedin">
-                  <p>LinkedIn</p>
-                  </a>
-                  <a href = "https://drive.google.com/file/d/151GyXMqMP7wq571OO6Mu-xP-C8lHL283/view" target = "_blank" rel="noopener noreferrer" alt = "linkedin">
-                  <p>Resume</p>
-                  </a>
-
-                </div>
-              </div>
-              <div className='footerbottom'>
-                <p>Designed and Developed by Pearce Packman :)</p>
-              </div>
-            </div>
-          
-    </div>
+      </div>
+    </>
   );
 }
 
