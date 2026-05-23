@@ -7,7 +7,6 @@ import cool from './assets/cool.jpg';
 import snowboard from './assets/snowboard.jpg';
 
 import React from "react";
-import ParticlesBackground from "./ParticlesBackground";
 import ScrollFadeIn from './ScrollFadeIn';
 
 import './App.css';
@@ -15,7 +14,6 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-    <ParticlesBackground />
       <header className="App-header">
     
         <div className = "Nav">
@@ -130,6 +128,7 @@ function App() {
                   <span className="skillchip">C</span>
                   <span className="skillchip">JavaScript</span>
                   <span className="skillchip">Python</span>
+                  <span className="skillchip">TypeScript</span>
                   <span className="skillchip">SQL</span>
                   <span className="skillchip">Bash</span>
                 </div>
