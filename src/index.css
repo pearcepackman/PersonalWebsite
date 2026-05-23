@@ -20,6 +20,7 @@ body {
   background-color: #05080f;
   min-height: 100vh;
   width: 100%;
+  font-family: 'Geist', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
