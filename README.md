@@ -19,8 +19,14 @@ The goal of this site is to showcase my projects, skills, and experience in a cl
 ## Tech Stack
 - **React + Vite** – Component-based structure with fast dev/build tooling
 - **Tailwind CSS + Custom CSS** – Utility-first styling combined with custom animations, hover effects, and layout
-- **Geist** – Variable font for clean, consistent typography throughout
-- **Netlify** – Hosting and domain management with continuous deployment via GitHub Actions
+- **Netlify** – Hosting and domain management with continuous deployment on push to `main`
+
+## Running Locally
+```bash
+npm install
+npm run dev
+```
+Runs on `http://localhost:5173` by default.
 
 ## Features
 - Fully responsive layout for desktop, tablet, and mobile
