@@ -1,15 +1,63 @@
 @import "tailwindcss";
 
-body {
+html {
+  background-color: #080c12;
+}
+
+html, body {
+  min-height: 100%;
+  width: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #080c12;
+}
+
+@keyframes glow-top {
+  0%   { opacity: 0.08; }
+  25%  { opacity: 0.28; }
+  50%  { opacity: 0.12; }
+  75%  { opacity: 0.32; }
+  100% { opacity: 0.08; }
+}
+
+.bg-layers {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-glow-top {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 45% at 50% 0%, #3b82f6 0%, #000000 100%);
+  will-change: opacity;
+  animation: glow-top 12s ease-in-out infinite;
+}
+
+.bg-glow-bottom {
+  display: none;
+}
+
+body::before { display: none; }
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,<svg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
 }
