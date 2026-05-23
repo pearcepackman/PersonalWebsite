@@ -18,7 +18,7 @@ function App() {
       <div className="bg-grain" aria-hidden="true" />
 
       {/* All page content sits above background */}
-      <div style={{ position: 'relative', zIndex: 1, fontFamily: 'Geist, sans-serif' }}>
+      <div style={{ position: 'relative', zIndex: 1 }}>
 
         {/* Navbar */}
         <nav className="navbar">
@@ -38,17 +38,7 @@ function App() {
           justifyContent: 'center',
         }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 24px', marginTop: 50 }}>
-            <p style={{
-              fontFamily: 'Geist, sans-serif',
-              fontWeight: 900,
-              fontSize: 'clamp(48px, 7vw, 92px)',
-              lineHeight: 1,
-              margin: 0,
-              background: 'linear-gradient(160deg, #ffffff 0%, #7ec8e3 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>
+            <p className="hero-title">
               Pearce Packman
             </p>
             <p style={{ color: '#c8d8e0', fontWeight: 500, fontSize: 'clamp(18px, 3vw, 36px)', fontStyle: 'italic', marginTop: 12, marginBottom: 8, maxWidth: 620 }}>
@@ -112,19 +102,19 @@ function App() {
 
               {/* Link buttons */}
               <div className="aboutme-buttons">
-                <a href="https://www.linkedin.com/in/pearce-packman/" target="_blank" rel="noopener noreferrer" style={{ flex: 1, minWidth: 140 }}>
+                <a href="https://www.linkedin.com/in/pearce-packman/" target="_blank" rel="noopener noreferrer" className="aboutme-link">
                   <div className="aboutmebutton">
                     <img src={linkedin} alt="linkedin" />
                     <p>LinkedIn</p>
                   </div>
                 </a>
-                <a href="https://github.com/pearcepackman" target="_blank" rel="noopener noreferrer" style={{ flex: 1, minWidth: 140 }}>
+                <a href="https://github.com/pearcepackman" target="_blank" rel="noopener noreferrer" className="aboutme-link">
                   <div className="aboutmebutton">
                     <img src={github} alt="github" />
                     <p>GitHub</p>
                   </div>
                 </a>
-                <a href="https://drive.google.com/file/d/151GyXMqMP7wq571OO6Mu-xP-C8lHL283/view" target="_blank" rel="noopener noreferrer" style={{ flex: 1, minWidth: 140 }}>
+                <a href="https://drive.google.com/file/d/151GyXMqMP7wq571OO6Mu-xP-C8lHL283/view" target="_blank" rel="noopener noreferrer" className="aboutme-link">
                   <div className="aboutmebutton">
                     <img src={resume} alt="resume" />
                     <p>Resume</p>
@@ -234,10 +224,12 @@ function App() {
                       <h5>June 2025 – Present</h5>
                     </div>
                     <div className="schoolnotes">
-                      <p>– Built an indoor navigation app using Bluetooth beacons for real-time positioning and directions<br />
-                      – Implemented BLE beacon detection including signal processing and device ranging<br />
-                      – Designed and implemented a pathfinding algorithm supporting multiple floors<br />
-                      – Designed and developed frontend UI for live user position, pathfinding, and turn-by-turn directions</p>
+                      <ul>
+                        <li>Built an indoor navigation app using Bluetooth beacons for real-time positioning and directions</li>
+                        <li>Implemented BLE beacon detection including signal processing and device ranging</li>
+                        <li>Designed and implemented a pathfinding algorithm supporting multiple floors</li>
+                        <li>Designed and developed frontend UI for live user position, pathfinding, and turn-by-turn directions</li>
+                      </ul>
                     </div>
                   </div>
                 </a>
@@ -248,9 +240,11 @@ function App() {
                       <h5>April 2025</h5>
                     </div>
                     <div className="schoolnotes">
-                      <p>– Awarded Best Computer Vision for developing a goal-tracking app using image recognition to monitor user progress<br />
-                      – Designed a clean, user-friendly UI in React Native<br />
-                      – Learned React Native UI in 24 hours and collaborated with a team under tight deadlines</p>
+                      <ul>
+                        <li>Awarded Best Computer Vision for developing a goal-tracking app using image recognition to monitor user progress</li>
+                        <li>Designed a clean, user-friendly UI in React Native</li>
+                        <li>Learned React Native UI in 24 hours and collaborated with a team under tight deadlines</li>
+                      </ul>
                     </div>
                   </div>
                 </a>
@@ -271,10 +265,12 @@ function App() {
                     <h5>August 2024 – December 2026</h5>
                   </div>
                   <div className="schoolnotes">
-                    <p>– B.S. Computer Science — Expected December 2026<br />
-                    – GPA: 3.62<br />
-                    – Coursework: Software Engineering, Operating Systems, Computer Security, Data Structures, Algorithms, Malware Analysis, Computer Architecture, Assembly Language, Principles of Programming Languages<br />
-                    – Extra Curricular: UMBC Racing Team</p>
+                    <ul>
+                      <li>B.S. Computer Science — Expected December 2026</li>
+                      <li>GPA: 3.62</li>
+                      <li>Coursework: Software Engineering, Operating Systems, Computer Security, Data Structures, Algorithms, Malware Analysis, Computer Architecture, Assembly Language, Principles of Programming Languages</li>
+                      <li>Extra Curricular: UMBC Racing Team</li>
+                    </ul>
                   </div>
                 </div>
                 <div className="school">
@@ -283,10 +279,12 @@ function App() {
                     <h5>August 2022 – May 2024</h5>
                   </div>
                   <div className="schoolnotes">
-                    <p>– Associate's Degree in Arts and Sciences<br />
-                    – GPA: 3.83 (Magna Cum Laude)<br />
-                    – Coursework: Introduction to Python, Introduction to C++<br />
-                    – Extra Curricular: PTK Honor's Society</p>
+                    <ul>
+                      <li>Associate's Degree in Arts and Sciences</li>
+                      <li>GPA: 3.83 (Magna Cum Laude)</li>
+                      <li>Coursework: Introduction to Python, Introduction to C++</li>
+                      <li>Extra Curricular: PTK Honor's Society</li>
+                    </ul>
                   </div>
                 </div>
               </div>

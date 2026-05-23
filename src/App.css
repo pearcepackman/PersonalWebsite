@@ -53,6 +53,18 @@
   background-size: 256px 256px;
 }
 
+/* ── Hero title ── */
+.hero-title {
+  font-weight: 900;
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: 1;
+  margin: 0;
+  background: linear-gradient(160deg, #ffffff 0%, #7ec8e3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── Section title ── */
 .section-title {
   font-family: "Geist";
@@ -180,6 +192,11 @@
 }
 
 /* ── About link buttons ── */
+.aboutme-link {
+  flex: 1;
+  min-width: 140px;
+}
+
 .aboutme-buttons {
   display: flex;
   gap: 14px;
@@ -415,6 +432,20 @@
   color: #a0a0a0;
   font-style: italic;
   font-size: 14px;
+}
+.schoolnotes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.schoolnotes li {
+  position: relative;
+  padding-left: 16px;
+}
+.schoolnotes li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
 }
 
 @media (max-width: 768px) {
