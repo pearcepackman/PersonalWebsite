@@ -420,11 +420,12 @@ a {
     margin-bottom:0;
     margin-left: 5%;
     text-align: left;
-    background: linear-gradient(180deg,rgba(230, 230, 230, 1) 0%, rgba(156, 204, 219, 1) 100%);
+    background: linear-gradient(135deg, #f0f5ff 0%, #5da8d0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     /*background-color: green;*/
-    border-bottom:solid 1px #7b7b7b;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+    padding-bottom: 6px;
   }
   .projectarea{
     height: 100%;
@@ -440,170 +441,58 @@ a {
     display: flex;
     justify-content: space-evenly;
   }
-  .skillcard{
-    height: 210px;
-    width: 302px;
-    justify-content: space-between;
+  .skillarea {
     display: flex;
-    flex-direction: column;
-    transition: filter .3s ease, transform 0.2s ease;
-    border: solid 1px rgba(219, 219, 219, .2);
-    border-radius: 12px;
-    filter:brightness(80%);
-    position: relative;
-    margin-bottom: 0px;
-    overflow: hidden;
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
-              0 0px 10px rgba(153, 141, 141, 0.199);
-
-  }
-  .skillcard:hover ~ .skillcard,
-  .skillcard:has(~ .skillcard:hover) {
-    filter: brightness(0.6);
-  }
-  .skillcard::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
-  pointer-events: none;
-}
-
-  .skillcardimg{
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    /*background-color: orange;*/
+    gap: 14px;
+    margin-bottom: 30px;
   }
-  .skillcardimg{
-  transition: transform 0.15s ease;
-}
-
-.skillcard:hover .skillcardimg,
-.skillcard:hover .skilltag{
-  transform: scale(1.08);
-}
-
-  .skillcard:hover{
-    transform: scale(1.04);
-  filter: brightness(.9);
-  box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
-              0 0px 15px rgba(153, 141, 141, 0.445);
+  .skillcard {
+    width: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #111115;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    filter: brightness(0.85);
+    transition: filter 0.25s ease, transform 0.25s ease;
   }
-
-  .skillbackend {
-background: radial-gradient(circle,rgb(72, 98, 124) 0%, rgb(2, 49, 150) 100%);  /* Cool blue — structured and backend-feeling */
-}
-
-.skilllanguage {
-  background: radial-gradient(circle, rgba(139, 81, 82, 0.8) 0%, rgba(168, 42, 46, 0.95) 100%);
-  /* Bold red — expressive, direct, language-focused */
-}
-
-.skillfrontend {
-  background: radial-gradient(circle, rgba(125, 211, 144, 0.8) 0%, rgba(5, 126, 69, 0.932) 100%);
-  /* Bright green — visual, energetic, dynamic */
-}
-
-.skillembedded {
-  background: radial-gradient(circle, rgba(219, 195, 128, 0.8) 0%, rgba(211, 148, 11, 0.95) 100%);
-  /* Yellow-gold — embedded systems / signal / hardware */
-}
-
-.skilltools {
-  background: radial-gradient(circle, rgba(124, 124, 124, 0.8) 0%, rgba(71, 71, 71, 0.95) 100%);
-  /* Deep purple — understated, behind-the-scenes tools */
-}
-
-.skillsoft {
-  background: radial-gradient(circle, rgba(143, 108, 192, 0.8) 0%, rgba(89, 4, 146, 0.9) 100%);
-  /* Purple-to-gold — confident and warm for soft skills */
-}
-  .skilltag{
-    position: absolute;
-    top: 8px;
-    left: auto;
-    right: 8px;
+  .skillcard:hover {
+    filter: brightness(1.05);
+    transform: translateY(-3px);
+  }
+  .skillcategoryname {
     font-family: "Geist";
     font-weight: 700;
-    font-size: 14px;
-    background-color: rgba(109, 109, 109, 0.336);
-    border: solid 1px rgba(219, 219, 219, .2);
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 7px;
-    transition: all .15s ease;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 11px 14px 9px;
+    display: block;
   }
-  .skillcard p {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 200%;
-  }
-
-  .skillpointslayout{
-    background-color: rgba(109, 109, 109, 0.336);
-    border-top: solid 1px rgba(219, 219, 219, .2);
-    
-    height: 80px;
+  .skilllanguage .skillcategoryname { background: linear-gradient(110deg, #b91c3c 0%, #7f1128 100%); }
+  .skillfrontend .skillcategoryname { background: linear-gradient(110deg, #0d9373 0%, #065c47 100%); }
+  .skillbackend  .skillcategoryname { background: linear-gradient(110deg, #1d5fc4 0%, #0f3a85 100%); }
+  .skillembedded .skillcategoryname { background: linear-gradient(110deg, #b07d00 0%, #7a5400 100%); }
+  .skilltools    .skillcategoryname { background: linear-gradient(110deg, #5b36c4 0%, #361e8a 100%); }
+  .skillchips {
     display: flex;
-    justify-content: center;
-    margin-bottom: 0px;
-    backdrop-filter: blur(2px);
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px 12px 12px;
   }
-  .skillpoints{
+  .skillchip {
     font-family: "Geist";
-    font-weight: 600;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 100%;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    /*background-color: orangered;*/
-    list-style-type: none;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+    color: #7a8295;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 3px 10px;
+    border-radius: 20px;
   }
-  .skillpoints li::before {
-  content: "›";
-  color: #e2e2f8;
-  margin-right: 8px;
-  font-weight: bold;
-  font-size: 20px;
-  }
-  .skillpoints li{
-    transition: all .1s ease;
-  }
-  .skillpoints li:hover {
-  color: white;
-  transform: translateX(6px);
-}
-.languageimg{
-    filter: invert(1) brightness(.95);
-    height: 85px;
-    width: 85px;
-    margin-top: 0px;
-    /*background-color: red;*/
-  }
-  .backendimg{
-    filter: invert(1) brightness(0.95);
-    height: 80px;
-    width: 80px;
-    margin-left: 10px;
-    margin-top: 10px;
-    /*background-color: gray;*/
-  }
-  .frontendimg{
-    filter: invert(1) brightness(0.95);
-    height: 80px;
-    width: 80px;
-    margin-top: 0px;
-  }
+  .skillcard:hover .skillchip { color: #bdc8da; }
   .projectcard{
     height: 300px;
     width: 305px;
@@ -1032,13 +921,8 @@ background: radial-gradient(circle,rgb(72, 98, 124) 0%, rgb(2, 49, 150) 100%);  
     margin-top: 2px;
     width: auto;
   }
-  .skillcard{
-    width: 280px;
-    height: 165px;
-  }
-  .skillpoints{
-    line-height: .25;
-    font-size: 14px;
+  .skillcard {
+    width: 88vw;
   }
   .projectcard{
     width: 270px;
@@ -1287,7 +1171,7 @@ background: radial-gradient(circle,rgb(72, 98, 124) 0%, rgb(2, 49, 150) 100%);  
   .introtext{
     font-family: "Geist";
     font-weight: 900;
-    background: linear-gradient(184deg,rgba(207, 215, 230, 1) 0%, rgba(207, 222, 232, 1) 100%);
+    background: linear-gradient(160deg, #ffffff 0%, #7ec8e3 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
@@ -1299,27 +1183,28 @@ background: radial-gradient(circle,rgb(72, 98, 124) 0%, rgb(2, 49, 150) 100%);  
   }
   .introdesc{
     /*background-color: blue;*/
-    color: #DBDBDB;
+    color: #c8d8e0;
     line-height: 1.2;
     font-family: "Geist";
-    font-weight: 700;
-    font-size: 40px;
-    margin: 5px;
+    font-weight: 500;
+    font-size: 36px;
+    margin: 8px;
     font-style: italic;
     padding: 0;
-    width: 650px;
+    width: 620px;
     align-self: center;
   }
   .introblurb{
-    color: #a8a8a8;
-    line-height: 1.2;
+    color: #8a9aaa;
+    line-height: 1.5;
     font-family: "Geist";
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 15px;
     margin: 10px;
     font-style: italic;
     padding: 0;
-    width: 400px;
+    width: 480px;
+    max-width: 90%;
     /*background-color: blue;*/
     margin-left: 0;
     margin-right: 0;
@@ -1592,315 +1477,221 @@ background: radial-gradient(circle,rgb(72, 98, 124) 0%, rgb(2, 49, 150) 100%);  
     margin-left: 0%;
     text-align: left;
     font-size: 68px;
-    background: linear-gradient(184deg,rgba(207, 215, 230, 1) 0%, rgba(207, 222, 232, 1) 100%);
+    background: linear-gradient(135deg, #f0f5ff 0%, #5da8d0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    border-bottom:solid 1px #7b7b7b;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+    padding-bottom: 10px;
   }
   .projectarea{
-    height: auto;
-    font-family:"Geist";
-    /*background-color: darkcyan;*/
-    width: auto;
-    flex-wrap: wrap;
-    margin-top: 0px;
-    margin-left: 0%;
-    margin-right: 0%;
-    row-gap: 28px;
-    column-gap: 28px;
-    margin-bottom: 80px;
     display: flex;
-    justify-content: center;
-    
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 4px;
+    margin-bottom: 80px;
+    filter: brightness(0.82);
+    transition: filter 0.25s ease;
   }
-  
-  
-  
-  .languageimg{
-    filter: invert(1) brightness(.95);
-    height: 85px;
-    width: 85px;
-    margin-top: 0px;
-    /*background-color: red;*/
-    
+  .projectarea:hover {
+    filter: brightness(1);
   }
-  .backendimg{
-    filter: invert(1) brightness(0.95);
-    height: 80px;
-    width: 80px;
-    margin-left: 10px;
-    margin-top: 10px;
-    /*background-color: gray;*/
-    
-  }
-  .frontendimg{
-    filter: invert(1) brightness(0.95);
-    height: 80px;
-    width: 80px;
-    margin-top: 0px;
-  }
-  .project img{
-    /*background-color: green;*/
-    
-    margin-left:auto;
-    margin-right: auto;
-  }
-.skillcard {
-  height: 210px;
-  width: 368px;
+/* ── Skill area: stacked row strips ── */
+.skillarea {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
   overflow: hidden;
-  border-radius: 12px;
-  
-  /* Modern Matte Dark Look */
-  background: #121212; 
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  
-  /* Smooth transitions */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: brightness(0.8);
+  margin-top: 4px;
+  margin-bottom: 80px;
+  filter: brightness(0.82);
+  transition: filter 0.25s ease;
 }
 
-/* The "Accent Border" - Hidden by default at the top */
-.skillcard::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px; /* Thin, sharp accent line */
-  transform: scaleX(0); /* Hidden */
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform-origin: left;
-  z-index: 10;
+.skillarea:hover {
+  filter: brightness(1.0);
 }
 
-/* Hover State */
+/* ── Each skill row ── */
+.skillcard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 96px;
+  padding: 22px 36px;
+  background: rgba(255, 255, 255, 0.015);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0;
+  border-left: 3px solid transparent;
+  filter: none;
+  transition: background 0.2s ease, border-left-color 0.2s ease;
+  overflow: visible;
+  width: auto;
+}
+
+.skillcard:last-child {
+  border-bottom: none;
+}
+
 .skillcard:hover {
-  transform: translateY(-5px);
-  filter: brightness(1.1);
-  background: #161616;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+  filter: none;
+  transform: none;
 }
 
-/* Activate the border on hover */
-.skillcard:hover::after {
-  transform: scaleX(1);
-}
-
-/* Dim surrounding cards */
 .skillcard:hover ~ .skillcard,
 .skillcard:has(~ .skillcard:hover) {
-  filter: brightness(0.5);
-  transform: scale(0.98);
+  filter: none;
+  transform: none;
 }
 
-/* Specific Accent Colors for the Top Border and subtle Glow */
-.skillbackend:hover { box-shadow: 0 10px 30px -10px rgba(58, 134, 255, 0.3); }
-.skillbackend::after { background: #3a86ff; }
-
-.skilllanguage:hover { box-shadow: 0 10px 30px -10px rgba(255, 0, 110, 0.3); }
-.skilllanguage::after { background: #ff006e; }
-
-.skillfrontend:hover { box-shadow: 0 10px 30px -10px rgba(58, 240, 174, 0.3); }
-.skillfrontend::after { background: #3af0ae; }
-
-.skillembedded:hover { box-shadow: 0 10px 30px -10px rgba(255, 190, 11, 0.3); }
-.skillembedded::after { background: #ffbe0b; }
-
-.skilltools:hover { box-shadow: 0 10px 30px -10px rgba(131, 56, 236, 0.3); }
-.skilltools::after { background: #8338ec; }
-
-.skillsoft:hover { box-shadow: 0 10px 30px -10px rgba(251, 86, 7, 0.3); }
-.skillsoft::after { background: #fb5607; }
-
-/* Refined Skill Tag - Darker and stealthier */
-.skilltag {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+/* ── Category label ── */
+.skillcategoryname {
+  width: 175px;
+  flex-shrink: 0;
   font-family: "Geist";
-  font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #888;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 0;
+  background: none;
 }
 
-/* Skill Points Area */
-.skillpointslayout {
-  background-color: rgba(255, 255, 255, 0.02);
-  border-top: solid 1px rgba(255, 255, 255, 0.05);
-  height: 80px;
+/* ── Divider + chip area ── */
+.skillchips {
+  flex: 1;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 0 0 36px;
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  align-items: center;
 }
 
-.skillpoints {
-  list-style-type: none;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.skillpoints li {
+/* ── Individual chip ── */
+.skillchip {
   font-family: "Geist";
-  font-size: 15px;
-  color: #999;
-  transition: color 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: #8a95a8;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 7px 18px;
+  border-radius: 20px;
+  transition: color 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
 }
 
-.skillcard:hover .skillpoints li {
-  color: #ddd;
+.skillcard:hover .skillchip {
+  color: #c5d0e0;
+  background: rgba(255, 255, 255, 0.09);
 }
 
-.skillpoints li::before {
-  content: "•";
-  margin-right: 8px;
-  opacity: 0.5;
-}
-  .projectcard{
-    height: 300px;
-    width: 400px;
-    justify-content: space-between;
+/* ── Per-category accent colors ── */
+.skilllanguage .skillcategoryname { color: #f87171; }
+.skilllanguage:hover               { border-left-color: #f87171; }
+
+.skillfrontend .skillcategoryname  { color: #34d399; }
+.skillfrontend:hover               { border-left-color: #34d399; }
+
+.skillbackend .skillcategoryname   { color: #60a5fa; }
+.skillbackend:hover                { border-left-color: #60a5fa; }
+
+.skillembedded .skillcategoryname  { color: #fbbf24; }
+.skillembedded:hover               { border-left-color: #fbbf24; }
+
+.skilltools .skillcategoryname     { color: #a78bfa; }
+.skilltools:hover                  { border-left-color: #a78bfa; }
+  .projectrow {
     display: flex;
-    flex-direction: column;
-    transition: all .2s ease;
-    border: solid 1px rgba(219, 219, 219, .2);
-    border-radius: 12px;
-    filter:brightness(80%);
-    position: relative;
-    margin-bottom: 0px;
-    overflow: hidden;
-    transition: filter .3s ease, transform 0.2s ease;
-    box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.356), 
-              0 0px 10px rgba(153, 141, 141, 0.199);
-
-  }
-  .projectcard a{
+    flex-direction: row;
+    align-items: center;
+    min-height: 100px;
+    padding: 22px 36px;
+    background: rgba(255,255,255,0.015);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-left: 3px solid transparent;
     text-decoration: none;
     color: inherit;
+    transition: background 0.2s ease, border-left-color 0.2s ease;
   }
-  .projectcard:hover ~ .projectcard,
-  .projectcard:has(~ .projectcard:hover) {
-  filter: brightness(0.6);
-}
-  .projectcard:hover{
-    transform: scale(1.05);
-  filter: brightness(90%);
-  box-shadow: inset 0 0 15px rgba(85, 85, 85, 0.281), 
-              0 0px 15px rgba(153, 141, 141, 0.445);
-  }
-  .projectcardimg{
-    transition: all .15s ease;
-  }
-  .projectcard:hover .projectcardimg{
-    transform: scale(1.05);
-  }
-  .projectcard:hover .projecttag{
-    transform: scale(1.10);
-  }
-  .projecttagarea{
-    /*background-color: red;*/
-    width: 140px;
-    position:absolute;
+  .projectrow:last-child { border-bottom: none; }
+
+  .projectrowleft {
+    width: 200px;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    left: auto;
-    right: 8px;
-    top: 8px;
+    gap: 6px;
   }
-  .projecttag{
-    width: auto;
-    align-self: flex-end;
-    height: auto;
-    flex: 0 0 auto;
+  .projectrowname {
     font-family: "Geist";
     font-weight: 700;
-    font-size: 14px;
-    background-color: rgba(109, 109, 109, 0.336);
-    border: solid 1px rgba(219, 219, 219, .2);
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 7px;
-    color: #e2e2f8;
-    transition: all .15s ease;
-  }
-
-    .projectdesclayout{
-    background-color: rgba(109, 109, 109, 0.336);
-    border-top: solid 1px rgba(219, 219, 219, .2);
-    height: 100%;
-    display: flex;
-    
-    justify-content: center;
-    backdrop-filter: blur(2px);
-  }
-  .projectdesclayout p{
-    /*background-color: red;*/
-    height: auto;
-    width: 92%;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    text-decoration: none;
-    color:#e2e2f8;
-    font-family: "Geist";
-    font-weight: 500;
     font-size: 16px;
-    line-height: 1.4;
   }
-  .projectname{
-    font-size: 21px;
-    font-weight: 700;
+  .projectrowaward {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #6b7280;
+  }
+  .projectrowcontent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 1px solid rgba(255,255,255,0.07);
+    padding-left: 36px;
+  }
+  .projectrowdesc {
+    font-family: "Geist";
+    font-size: 14px;
+    color: #8a95a8;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .projectrowchips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .projectchip {
+    font-size: 12px;
+    font-weight: 500;
+    color: #7a8295;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+  .projectrowarrow {
+    font-size: 20px;
+    color: #5a6070;
+    flex-shrink: 0;
+    margin-left: 20px;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .projectrow:hover .projectrowarrow {
+    color: #a0aab8;
+    transform: translate(2px, -2px);
   }
 
-  .projectcorepanel {
-  background: radial-gradient(circle,rgb(72, 98, 124) 0%, rgb(2, 49, 150) 100%);  /* Cool blue — structured and backend-feeling */
-  }
+  .projectcorepanel .projectrowname { color: #60a5fa; }
+  .projectcorepanel:hover { background: rgba(96,165,250,0.04); border-left-color: #60a5fa; }
 
-  .projectsmarthome {
-    background: radial-gradient(circle, rgba(212, 185, 109, 0.8) 0%, rgba(211, 148, 11, 0.95) 100%);
-  }
+  .projectsmarthome .projectrowname { color: #fbbf24; }
+  .projectsmarthome:hover { background: rgba(251,191,36,0.04); border-left-color: #fbbf24; }
 
+  .projectsnapmotive .projectrowname { color: #34d399; }
+  .projectsnapmotive:hover { background: rgba(52,211,153,0.04); border-left-color: #34d399; }
 
-  .projectsnapmotive {
-    background: radial-gradient(circle, rgba(125, 211, 144, 0.8) 0%, rgba(5, 126, 69, 0.932) 100%);
-  }
-  .projectprojectssimplified {
-    background: radial-gradient(circle, rgba(139, 81, 82, 0.8) 0%, rgba(168, 42, 46, 0.95) 100%);
-  }
-  .corepanelimg{
-    filter: invert(1) brightness(.95);
-    height: 135px;
-    width: 135px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-  }
-  .iotimg{
-    filter: invert(1) brightness(.95);
-    height: 135px;
-    width: 135px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-  }
-  .psimg{
-    height: 110px;
-    width: 250px;
-    margin-top: 35px;
-    margin-bottom: 30px;
-  }
+  .projectprojectssimplified .projectrowname { color: #f87171; }
+  .projectprojectssimplified:hover { background: rgba(248,113,113,0.04); border-left-color: #f87171; }
 
   .educationarea{
     height: 450px;;
