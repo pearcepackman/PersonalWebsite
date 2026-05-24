@@ -67,7 +67,7 @@
 
 /* ── Section title ── */
 .section-title {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-weight: 800;
   font-size: 68px;
   margin: 0 0 20px 0;
@@ -141,7 +141,7 @@
 }
 .aboutme-nameblock:hover { filter: brightness(1); transform: scale(1.02); }
 .aboutme-nameblock h2 {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-weight: 850;
   font-size: 46px;
   line-height: 1;
@@ -175,14 +175,14 @@
 }
 .aboutme-biocard:hover { filter: brightness(1); background: rgba(255,255,255,0.05); transform: scale(1.01); }
 .aboutme-biocard h3 {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-weight: 800;
   font-size: 26px;
   color: #e0e4f0;
   margin: 0 0 14px 0;
 }
 .aboutme-biocard p {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: #8a95a8;
@@ -226,7 +226,7 @@
   background: rgba(255,255,255,0.09);
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
-.aboutmebutton p { font-family: "Geist"; font-weight: 600; font-size: 14px; margin: 0; color: #c5d0e0; }
+.aboutmebutton p { font-family: "Geist", sans-serif; font-weight: 600; font-size: 14px; margin: 0; color: #c5d0e0; }
 .aboutmebutton img { width: 22px; height: 22px; filter: invert(1) brightness(0.85); }
 
 /* ── Skill rows ── */
@@ -256,7 +256,7 @@
 .skillcategoryname {
   width: 175px;
   flex-shrink: 0;
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-weight: 700;
   font-size: 16px;
 }
@@ -270,7 +270,7 @@
   align-items: center;
 }
 .skillchip {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: #8a95a8;
@@ -337,7 +337,7 @@
   flex-direction: column;
   gap: 5px;
 }
-.projectrowname  { font-family: "Geist"; font-weight: 700; font-size: 16px; }
+.projectrowname  { font-family: "Geist", sans-serif; font-weight: 700; font-size: 16px; }
 .projectrowaward { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #6b7280; }
 
 .projectrowcontent {
@@ -348,7 +348,7 @@
   border-left: 1px solid rgba(255,255,255,0.07);
   padding-left: 32px;
 }
-.projectrowdesc { font-family: "Geist"; font-size: 14px; color: #8a95a8; line-height: 1.6; margin: 0; }
+.projectrowdesc { font-family: "Geist", sans-serif; font-size: 14px; color: #8a95a8; line-height: 1.6; margin: 0; }
 .projectrowchips { display: flex; flex-wrap: wrap; gap: 8px; }
 .projectchip {
   font-size: 12px;
@@ -394,7 +394,7 @@
   margin-bottom: 80px;
 }
 .school {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   filter: brightness(0.8);
   transition: all 0.2s ease;
   padding: 24px 28px;
@@ -417,7 +417,7 @@
 }
 .schoolnotes {
   line-height: 1.6;
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-weight: 500;
   color: #a0a0a0;
   font-style: italic;
@@ -466,7 +466,7 @@
   margin-top: 4px;
 }
 .contact-intro {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: #8a95a8;
@@ -490,7 +490,7 @@
   flex: 1;
 }
 .contact-label {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: #6b7280;
@@ -498,7 +498,7 @@
   text-transform: uppercase;
 }
 .contact-input {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: #c5d0e0;
@@ -517,7 +517,7 @@
 }
 .contact-textarea { min-height: 120px; }
 .contact-submit {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 15px;
   font-weight: 700;
   color: white;
@@ -533,7 +533,7 @@
 .contact-submit:hover:not(:disabled) { opacity: 0.88; transform: translateY(-1px); }
 .contact-submit:disabled { opacity: 0.5; cursor: default; }
 .contact-error {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 13px;
   color: #f87171;
   margin: 0;
@@ -573,14 +573,14 @@
   gap: 10px;
 }
 .footer-brand {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: #c5d0e0;
   margin: 0;
 }
 .footer-tagline {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: #5a6478;
@@ -596,7 +596,7 @@
   flex-wrap: wrap;
 }
 .footer-social-link {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: #8a95a8;
@@ -618,7 +618,7 @@
   gap: 6px;
 }
 .footer-col-heading {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -627,7 +627,7 @@
   margin: 0 0 6px 0;
 }
 .footer-nav-link {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: #6b7280;
@@ -642,7 +642,7 @@
   text-align: center;
 }
 .footer-bottom p {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 11px;
   font-weight: 500;
   color: #3a4050;
@@ -674,7 +674,7 @@
 .navbar:hover { filter: brightness(1); }
 
 .navbar-logo {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 15px;
   font-weight: 600;
   color: #c5d0e0;
@@ -728,7 +728,7 @@
   padding: 12px 0;
 }
 .mobile-menu-link {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 15px;
   font-weight: 500;
   color: #8a95a8;
@@ -742,7 +742,7 @@
 
 /* ── Nav links ── */
 .nav-link {
-  font-family: "Geist";
+  font-family: "Geist", sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: #8a95a8;
