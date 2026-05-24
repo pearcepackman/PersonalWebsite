@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import './App.css';
 import ScrollFadeIn from './ScrollFadeIn';
 import grad from './assets/grad.jpg';
@@ -7,6 +8,13 @@ import snowboard from './assets/snowboard.jpg';
 import github from './assets/github-sign.png';
 import linkedin from './assets/linkedin.png';
 import resume from './assets/resume.png';
+
+const fadeIn = (delay = 0) => ({
+  initial: { opacity: 0, scale: 0.97 },
+  whileInView: { opacity: 1, scale: 1 },
+  transition: { duration: 0.4, ease: "easeOut", delay },
+  viewport: { once: false, amount: 0.2 },
+});
 
 function App() {
   return (
@@ -38,17 +46,17 @@ function App() {
           justifyContent: 'center',
         }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 24px', marginTop: 50 }}>
-            <p className="hero-title">
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0 }} className="hero-title">
               Pearce Packman
-            </p>
-            <p style={{ color: '#c8d8e0', fontWeight: 500, fontSize: 'clamp(18px, 3vw, 36px)', fontStyle: 'italic', marginTop: 12, marginBottom: 8, maxWidth: 620 }}>
+            </motion.p>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }} style={{ color: '#c8d8e0', fontWeight: 500, fontSize: 'clamp(18px, 3vw, 36px)', fontStyle: 'italic', marginTop: 12, marginBottom: 8, maxWidth: 620 }}>
               Building systems that matter.
-            </p>
-            <p style={{ color: '#8a9aaa', fontSize: 15, lineHeight: 1.7, fontWeight: 500, fontStyle: 'italic', marginTop: 8, maxWidth: 480 }}>
+            </motion.p>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }} style={{ color: '#8a9aaa', fontSize: 15, lineHeight: 1.7, fontWeight: 500, fontStyle: 'italic', marginTop: 8, maxWidth: 480 }}>
               Full-stack dev, embedded tinkerer, CS student at UMBC.
               Currently shipping production software at Occams Group.
-            </p>
-            <div style={{ marginTop: 28 }}>
+            </motion.p>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }} style={{ marginTop: 28 }}>
               <a href="#aboutme" style={{
                 display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
                 height: 50, padding: '0 28px',
@@ -59,7 +67,7 @@ function App() {
               }}>
                 Learn About Me ▼
               </a>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -140,13 +148,13 @@ function App() {
                   { cls: 'skillauthapi', label: 'AI & Auth',         chips: ['Claude API','Clerk','JWT'] },
                   { cls: 'skillembedded', label: 'Embedded & Systems',chips: ['ESP32','MQTT','BLE','IoT','Sensor I/O','LibreHardwareMonitor'] },
                   { cls: 'skilltools',    label: 'Tools & OS',       chips: ['Git','GitHub','Jira','VSCode','NeoVim','Linux','Windows','macOS'] },
-                ].map(({ cls, label, chips }) => (
-                  <div key={label} className={`skillcard ${cls}`}>
+                ].map(({ cls, label, chips }, i) => (
+                  <motion.div key={label} {...fadeIn(i * 0.07)} className={`skillcard ${cls}`}>
                     <div className="skillcategoryname">{label}</div>
                     <div className="skillchips">
                       {chips.map(s => <span key={s} className="skillchip">{s}</span>)}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -159,7 +167,7 @@ function App() {
             <div className="section-inner">
               <h1 className="section-title">Projects</h1>
               <div className="projectarea">
-                <a href="https://github.com/pearcepackman/CorePanel" target="_blank" rel="noopener noreferrer" className="projectrow projectcorepanel">
+                <motion.a {...fadeIn(0)} href="https://github.com/pearcepackman/CorePanel" target="_blank" rel="noopener noreferrer" className="projectrow projectcorepanel">
                   <div className="projectrowleft">
                     <span className="projectrowname">CorePanel</span>
                   </div>
@@ -170,8 +178,8 @@ function App() {
                     </div>
                   </div>
                   <span className="projectrowarrow">&#8599;</span>
-                </a>
-                <a href="https://github.com/pearcepackman/Smart-home-dashboard" target="_blank" rel="noopener noreferrer" className="projectrow projectsmarthome">
+                </motion.a>
+                <motion.a {...fadeIn(0.07)} href="https://github.com/pearcepackman/Smart-home-dashboard" target="_blank" rel="noopener noreferrer" className="projectrow projectsmarthome">
                   <div className="projectrowleft">
                     <span className="projectrowname">Smart Home Dashboard</span>
                   </div>
@@ -182,8 +190,8 @@ function App() {
                     </div>
                   </div>
                   <span className="projectrowarrow">&#8599;</span>
-                </a>
-                <a href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer" className="projectrow projectsnapmotive">
+                </motion.a>
+                <motion.a {...fadeIn(0.14)} href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer" className="projectrow projectsnapmotive">
                   <div className="projectrowleft">
                     <span className="projectrowname">SnapMotive</span>
                     <span className="projectrowaward">HackHounds 2025 Winner</span>
@@ -195,8 +203,8 @@ function App() {
                     </div>
                   </div>
                   <span className="projectrowarrow">&#8599;</span>
-                </a>
-                <a href="https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target="_blank" rel="noopener noreferrer" className="projectrow projectprojectssimplified">
+                </motion.a>
+                <motion.a {...fadeIn(0.21)} href="https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target="_blank" rel="noopener noreferrer" className="projectrow projectprojectssimplified">
                   <div className="projectrowleft">
                     <span className="projectrowname">Projects Simplified</span>
                   </div>
@@ -207,7 +215,7 @@ function App() {
                     </div>
                   </div>
                   <span className="projectrowarrow">&#8599;</span>
-                </a>
+                </motion.a>
               </div>
             </div>
           </section>
@@ -219,7 +227,7 @@ function App() {
             <div className="section-inner">
               <h1 className="section-title">Experience</h1>
               <div className="educationarea">
-                <a href="https://www.occamsgroup.com/" target="_blank" rel="noopener noreferrer">
+                <motion.a {...fadeIn(0)} href="https://www.occamsgroup.com/" target="_blank" rel="noopener noreferrer">
                   <div className="school">
                     <div className="schoolanddates">
                       <h3>Software Engineer Intern — Occams Group</h3>
@@ -238,8 +246,8 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </a>
-                <a href="https://damslabumbc.github.io/" target="_blank" rel="noopener noreferrer">
+                </motion.a>
+                <motion.a {...fadeIn(0.07)} href="https://damslabumbc.github.io/" target="_blank" rel="noopener noreferrer">
                   <div className="school">
                     <div className="schoolanddates">
                       <h3>Undergraduate Research Assistant — DAMS Lab</h3>
@@ -258,8 +266,8 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </a>
-                <a href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer">
+                </motion.a>
+                <motion.a {...fadeIn(0.14)} href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer">
                   <div className="school">
                     <div className="schoolanddates">
                       <h3>Hackathon Winner — HackHounds 2025</h3>
@@ -276,7 +284,7 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </a>
+                </motion.a>
               </div>
             </div>
           </section>
@@ -288,7 +296,7 @@ function App() {
             <div className="section-inner">
               <h1 className="section-title">Education</h1>
               <div className="educationarea">
-                <div className="school">
+                <motion.div {...fadeIn(0)} className="school">
                   <div className="schoolanddates">
                     <h3>University of Maryland, Baltimore County (UMBC)</h3>
                     <h5>August 2024 – December 2026</h5>
@@ -301,8 +309,8 @@ function App() {
                       <li>Extra Curricular: UMBC Racing Team</li>
                     </ul>
                   </div>
-                </div>
-                <div className="school">
+                </motion.div>
+                <motion.div {...fadeIn(0.07)} className="school">
                   <div className="schoolanddates">
                     <h3>Carroll Community College</h3>
                     <h5>August 2022 – May 2024</h5>
@@ -315,7 +323,7 @@ function App() {
                       <li>Extra Curricular: PTK Honor's Society</li>
                     </ul>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </section>

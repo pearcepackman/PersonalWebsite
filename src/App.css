@@ -233,17 +233,10 @@
 .skillarea {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  overflow: hidden;
+  gap: 10px;
   margin-top: 4px;
   margin-bottom: 80px;
-  filter: brightness(0.82);
-  transition: filter 0.25s ease;
-  backdrop-filter: blur(12px);
-  background: rgba(255,255,255,0.02);
 }
-.skillarea:hover { filter: brightness(1); }
 
 .skillcard {
   display: flex;
@@ -251,12 +244,13 @@
   align-items: center;
   min-height: 88px;
   padding: 20px 32px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
   border-left: 3px solid transparent;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.02);
   transition: background 0.2s ease, border-left-color 0.2s ease, transform 0.2s ease;
 }
-.skillcard:first-child { border-radius: 16px 16px 0 0; }
-.skillcard:last-child  { border-bottom: none; border-radius: 0 0 16px 16px; }
 .skillcard:hover { background: rgba(255,255,255,0.04); transform: scale(1.01); }
 
 .skillcategoryname {
@@ -315,17 +309,10 @@
 .projectarea {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  overflow: hidden;
+  gap: 10px;
   margin-top: 4px;
   margin-bottom: 80px;
-  filter: brightness(0.82);
-  transition: filter 0.25s ease;
-  backdrop-filter: blur(12px);
-  background: rgba(255,255,255,0.02);
 }
-.projectarea:hover { filter: brightness(1); }
 
 .projectrow {
   display: flex;
@@ -333,14 +320,15 @@
   align-items: center;
   min-height: 100px;
   padding: 22px 32px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
   border-left: 3px solid transparent;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.02);
   text-decoration: none;
   color: inherit;
   transition: background 0.2s ease, border-left-color 0.2s ease, transform 0.2s ease;
 }
-.projectrow:first-child { border-radius: 16px 16px 0 0; }
-.projectrow:last-child  { border-bottom: none; border-radius: 0 0 16px 16px; }
 
 .projectrowleft {
   width: 200px;
