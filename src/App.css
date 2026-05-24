@@ -456,6 +456,94 @@
   font-family: "Geist", sans-serif;
 }
 
+/* ── Contact ── */
+.contact-card {
+  padding: 36px 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(16px);
+  margin-top: 4px;
+}
+.contact-intro {
+  font-family: "Geist";
+  font-size: 14px;
+  font-weight: 500;
+  color: #8a95a8;
+  font-style: italic;
+  line-height: 1.7;
+  margin: 0 0 28px 0;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.contact-row {
+  display: flex;
+  gap: 18px;
+}
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+.contact-label {
+  font-family: "Geist";
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.contact-input {
+  font-family: "Geist";
+  font-size: 14px;
+  font-weight: 500;
+  color: #c5d0e0;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  resize: none;
+}
+.contact-input::placeholder { color: #4a5568; }
+.contact-input:focus {
+  border-color: rgba(93,168,208,0.5);
+  background: rgba(255,255,255,0.06);
+}
+.contact-textarea { min-height: 120px; }
+.contact-submit {
+  font-family: "Geist";
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(103deg, rgba(45,134,181,1) 0%, rgba(102,45,107,1) 100%);
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  padding: 0 28px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.contact-submit:hover:not(:disabled) { opacity: 0.88; transform: translateY(-1px); }
+.contact-submit:disabled { opacity: 0.5; cursor: default; }
+.contact-error {
+  font-family: "Geist";
+  font-size: 13px;
+  color: #f87171;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-card { padding: 24px 20px; }
+  .contact-row { flex-direction: column; }
+}
+
 /* ── Footer ── */
 .site-footer {
   width: 100%;
@@ -596,6 +684,60 @@
 .navbar-links {
   display: flex;
   gap: 4px;
+}
+
+/* ── Hamburger ── */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #c5d0e0;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.hamburger-bar.open-1 { transform: translateY(7px) rotate(45deg); }
+.hamburger-bar.open-2 { opacity: 0; }
+.hamburger-bar.open-3 { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .navbar-hamburger { display: flex; }
+}
+
+/* ── Mobile menu ── */
+.mobile-menu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  z-index: 49;
+  display: flex;
+  flex-direction: column;
+  background: rgba(5,8,15,0.75);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 0;
+}
+.mobile-menu-link {
+  font-family: "Geist";
+  font-size: 15px;
+  font-weight: 500;
+  color: #8a95a8;
+  padding: 14px 24px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.mobile-menu-link:hover {
+  color: #c5d0e0;
+  background: rgba(255,255,255,0.04);
 }
 
 /* ── Nav links ── */
