@@ -1,8 +1,6 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from '@emailjs/browser';
-
-emailjs.init({ publicKey: '5jpaSVQ7knciM-etS', limitRate: { throttle: 10000 } });
 import './App.css';
 import ScrollFadeIn from './ScrollFadeIn';
 import grad from './assets/grad.jpg';
@@ -11,6 +9,17 @@ import snowboard from './assets/snowboard.jpg';
 import github from './assets/github-sign.png';
 import linkedin from './assets/linkedin.png';
 import resume from './assets/resume.png';
+
+emailjs.init({ publicKey: '5jpaSVQ7knciM-etS', limitRate: { throttle: 10000 } });
+
+const NAV_LINKS = [
+  ['About Me', '#aboutme'],
+  ['Skills', '#skills'],
+  ['Projects', '#projects'],
+  ['Experience', '#experience'],
+  ['Education', '#education'],
+  ['Contact', '#contact'],
+];
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, scale: 0.97 },
@@ -21,8 +30,8 @@ const fadeIn = (delay = 0) => ({
 
 function App() {
   const formRef = useRef(null);
-  const [formState, setFormState] = useState('idle');
-  const [menuOpen, setMenuOpen] = useState(false); // idle | sending | success | error
+  const [formState, setFormState] = useState('idle'); // idle | sending | success | error
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,7 +66,7 @@ function App() {
         <nav className="navbar">
           <a href="#" className="navbar-logo">PearcePackman.com</a>
           <div className="navbar-links">
-            {[['About Me', '#aboutme'], ['Skills', '#skills'], ['Projects', '#projects'], ['Experience', '#experience'], ['Education', '#education'], ['Contact', '#contact']].map(([label, href]) => (
+            {NAV_LINKS.map(([label, href]) => (
               <a key={href} href={href} className="nav-link">{label}</a>
             ))}
           </div>
@@ -69,7 +78,7 @@ function App() {
         </nav>
         {menuOpen && (
           <div className="mobile-menu">
-            {[['About Me', '#aboutme'], ['Skills', '#skills'], ['Projects', '#projects'], ['Experience', '#experience'], ['Education', '#education'], ['Contact', '#contact']].map(([label, href]) => (
+            {NAV_LINKS.map(([label, href]) => (
               <a key={href} href={href} className="mobile-menu-link" onClick={() => setMenuOpen(false)}>{label}</a>
             ))}
           </div>
@@ -418,7 +427,7 @@ function App() {
             </div>
             <div className="footer-right">
               <p className="footer-col-heading">Quick Links</p>
-              {[['About Me','#aboutme'],['Skills','#skills'],['Projects','#projects'],['Experience','#experience'],['Education','#education'],['Contact','#contact']].map(([label, href]) => (
+              {NAV_LINKS.map(([label, href]) => (
                 <a key={href} href={href} className="footer-nav-link">{label}</a>
               ))}
             </div>
