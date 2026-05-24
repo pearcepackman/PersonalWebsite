@@ -5,6 +5,8 @@
   <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" />
   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify&logoColor=white" />
+  <img src="https://img.shields.io/badge/Framer_Motion-EF0082?style=flat&logo=framer&logoColor=white" />
+  <img src="https://img.shields.io/badge/EmailJS-EA4335?style=flat" />
   <img src="https://img.shields.io/badge/Responsive_Design-2196F3?style=flat" />
 </p>
 
@@ -19,6 +21,8 @@ The goal of this site is to showcase my projects, skills, and experience in a cl
 ## Tech Stack
 - **React + Vite** – Component-based structure with fast dev/build tooling
 - **Tailwind CSS + Custom CSS** – Utility-first styling combined with custom animations, hover effects, and layout
+- **Framer Motion** – Scroll-triggered fade/scale animations with per-element stagger
+- **EmailJS** – Serverless contact form with honeypot protection and rate limiting
 - **Netlify** – Hosting and domain management with continuous deployment on push to `main`
 
 ## Running Locally
@@ -33,11 +37,14 @@ Runs on `http://localhost:5173` by default.
 - Liquid glass aesthetic — frosted/blurred cards, subtle translucency, soft borders throughout
 - Animated background with radial glow effects, dot grid, and film grain overlay
 - Custom skill and project cards with individual row hover animations
-- Clear section structure: About Me, Skills, Projects, Experience, Education
-- Smooth scroll transitions, scroll-triggered fade-in animations, and consistent dark theming
-- External links to resume, LinkedIn, and GitHub
+- Scroll-triggered Framer Motion animations — fade + scale with per-section stagger, replays on scroll
+- Contact form powered by EmailJS — no backend required; honeypot field, input length caps, and SDK-level rate limiting
+- SEO-optimized with meta tags, Open Graph, Twitter Card, sitemap, and robots.txt
+- Clear section structure: About Me, Skills, Projects, Experience, Education, Contact
+- External links to resume (Google Drive), LinkedIn, and GitHub
 
 ## Update History
+- 5/24/2026 - Contact form (EmailJS), favicon, Framer Motion animations, SEO meta tags, sitemap, robots.txt
 - 5/23/2026 - Content refresh: added Occams Group experience, expanded skills, updated bio and hero
 - 8/29/2025 - Background redesign, navbar liquid glass, footer, full mobile responsiveness pass
 - 8/29/2025 - Fixed GPA after data structures
