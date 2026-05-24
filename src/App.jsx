@@ -1,5 +1,8 @@
-import React from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import emailjs from '@emailjs/browser';
+
+emailjs.init({ publicKey: '5jpaSVQ7knciM-etS', limitRate: { throttle: 10000 } });
 import './App.css';
 import ScrollFadeIn from './ScrollFadeIn';
 import grad from './assets/grad.jpg';
@@ -17,6 +20,28 @@ const fadeIn = (delay = 0) => ({
 });
 
 function App() {
+  const formRef = useRef(null);
+  const [formState, setFormState] = useState('idle');
+  const [menuOpen, setMenuOpen] = useState(false); // idle | sending | success | error
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = formRef.current;
+    if (form.website.value) return; // honeypot — bot filled the hidden field
+    const name = form.from_name.value.trim();
+    const email = form.from_email.value.trim();
+    const message = form.message.value.trim().slice(0, 2000);
+    if (!name || !email || !message) return;
+    setFormState('sending');
+    emailjs.send('service_9cyo26p', 'template_y8t85ei', { from_name: name, from_email: email, message })
+      .then(() => {
+        setFormState('success');
+        form.reset();
+        setTimeout(() => setFormState('idle'), 60000);
+      })
+      .catch((err) => { console.error('EmailJS error:', err); setFormState('error'); });
+  };
+
   return (
     <>
       {/* Background effects */}
@@ -32,11 +57,23 @@ function App() {
         <nav className="navbar">
           <a href="#" className="navbar-logo">PearcePackman.com</a>
           <div className="navbar-links">
-            {[['About Me', '#aboutme'], ['Skills', '#skills'], ['Projects', '#projects'], ['Experience', '#experience'], ['Education', '#education']].map(([label, href]) => (
+            {[['About Me', '#aboutme'], ['Skills', '#skills'], ['Projects', '#projects'], ['Experience', '#experience'], ['Education', '#education'], ['Contact', '#contact']].map(([label, href]) => (
               <a key={href} href={href} className="nav-link">{label}</a>
             ))}
           </div>
+          <button className="navbar-hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
+            <span className={`hamburger-bar ${menuOpen ? 'open-1' : ''}`} />
+            <span className={`hamburger-bar ${menuOpen ? 'open-2' : ''}`} />
+            <span className={`hamburger-bar ${menuOpen ? 'open-3' : ''}`} />
+          </button>
         </nav>
+        {menuOpen && (
+          <div className="mobile-menu">
+            {[['About Me', '#aboutme'], ['Skills', '#skills'], ['Projects', '#projects'], ['Experience', '#experience'], ['Education', '#education'], ['Contact', '#contact']].map(([label, href]) => (
+              <a key={href} href={href} className="mobile-menu-link" onClick={() => setMenuOpen(false)}>{label}</a>
+            ))}
+          </div>
+        )}
 
         {/* Hero */}
         <section style={{
@@ -329,6 +366,44 @@ function App() {
           </section>
         </ScrollFadeIn>
 
+        {/* Contact */}
+        <ScrollFadeIn>
+          <section id="contact" style={{ display: 'flex', justifyContent: 'center', marginBottom: 150, scrollMarginTop: 100 }}>
+            <div className="section-inner">
+              <h1 className="section-title">Contact</h1>
+              <div className="contact-card">
+                <p className="contact-intro">Have a question or want to work together? Send me a message and I'll get back to you.</p>
+                <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
+                  <input type="text" name="website" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+                  <div className="contact-row">
+                    <div className="contact-field">
+                      <label className="contact-label">Name</label>
+                      <input className="contact-input" type="text" name="from_name" required placeholder="Your name" maxLength={100} />
+                    </div>
+                    <div className="contact-field">
+                      <label className="contact-label">Email</label>
+                      <input className="contact-input" type="email" name="from_email" required placeholder="your@email.com" maxLength={200} />
+                    </div>
+                  </div>
+                  <div className="contact-field">
+                    <label className="contact-label">Message</label>
+                    <textarea className="contact-input contact-textarea" name="message" required placeholder="What's on your mind?" rows={5} maxLength={2000} />
+                  </div>
+                  <button type="submit" className="contact-submit" disabled={formState === 'sending' || formState === 'success'}>
+                    {formState === 'idle' && 'Send Message'}
+                    {formState === 'sending' && 'Sending...'}
+                    {formState === 'success' && 'Message Sent!'}
+                    {formState === 'error' && 'Try Again'}
+                  </button>
+                  {formState === 'error' && (
+                    <p className="contact-error">Something went wrong. Please try again or email me directly.</p>
+                  )}
+                </form>
+              </div>
+            </div>
+          </section>
+        </ScrollFadeIn>
+
         {/* Footer */}
         <footer className="site-footer">
           <div className="site-footer-inner">
@@ -343,7 +418,7 @@ function App() {
             </div>
             <div className="footer-right">
               <p className="footer-col-heading">Quick Links</p>
-              {[['About Me','#aboutme'],['Skills','#skills'],['Projects','#projects'],['Experience','#experience'],['Education','#education']].map(([label, href]) => (
+              {[['About Me','#aboutme'],['Skills','#skills'],['Projects','#projects'],['Experience','#experience'],['Education','#education'],['Contact','#contact']].map(([label, href]) => (
                 <a key={href} href={href} className="footer-nav-link">{label}</a>
               ))}
             </div>
