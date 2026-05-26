@@ -168,7 +168,7 @@ function App() {
                     <p>GitHub</p>
                   </div>
                 </a>
-                <a href="https://drive.google.com/file/d/151GyXMqMP7wq571OO6Mu-xP-C8lHL283/view" target="_blank" rel="noopener noreferrer" className="aboutme-link">
+                <a href="/websiteResume.pdf" target="_blank" rel="noopener noreferrer" className="aboutme-link">
                   <div className="aboutmebutton">
                     <img src={resume} alt="resume" />
                     <p>Resume</p>
@@ -422,7 +422,7 @@ function App() {
               <div className="footer-socials">
                 <a href="https://github.com/pearcepackman" target="_blank" rel="noopener noreferrer" className="footer-social-link">GitHub</a>
                 <a href="https://www.linkedin.com/in/pearce-packman/" target="_blank" rel="noopener noreferrer" className="footer-social-link">LinkedIn</a>
-                <a href="https://drive.google.com/file/d/151GyXMqMP7wq571OO6Mu-xP-C8lHL283/view" target="_blank" rel="noopener noreferrer" className="footer-social-link">Resume</a>
+                <a href="/websiteResume.pdf" target="_blank" rel="noopener noreferrer" className="footer-social-link">Resume</a>
               </div>
             </div>
             <div className="footer-right">
