@@ -41,9 +41,10 @@ Runs on `http://localhost:5173` by default.
 - Contact form powered by EmailJS — no backend required; honeypot field, input length caps, and SDK-level rate limiting
 - SEO-optimized with meta tags, Open Graph, Twitter Card, sitemap, and robots.txt
 - Clear section structure: About Me, Skills, Projects, Experience, Education, Contact
-- External links to resume (Google Drive), LinkedIn, and GitHub
+- Resume self-hosted as a static PDF — no Google Drive dependency, opens in browser directly
 
 ## Update History
+- 6/2/2026 - UI/UX pass: color scheme cohesion, hover effects on all cards, ↗ symbols throughout, education chips & school links, self-hosted resume, graduation badge in hero, favicon fix, copyright footer
 - 5/24/2026 - Contact form (EmailJS), favicon, Framer Motion animations, SEO meta tags, sitemap, robots.txt
 - 5/23/2026 - Content refresh: added Occams Group experience, expanded skills, updated bio and hero
 - 8/29/2025 - Background redesign, navbar liquid glass, footer, full mobile responsiveness pass

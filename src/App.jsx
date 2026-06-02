@@ -92,25 +92,22 @@ function App() {
           justifyContent: 'center',
         }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 24px', marginTop: 50 }}>
-            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0 }} className="hero-title">
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0 }} className="hero-badge">
+              <span className="hero-badge-dot" />
+              Graduating December 2026 :)
+            </motion.div>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }} className="hero-title">
               Pearce Packman
             </motion.p>
-            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }} style={{ color: '#c8d8e0', fontWeight: 500, fontSize: 'clamp(18px, 3vw, 36px)', fontStyle: 'italic', marginTop: 12, marginBottom: 8, maxWidth: 620 }}>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }} style={{ color: '#c8d8e0', fontWeight: 500, fontSize: 'clamp(18px, 3vw, 36px)', fontStyle: 'italic', marginTop: 12, marginBottom: 8, maxWidth: 620 }}>
               Building systems that matter.
             </motion.p>
-            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }} style={{ color: '#8a9aaa', fontSize: 15, lineHeight: 1.7, fontWeight: 500, fontStyle: 'italic', marginTop: 8, maxWidth: 480 }}>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.25 }} style={{ color: '#8a9aaa', fontSize: 15, lineHeight: 1.7, fontWeight: 500, fontStyle: 'italic', marginTop: 8, maxWidth: 480 }}>
               Full-stack dev, embedded tinkerer, CS student at UMBC.
               Currently shipping production software at Occams Group.
             </motion.p>
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }} style={{ marginTop: 28 }}>
-              <a href="#aboutme" style={{
-                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                height: 50, padding: '0 28px',
-                background: 'linear-gradient(103deg, rgba(45,134,181,1) 0%, rgba(102,45,107,1) 100%)',
-                borderRadius: 10, color: 'white', fontWeight: 700, fontSize: 15,
-                fontFamily: 'Geist, sans-serif',
-                transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-              }}>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.35 }} style={{ marginTop: 28 }}>
+              <a href="#aboutme" className="hero-cta">
                 Learn About Me ▼
               </a>
             </motion.div>
@@ -160,18 +157,21 @@ function App() {
                   <div className="aboutmebutton">
                     <img src={linkedin} alt="linkedin" />
                     <p>LinkedIn</p>
+                    <span className="aboutme-arrow">↗</span>
                   </div>
                 </a>
                 <a href="https://github.com/pearcepackman" target="_blank" rel="noopener noreferrer" className="aboutme-link">
                   <div className="aboutmebutton">
                     <img src={github} alt="github" />
                     <p>GitHub</p>
+                    <span className="aboutme-arrow">↗</span>
                   </div>
                 </a>
                 <a href="/websiteResume.pdf" target="_blank" rel="noopener noreferrer" className="aboutme-link">
                   <div className="aboutmebutton">
                     <img src={resume} alt="resume" />
                     <p>Resume</p>
+                    <span className="aboutme-arrow">↗</span>
                   </div>
                 </a>
               </div>
@@ -195,7 +195,7 @@ function App() {
                   { cls: 'skillembedded', label: 'Embedded & Systems',chips: ['ESP32','MQTT','BLE','IoT','Sensor I/O','LibreHardwareMonitor'] },
                   { cls: 'skilltools',    label: 'Tools & OS',       chips: ['Git','GitHub','Jira','VSCode','NeoVim','Linux','Windows','macOS'] },
                 ].map(({ cls, label, chips }, i) => (
-                  <motion.div key={label} {...fadeIn(i * 0.07)} className={`skillcard ${cls}`}>
+                  <motion.div key={label} {...fadeIn(i * 0.07)} whileHover={{ scale: 1.015, transition: { duration: 0.15 } }} className={`skillcard ${cls}`}>
                     <div className="skillcategoryname">{label}</div>
                     <div className="skillchips">
                       {chips.map(s => <span key={s} className="skillchip">{s}</span>)}
@@ -213,7 +213,7 @@ function App() {
             <div className="section-inner">
               <h1 className="section-title">Projects</h1>
               <div className="projectarea">
-                <motion.a {...fadeIn(0)} href="https://github.com/pearcepackman/CorePanel" target="_blank" rel="noopener noreferrer" className="projectrow projectcorepanel">
+                <motion.a {...fadeIn(0)} whileHover={{ scale: 1.015, transition: { duration: 0.15 } }} href="https://github.com/pearcepackman/CorePanel" target="_blank" rel="noopener noreferrer" className="projectrow projectcorepanel">
                   <div className="projectrowleft">
                     <span className="projectrowname">CorePanel</span>
                   </div>
@@ -225,7 +225,7 @@ function App() {
                   </div>
                   <span className="projectrowarrow">&#8599;</span>
                 </motion.a>
-                <motion.a {...fadeIn(0.07)} href="https://github.com/pearcepackman/Smart-home-dashboard" target="_blank" rel="noopener noreferrer" className="projectrow projectsmarthome">
+                <motion.a {...fadeIn(0.07)} whileHover={{ scale: 1.015, transition: { duration: 0.15 } }} href="https://github.com/pearcepackman/Smart-home-dashboard" target="_blank" rel="noopener noreferrer" className="projectrow projectsmarthome">
                   <div className="projectrowleft">
                     <span className="projectrowname">Smart Home Dashboard</span>
                   </div>
@@ -237,7 +237,7 @@ function App() {
                   </div>
                   <span className="projectrowarrow">&#8599;</span>
                 </motion.a>
-                <motion.a {...fadeIn(0.14)} href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer" className="projectrow projectsnapmotive">
+                <motion.a {...fadeIn(0.14)} whileHover={{ scale: 1.015, transition: { duration: 0.15 } }} href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer" className="projectrow projectsnapmotive">
                   <div className="projectrowleft">
                     <span className="projectrowname">SnapMotive</span>
                     <span className="projectrowaward">HackHounds 2025 Winner</span>
@@ -250,7 +250,7 @@ function App() {
                   </div>
                   <span className="projectrowarrow">&#8599;</span>
                 </motion.a>
-                <motion.a {...fadeIn(0.21)} href="https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target="_blank" rel="noopener noreferrer" className="projectrow projectprojectssimplified">
+                <motion.a {...fadeIn(0.21)} whileHover={{ scale: 1.015, transition: { duration: 0.15 } }} href="https://projectmgmtapplication-fd3214989d4c.herokuapp.com/" target="_blank" rel="noopener noreferrer" className="projectrow projectprojectssimplified">
                   <div className="projectrowleft">
                     <span className="projectrowname">Projects Simplified</span>
                   </div>
@@ -273,11 +273,14 @@ function App() {
             <div className="section-inner">
               <h1 className="section-title">Experience</h1>
               <div className="educationarea">
-                <motion.a {...fadeIn(0)} href="https://www.occamsgroup.com/" target="_blank" rel="noopener noreferrer">
+                <motion.a {...fadeIn(0)} whileHover={{ scale: 1.015, transition: { duration: 0.15 } }} href="https://www.occamsgroup.com/" target="_blank" rel="noopener noreferrer">
                   <div className="school">
                     <div className="schoolanddates">
-                      <h3>Software Engineer Intern — Occams Group</h3>
-                      <h5>May 2026 – Present</h5>
+                      <div>
+                        <h3>Software Engineer Intern — Occams Group</h3>
+                        <h5>May 2026 – Present</h5>
+                      </div>
+                      <span className="school-arrow">↗</span>
                     </div>
                     <div className="schoolnotes">
                       <ul>
@@ -293,11 +296,14 @@ function App() {
                     </div>
                   </div>
                 </motion.a>
-                <motion.a {...fadeIn(0.07)} href="https://damslabumbc.github.io/" target="_blank" rel="noopener noreferrer">
+                <motion.a {...fadeIn(0.07)} whileHover={{ scale: 1.015, transition: { duration: 0.15 } }} href="https://damslabumbc.github.io/" target="_blank" rel="noopener noreferrer">
                   <div className="school">
                     <div className="schoolanddates">
-                      <h3>Undergraduate Research Assistant — DAMS Lab</h3>
-                      <h5>June 2025 – Present</h5>
+                      <div>
+                        <h3>Undergraduate Research Assistant — DAMS Lab</h3>
+                        <h5>June 2025 – Present</h5>
+                      </div>
+                      <span className="school-arrow">↗</span>
                     </div>
                     <div className="schoolnotes">
                       <ul>
@@ -313,11 +319,14 @@ function App() {
                     </div>
                   </div>
                 </motion.a>
-                <motion.a {...fadeIn(0.14)} href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer">
+                <motion.a {...fadeIn(0.14)} whileHover={{ scale: 1.015, transition: { duration: 0.15 } }} href="https://devpost.com/software/d-kh8jf4" target="_blank" rel="noopener noreferrer">
                   <div className="school">
                     <div className="schoolanddates">
-                      <h3>Hackathon Winner — HackHounds 2025</h3>
-                      <h5>April 2025</h5>
+                      <div>
+                        <h3>Hackathon Winner — HackHounds 2025</h3>
+                        <h5>April 2025</h5>
+                      </div>
+                      <span className="school-arrow">↗</span>
                     </div>
                     <div className="schoolnotes">
                       <ul>
@@ -342,34 +351,48 @@ function App() {
             <div className="section-inner">
               <h1 className="section-title">Education</h1>
               <div className="educationarea">
-                <motion.div {...fadeIn(0)} className="school">
-                  <div className="schoolanddates">
-                    <h3>University of Maryland, Baltimore County (UMBC)</h3>
-                    <h5>August 2024 – December 2026</h5>
+                <motion.a {...fadeIn(0)} whileHover={{ scale: 1.015, transition: { duration: 0.15 } }} href="https://www.umbc.edu/" target="_blank" rel="noopener noreferrer">
+                  <div className="school">
+                    <div className="schoolanddates">
+                      <div>
+                        <h3>University of Maryland, Baltimore County (UMBC)</h3>
+                        <h5>August 2024 – December 2026</h5>
+                      </div>
+                      <span className="school-arrow">↗</span>
+                    </div>
+                    <div className="schoolnotes">
+                      <ul>
+                        <li>B.S. Computer Science — Expected December 2026</li>
+                        <li>GPA: 3.62</li>
+                        <li>Extra Curricular: UMBC Racing Team</li>
+                      </ul>
+                      <div className="schoolchips">
+                        {['Software Engineering', 'Operating Systems', 'Computer Security', 'Data Structures', 'Algorithms', 'Assembly Language'].map(t => <span key={t} className="projectchip">{t}</span>)}
+                      </div>
+                    </div>
                   </div>
-                  <div className="schoolnotes">
-                    <ul>
-                      <li>B.S. Computer Science — Expected December 2026</li>
-                      <li>GPA: 3.62</li>
-                      <li>Coursework: Software Engineering, Operating Systems, Computer Security, Data Structures, Algorithms, Malware Analysis, Computer Architecture, Assembly Language, Principles of Programming Languages</li>
-                      <li>Extra Curricular: UMBC Racing Team</li>
-                    </ul>
+                </motion.a>
+                <motion.a {...fadeIn(0.07)} whileHover={{ scale: 1.015, transition: { duration: 0.15 } }} href="https://www.carrollcc.edu/" target="_blank" rel="noopener noreferrer">
+                  <div className="school">
+                    <div className="schoolanddates">
+                      <div>
+                        <h3>Carroll Community College</h3>
+                        <h5>August 2022 – May 2024</h5>
+                      </div>
+                      <span className="school-arrow">↗</span>
+                    </div>
+                    <div className="schoolnotes">
+                      <ul>
+                        <li>Associate's Degree in Arts and Sciences</li>
+                        <li>GPA: 3.83 (Magna Cum Laude)</li>
+                        <li>Extra Curricular: PTK Honor's Society</li>
+                      </ul>
+                      <div className="schoolchips">
+                        {['Python', 'C++'].map(t => <span key={t} className="projectchip">{t}</span>)}
+                      </div>
+                    </div>
                   </div>
-                </motion.div>
-                <motion.div {...fadeIn(0.07)} className="school">
-                  <div className="schoolanddates">
-                    <h3>Carroll Community College</h3>
-                    <h5>August 2022 – May 2024</h5>
-                  </div>
-                  <div className="schoolnotes">
-                    <ul>
-                      <li>Associate's Degree in Arts and Sciences</li>
-                      <li>GPA: 3.83 (Magna Cum Laude)</li>
-                      <li>Coursework: Introduction to Python, Introduction to C++</li>
-                      <li>Extra Curricular: PTK Honor's Society</li>
-                    </ul>
-                  </div>
-                </motion.div>
+                </motion.a>
               </div>
             </div>
           </section>
@@ -420,9 +443,9 @@ function App() {
               <p className="footer-brand">PearcePackman.com</p>
               <p className="footer-tagline">Building systems that bridge hardware and software.</p>
               <div className="footer-socials">
-                <a href="https://github.com/pearcepackman" target="_blank" rel="noopener noreferrer" className="footer-social-link">GitHub</a>
-                <a href="https://www.linkedin.com/in/pearce-packman/" target="_blank" rel="noopener noreferrer" className="footer-social-link">LinkedIn</a>
-                <a href="/websiteResume.pdf" target="_blank" rel="noopener noreferrer" className="footer-social-link">Resume</a>
+                <a href="https://github.com/pearcepackman" target="_blank" rel="noopener noreferrer" className="footer-social-link">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/pearce-packman/" target="_blank" rel="noopener noreferrer" className="footer-social-link">LinkedIn ↗</a>
+                <a href="/websiteResume.pdf" target="_blank" rel="noopener noreferrer" className="footer-social-link">Resume ↗</a>
               </div>
             </div>
             <div className="footer-right">
@@ -433,7 +456,7 @@ function App() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>Designed and developed by Pearce Packman</p>
+            <p>© 2026 Pearce Packman · Built with React, Vite & Framer Motion</p>
           </div>
         </footer>
 
