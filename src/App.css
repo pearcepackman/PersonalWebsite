@@ -53,13 +53,42 @@
   background-size: 256px 256px;
 }
 
+/* ── Hero badge ── */
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a9aaa;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+
 /* ── Hero title ── */
 .hero-title {
   font-weight: 900;
   font-size: clamp(48px, 7vw, 92px);
   line-height: 1;
   margin: 0;
-  background: linear-gradient(160deg, #ffffff 0%, #7ec8e3 100%);
+  background: linear-gradient(160deg, #ffffff 0%, #e2e8f0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -72,7 +101,7 @@
   font-size: 68px;
   margin: 0 0 20px 0;
   line-height: 1;
-  background: linear-gradient(135deg, #f0f5ff 0%, #5da8d0 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -249,9 +278,10 @@
   border-radius: 16px;
   backdrop-filter: blur(12px);
   background: rgba(255,255,255,0.02);
-  transition: background 0.2s ease, border-left-color 0.2s ease, transform 0.2s ease;
+  filter: brightness(0.85);
+  transition: background 0.2s ease, border-left-color 0.2s ease, filter 0.2s ease;
 }
-.skillcard:hover { background: rgba(255,255,255,0.04); transform: scale(1.01); }
+.skillcard:hover { background: rgba(255,255,255,0.04); filter: brightness(1); }
 
 .skillcategoryname {
   width: 175px;
@@ -327,7 +357,8 @@
   background: rgba(255,255,255,0.02);
   text-decoration: none;
   color: inherit;
-  transition: background 0.2s ease, border-left-color 0.2s ease, transform 0.2s ease;
+  filter: brightness(0.85);
+  transition: background 0.2s ease, border-left-color 0.2s ease, filter 0.2s ease;
 }
 
 .projectrowleft {
@@ -367,7 +398,7 @@
   margin-left: 20px;
   transition: color 0.2s ease, transform 0.2s ease;
 }
-.projectrow:hover { transform: scale(1.01); }
+.projectrow:hover { filter: brightness(1); }
 .projectrow:hover .projectrowarrow { color: #a0aab8; transform: translate(2px, -2px); }
 
 .projectcorepanel .projectrowname          { color: #60a5fa; }
@@ -403,7 +434,7 @@
   background: rgba(255,255,255,0.02);
   backdrop-filter: blur(12px);
 }
-.school:hover { filter: brightness(1); transform: scale(1.01); background: rgba(255,255,255,0.04); }
+.school:hover { filter: brightness(1); background: rgba(255,255,255,0.04); }
 .school * { margin-top: 0; margin-bottom: 0; }
 .school h3 { font-size: 24px; font-weight: 700; color: #dedede; }
 .school h5 { font-size: 14px; font-weight: 600; color: #c5c4c4; font-style: italic; margin-bottom: 10px !important; }
@@ -443,6 +474,21 @@
   gap: 8px;
   margin-top: 14px;
 }
+.school-arrow {
+  font-size: 18px;
+  color: #5a6070;
+  flex-shrink: 0;
+  align-self: flex-start;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.school:hover .school-arrow { color: #a0aab8; transform: translate(2px, -2px); }
+.aboutme-arrow {
+  font-size: 11px;
+  color: #5a6478;
+  margin-left: 2px;
+  transition: color 0.15s ease;
+}
+.aboutmebutton:hover .aboutme-arrow { color: #8a95a8; }
 
 @media (max-width: 768px) {
   .schoolanddates { flex-direction: column; gap: 4px; }
@@ -521,7 +567,7 @@
   font-size: 15px;
   font-weight: 700;
   color: white;
-  background: linear-gradient(103deg, rgba(45,134,181,1) 0%, rgba(102,45,107,1) 100%);
+  background: linear-gradient(103deg, #2563a8 0%, #6d28d9 100%);
   border: none;
   border-radius: 10px;
   height: 50px;
@@ -530,7 +576,28 @@
   align-self: flex-start;
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
-.contact-submit:hover:not(:disabled) { opacity: 0.88; transform: translateY(-1px); }
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 28px;
+  background: linear-gradient(103deg, #2563a8 0%, #6d28d9 100%);
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: "Geist", sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(109, 40, 217, 0.35);
+}
+.contact-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(109, 40, 217, 0.35);
+}
 .contact-submit:disabled { opacity: 0.5; cursor: default; }
 .contact-error {
   font-family: "Geist", sans-serif;
@@ -809,7 +876,7 @@
   .schoolanddates { flex-direction: column; gap: 4px; }
   .school h3 { font-size: 18px; }
   .school { padding: 18px 20px; }
-  .school:hover { transform: none; }
+
 
   /* Footer */
   .site-footer-inner {
