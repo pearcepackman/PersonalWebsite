@@ -23,5 +23,13 @@ Run this process before any commit/push is proposed. Claude never runs `git comm
 - Add tests for meaningful gaps; skip tests for pure visual/CSS changes
 
 ## 5. Provide a commit message
-- Draft a concise commit message (why, not just what) ending with the standard Co-Authored-By trailer
+- Pearce's convention (used in ~90% of his commits) is a short prefix tag + comma-separated list, not a prose sentence:
+  ```
+  Added: contact form, favicon, sitemap
+  Fixed: broken resume link
+  Updated: README tech stack
+  Added/Fixed: mobile nav menu, glass effect bug
+  ```
+  Match this format by default — pick whichever tag(s) fit (`Added`, `Fixed`, `Updated`, `Added/Fixed`, or similar) and list the changes tersely. Only fall back to a prose message if the change is complex enough that a tag+list can't capture it, and ask first.
+- End with the standard Co-Authored-By trailer
 - Pearce runs the actual `git add` / `git commit` / `git push`
