@@ -49,7 +49,7 @@ export default function FlipCard({ src, alt, tag, frontTitle, frontDesc, backGro
               <div className="font-mono text-[11px] tracking-[0.06em] text-accent">{tag}</div>
               <div className="mt-1 font-serif text-lg text-text">{frontTitle}</div>
               <p className="mt-1 text-[13px] text-text-2">{frontDesc}</p>
-              <div className="mt-2 font-mono text-[10px] tracking-[0.04em] text-muted">Click to flip →</div>
+              <div className="mt-2 font-mono text-[10px] tracking-[0.04em] text-muted">Click to flip →︎</div>
             </div>
           </div>
 

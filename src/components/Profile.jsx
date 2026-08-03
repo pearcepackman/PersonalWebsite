@@ -16,9 +16,9 @@ const STATEMENT = [
 
 const CONNECT_LINKS = [
   { href: "mailto:pearcepackman@gmail.com", label: "Email" },
-  { href: "https://www.linkedin.com/in/pearce-packman/", label: "LinkedIn ↗" },
-  { href: "https://github.com/pearcepackman", label: "GitHub ↗" },
-  { href: "/websiteResume.pdf", label: "Resume ↗", newTab: true },
+  { href: "https://www.linkedin.com/in/pearce-packman/", label: "LinkedIn ↗︎" },
+  { href: "https://github.com/pearcepackman", label: "GitHub ↗︎" },
+  { href: "/websiteResume.pdf", label: "Resume ↗︎", newTab: true },
 ];
 
 const TILES = [

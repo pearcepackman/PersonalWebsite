@@ -54,7 +54,7 @@ export default function Projects() {
                   <h3 className="font-serif text-[24px] font-normal leading-[1.1] text-text transition-colors duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:text-accent">
                     {p.title}
                   </h3>
-                  <span className="shrink-0 text-[16px] text-muted transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-accent">↗</span>
+                  <span className="shrink-0 text-[16px] text-muted transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-accent">↗︎</span>
                 </div>
                 <p className="mt-3 text-[15px] leading-[1.7] text-text-2">{p.desc}</p>
                 <div className="mt-5 font-mono text-[11px] tracking-[0.05em] text-muted">{p.tags}</div>

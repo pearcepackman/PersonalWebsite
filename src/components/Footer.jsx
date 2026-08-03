@@ -4,9 +4,9 @@ import InlineLink from "./ui/InlineLink";
 
 const CONTACT_LINKS = [
   { href: "mailto:pearcepackman@gmail.com", label: "pearcepackman@gmail.com" },
-  { href: "https://github.com/pearcepackman", label: "GitHub ↗" },
-  { href: "https://www.linkedin.com/in/pearce-packman/", label: "LinkedIn ↗" },
-  { href: "/websiteResume.pdf", label: "Resume ↗", newTab: true },
+  { href: "https://github.com/pearcepackman", label: "GitHub ↗︎" },
+  { href: "https://www.linkedin.com/in/pearce-packman/", label: "LinkedIn ↗︎" },
+  { href: "/websiteResume.pdf", label: "Resume ↗︎", newTab: true },
 ];
 
 const QUICK_LINKS = [

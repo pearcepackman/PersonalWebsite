@@ -77,7 +77,7 @@ export default function Work() {
                   className="inline-block font-serif text-[27px] font-normal leading-[1.05] text-text transition-colors duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:text-accent"
                 >
                   {e.org}{" "}
-                  <span className="inline-block align-super text-[18px] opacity-60 transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                  <span className="inline-block align-super text-[18px] opacity-60 transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-1 group-hover:-translate-y-1">↗︎</span>
                 </a>
                 <div className="mt-2 text-[13px] text-muted">{e.loc}</div>
               </div>

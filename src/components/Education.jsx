@@ -59,7 +59,7 @@ export default function Education() {
                     className="inline-block text-text transition-colors duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:text-accent"
                   >
                     {e.org}{" "}
-                    <span className="inline-block align-super text-[20px] opacity-60 transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                    <span className="inline-block align-super text-[20px] opacity-60 transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-1 group-hover:-translate-y-1">↗︎</span>
                   </a>
                 </h3>
                 <ul className="space-y-2">
