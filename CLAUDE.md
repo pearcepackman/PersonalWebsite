@@ -8,8 +8,9 @@
 - Follow [docs/frontend-standards.md](docs/frontend-standards.md) for colors, component patterns, and hover/animation conventions. Don't invent new one-off styles when an existing pattern covers it.
 
 ## Occams Group confidentiality
-- Keep any mention of Occams Group work general — tech stack and role scope only.
-- Never name specific internal systems, APIs, or client-facing project names in code, comments, docs, or committed files.
+- OccamsRecruit and OccamsEnrichment are cleared to name publicly (confirmed with Ali, August 2026) — fine to reference these two by name in code, comments, docs, or committed files.
+- Don't name any other internal systems, APIs, or client-facing project names, and don't name Occams' clients, without separately confirming first.
+- Specific business metrics/comparisons about Occams work (cost figures, competitor comparisons, usage counts, etc.) need explicit sign-off before publishing — ask Pearce if it's unclear whether something's been cleared.
 
 ## Docs
 - `docs/` holds standards and process docs meant to survive context compaction. Check there before re-deriving conventions from scratch.

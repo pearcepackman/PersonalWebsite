@@ -1,51 +1,126 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-VariableFont_wght.ttf');
+/* ── Garage palette ──
+   Default (no data-theme, or data-theme="dark"): warm near-black "garage" dark mode.
+   data-theme="light" on <html>: warm paper "daylight" mode. Toggled + persisted by ThemeToggle. */
+:root {
+  --bg: #1a1c18;
+  --bg-2: #20221d;
+  --text: #e7e3d8;
+  --text-2: #a8a394;
+  --muted: #6d6a5d;
+  --line: #2f322b;
+  --line-2: #3d4137;
+  --accent: #a3b06a;
+  --accent-2: #8a9758;
+  /* Decorative-only glow color + blend mode for BackgroundGradient, kept separate from
+     --accent (which must stay muted enough to work as text). In dark mode the glow just
+     needs to be brighter than --bg, so a normal alpha blend works and reads as a warm
+     highlight. */
+  --glow: #c3cf8f;
+  --glow-blend: normal;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root[data-theme="light"] {
+  --bg: #e8e3d7;
+  --bg-2: #e1dbcc;
+  --text: #22201a;
+  --text-2: #565046;
+  --muted: #938c7c;
+  --line: #cfc8b8;
+  --line-2: #b8b0a0;
+  --accent: #5b6236;
+  --accent-2: #464b2a;
+  /* --accent is darker than --bg in light mode (kept dark on purpose, for text contrast),
+     so normal-blending it in only ever produces a faint gray smudge, never a visible glow.
+     Multiply with a richer, more saturated warm brown reads as an actual warm tint instead. */
+  --glow: #a9793a;
+  --glow-blend: multiply;
 }
 
+@theme {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+
+  --font-serif: 'Fraunces', serif;
+  --font-sans: 'Hanken Grotesk', sans-serif;
+  --font-mono: 'Fragment Mono', monospace;
+}
+
+/* Base element styles must live in @layer base — Tailwind's own utilities are emitted
+   inside cascade layers, and any *unlayered* CSS in this file would win over ALL of them
+   regardless of specificity (unlayered CSS always beats layered CSS). Preflight (part of
+   `@import "tailwindcss"`) already resets margin/padding/box-sizing, so no need to repeat it. */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+  }
+
+  body {
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+/* ── Ambient background drift — two glow layers move independently and very slowly.
+   Kept as plain @keyframes (not Tailwind utilities) since Tailwind has no built-in for
+   a custom named animation; referenced via animate-[drift-a_28s_...] in BackgroundGradient. */
+@keyframes drift-a {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  50% { transform: translate(10%, 8%) scale(1.18); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  50% { transform: translate(-9%, -10%) scale(1.15); }
+}
+
+/* ── Scrollbar ── thin, squared-off (not a rounded pill — nothing else on this site is
+   fully rounded, cards use cut corners), muted thumb that shifts to the accent on
+   hover/drag. Track's tick marks come from ScrollbarTicks.jsx, which measures real
+   section boundaries and injects the ::-webkit-scrollbar-track background-image below —
+   this base rule is just the fallback/default before that JS runs.
+   Firefox has no pseudo-element access for the track (so no ticks there), just the
+   two-color scrollbar-color fallback. */
 html {
-  background-color: #05080f;
-  min-height: 100%;
+  scrollbar-color: var(--line-2) var(--bg);
+  scrollbar-width: thin;
 }
-
-body {
-  background-color: #05080f;
-  min-height: 100vh;
-  width: 100%;
-  font-family: 'Geist', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-html, body {
-  scroll-behavior: smooth;
-}
-
-/* ── Scrollbar ── */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(93, 168, 208, 0.25);
-  border-radius: 999px;
-  transition: background 0.2s ease;
+  background: var(--line-2);
+  border-radius: 2px;
+  border: 1px solid var(--bg);
 }
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(93, 168, 208, 0.55);
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: var(--accent);
 }
