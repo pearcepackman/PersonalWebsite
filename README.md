@@ -1,57 +1,58 @@
 <p align="left">
-  <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/React_19-20232A?style=flat&logo=react&logoColor=61DAFB" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" />
-  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=flat&logo=tailwindcss&logoColor=white" />
   <img src="https://img.shields.io/badge/Framer_Motion-EF0082?style=flat&logo=framer&logoColor=white" />
   <img src="https://img.shields.io/badge/EmailJS-EA4335?style=flat" />
-  <img src="https://img.shields.io/badge/Responsive_Design-2196F3?style=flat" />
+  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify&logoColor=white" />
 </p>
 
 # Personal Portfolio Website
-Hello! I'm Pearce, and this is my personal portfolio website — fully designed and developed by me using React, Vite, Tailwind CSS, and custom CSS.
-
-The goal of this site is to showcase my projects, skills, and experience in a clean, responsive, and visually engaging format.
+Hi, I'm Pearce, this is my personal portfolio site, designed and built by me with React, Vite, Tailwind CSS, and Framer Motion.
 
 ## Live Site
 [pearcepackman.com](https://pearcepackman.com/)
 
 ## Tech Stack
-- **React + Vite** – Component-based structure with fast dev/build tooling
-- **Tailwind CSS + Custom CSS** – Utility-first styling combined with custom animations, hover effects, and layout
-- **Framer Motion** – Scroll-triggered fade/scale animations with per-element stagger
-- **EmailJS** – Serverless contact form with honeypot protection and rate limiting
-- **Netlify** – Hosting and domain management with continuous deployment on push to `main`
+- **React 19 + Vite** — component-based structure, fast dev/build tooling
+- **Tailwind CSS v4** — utility-first styling, CSS-based config
+- **Framer Motion** — scroll-triggered animations throughout, respects reduced-motion
+- **EmailJS** — serverless contact form with honeypot protection and rate limiting
+- **Netlify** — hosting with continuous deployment on push to `main`
 
 ## Running Locally
 ```bash
 npm install
-npm run dev
+npm run start
 ```
 Runs on `http://localhost:5173` by default.
 
+The contact form needs EmailJS credentials to send mail. Copy `.env.example` to `.env.local` and fill in `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAILJS_PUBLIC_KEY` (set the same three in Netlify's dashboard for the live site).
+
+### Scripts
+- `npm run start` — dev server
+- `npm run build` — production build
+- `npm run preview` — preview the production build locally
+
 ## Features
 - Fully responsive layout for desktop, tablet, and mobile
-- Liquid glass aesthetic — frosted/blurred cards, subtle translucency, soft borders throughout
-- Animated background with radial glow effects, dot grid, and film grain overlay
-- Custom skill and project cards with individual row hover animations
-- Scroll-triggered Framer Motion animations — fade + scale with per-section stagger, replays on scroll
-- Contact form powered by EmailJS — no backend required; honeypot field, input length caps, and SDK-level rate limiting
-- SEO-optimized with meta tags, Open Graph, Twitter Card, sitemap, and robots.txt
-- Clear section structure: About Me, Skills, Projects, Experience, Education, Contact
-- Resume self-hosted as a static PDF — no Google Drive dependency, opens in browser directly
+- Dark/light theme, defaults to system preference
+- Click-to-flip photo cards
+- Scroll-triggered animations, respects reduced-motion
+- Custom scrollbar with tick marks at each section
+- Contact form powered by EmailJS — no backend required
+- SEO optimized with meta tags, Open Graph, Twitter Card, sitemap, and robots.txt
+- Resume self-hosted as a static PDF
 
-## Update History
-- 6/2/2026 - UI/UX pass: color scheme cohesion, hover effects on all cards, ↗ symbols throughout, education chips & school links, self-hosted resume, graduation badge in hero, favicon fix, copyright footer
-- 5/24/2026 - Contact form (EmailJS), favicon, Framer Motion animations, SEO meta tags, sitemap, robots.txt
-- 5/23/2026 - Content refresh: added Occams Group experience, expanded skills, updated bio and hero
-- 8/29/2025 - Background redesign, navbar liquid glass, footer, full mobile responsiveness pass
-- 8/29/2025 - Fixed GPA after data structures
-- 8/5/2025 - DEPLOYED! + footer design and mobile styling
-- 4/8/2025 - Updated Hackathon win, new section
-- 3/30/2025 - DEPLOYED!
+## Project Structure
+```
+src/
+  App.jsx           composition root
+  components/       Hero, Profile, Work, Education, Projects, Index, Contact, Footer, Nav
+  components/ui/    shared primitives (Reveal, FlipCard, Container, etc.)
+  hooks/            useTheme.js
+docs/               design standards + pre-push checklist
+```
 
 ## Contact
 <p align="center">
