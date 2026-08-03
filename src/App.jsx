@@ -22,19 +22,21 @@ export default function App() {
         />
       </Helmet>
 
-      <BackgroundGradient />
       <ScrollbarTicks />
       <Nav />
-      <main>
-        <Hero />
-        <Profile />
-        <Work />
-        <Education />
-        <Projects />
-        <Index />
-        <Contact />
-      </main>
-      <Footer />
+      <div className="relative">
+        <BackgroundGradient />
+        <main>
+          <Hero />
+          <Profile />
+          <Work />
+          <Education />
+          <Projects />
+          <Index />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

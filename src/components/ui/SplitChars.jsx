@@ -12,20 +12,25 @@ const charVariant = {
 // per-character IntersectionObservers on elements this small don't fire reliably.
 // aria-hidden on the characters with an aria-label on the wrapper keeps it from
 // reading as garbled letters to a screen reader.
-export default function SplitChars({ text, delayStart = 0, staggerStep = 0.025, className = "" }) {
+export default function SplitChars({ text, delayStart = 0, staggerStep = 0.025, className = "", onMount = false }) {
   const reduceMotion = useReducedMotion();
 
   if (reduceMotion) {
     return <span className={className}>{text}</span>;
   }
 
+  // onMount skips whileInView's IntersectionObserver trigger — see Reveal.jsx for why
+  // above-the-fold content (the Hero name) needs this instead.
+  const triggerProps = onMount
+    ? { animate: "visible" }
+    : { whileInView: "visible", viewport: { once: false, amount: 0.6, margin: "0px 0px -15% 0px" } };
+
   return (
     <motion.span
       className={`inline-block overflow-hidden pr-[0.08em] ${className}`}
       aria-label={text}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.6, margin: "0px 0px -15% 0px" }}
+      {...triggerProps}
       variants={{ visible: { transition: { staggerChildren: staggerStep, delayChildren: delayStart } } }}
     >
       {[...text].map((ch, i) => (

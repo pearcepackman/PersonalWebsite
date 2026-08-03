@@ -17,7 +17,7 @@
      --accent (which must stay muted enough to work as text). In dark mode the glow just
      needs to be brighter than --bg, so a normal alpha blend works and reads as a warm
      highlight. */
-  --glow: #c3cf8f;
+  --glow: #b0bc82;
   --glow-blend: normal;
 }
 
