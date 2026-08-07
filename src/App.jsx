@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import BackgroundGradient from './components/ui/BackgroundGradient';
 import ScrollbarTicks from './components/ui/ScrollbarTicks';
 import Nav from './components/Nav';
@@ -14,14 +13,6 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <>
-      <Helmet>
-        <title>Pearce Packman - Software Engineer</title>
-        <meta
-          name="description"
-          content="CS student at UMBC and Software Engineer Intern at Occams Group. Full stack developer with experience in React, Node.js, Azure, and AI integration. Based in Maryland."
-        />
-      </Helmet>
-
       <BackgroundGradient />
       <ScrollbarTicks />
       <Nav />

@@ -9,7 +9,10 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-if (EMAILJS_PUBLIC_KEY) {
+// Guarded on `window` too, not just the key — this module is imported by the build-time
+// prerender script (see src/prerender.jsx), which runs in Node where @emailjs/browser
+// (a browser-only package) would throw.
+if (typeof window !== "undefined" && EMAILJS_PUBLIC_KEY) {
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY, limitRate: { throttle: 10000 } });
 }
 

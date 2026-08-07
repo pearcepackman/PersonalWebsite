@@ -1,0 +1,22 @@
+# Pearce Packman
+
+> Software Engineer based in the Baltimore/DMV area. CS student at UMBC and Software Engineer Intern at Occams Group, building full-stack and AI-integrated production systems.
+
+Pearce is a full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration (Claude API, Manus API). He worked as a mechanic and in construction before college, started in business/finance, then switched to computer science.
+
+## Work
+
+- **Occams Group** — Sole developer on OccamsRecruit (an AI-powered ATS live in daily use) and OccamsEnrichment (a contact enrichment platform). Built candidate scoring, resume parsing, and interview question generation with the Claude API, plus autonomous LinkedIn sourcing via a Manus AI agent. Wrote 500+ automated tests (Jest, Supertest, Playwright) with a full CI/CD pipeline.
+- **DAMS Lab (UMBC)** — Research work presented at three UMBC research days.
+
+## Links
+
+- [Portfolio](https://pearcepackman.com/)
+- [Resume (PDF)](https://pearcepackman.com/websiteResume.pdf)
+- [LinkedIn](https://www.linkedin.com/in/pearce-packman/)
+- [GitHub](https://github.com/pearcepackman)
+- Email: pearcepackman@gmail.com
+
+## Notes for crawlers
+
+This site's source is available at the GitHub link above. The homepage (https://pearcepackman.com/) is prerendered — the full page content (bio, work history, project details, skills) is present in the static HTML, not only client-rendered.

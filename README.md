@@ -18,6 +18,7 @@ Hi, I'm Pearce, this is my personal portfolio site, designed and built by me wit
 - **Tailwind CSS v4** — utility-first styling, CSS-based config
 - **Framer Motion** — scroll-triggered animations throughout, respects reduced-motion
 - **EmailJS** — serverless contact form with honeypot protection and rate limiting
+- **Prerendered at build time** (`vite-prerender-plugin`) — the production build ships real, readable HTML, not just an empty div for JS to fill in, so search engines and AI crawlers can actually read the page
 - **Netlify** — hosting with continuous deployment on push to `main`
 
 ## Running Locally
@@ -41,13 +42,16 @@ The contact form needs EmailJS credentials to send mail. Copy `.env.example` to 
 - Scroll-triggered animations, respects reduced-motion
 - Custom scrollbar with tick marks at each section
 - Contact form powered by EmailJS — no backend required
-- SEO optimized with meta tags, Open Graph, Twitter Card, sitemap, and robots.txt
+- SEO optimized with meta tags, Open Graph, Twitter Card, JSON-LD structured data, sitemap, robots.txt, and `llms.txt`
+- Prerendered HTML, so the page's actual content (not just meta tags) is crawlable without JS
+- Custom styled 404 page
 - Resume self-hosted as a static PDF
 
 ## Project Structure
 ```
 src/
   App.jsx           composition root
+  prerender.jsx     build-time prerender entry (vite-prerender-plugin)
   components/       Hero, Profile, Work, Education, Projects, Index, Contact, Footer, Nav
   components/ui/    shared primitives (Reveal, FlipCard, Container, etc.)
   hooks/            useTheme.js

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#1a1c18" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>404 - Page Not Found | Pearce Packman</title>
+
+    <style>
+      :root {
+        --bg: #1a1c18;
+        --text: #e7e3d8;
+        --text-2: #a8a394;
+        --muted: #6d6a5d;
+        --line: #2f322b;
+        --accent: #a3b06a;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #e8e3d7;
+          --text: #22201a;
+          --text-2: #565046;
+          --muted: #938c7c;
+          --line: #cfc8b8;
+          --accent: #5b6236;
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Hanken Grotesk", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      main {
+        max-width: 560px;
+        width: 100%;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 28px;
+        font-family: "Fragment Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        color: var(--accent);
+      }
+
+      .eyebrow .rule {
+        height: 1px;
+        max-width: 70px;
+        flex: 1;
+        background: var(--line);
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-size: clamp(40px, 8vw, 64px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      h1 em {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      p {
+        margin-top: 20px;
+        max-width: 42ch;
+        font-size: 17px;
+        line-height: 1.6;
+        color: var(--text-2);
+      }
+
+      a.home-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 40px;
+        font-family: "Fragment Mono", monospace;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        color: var(--text);
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 4px;
+      }
+
+      a.home-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        height: 1px;
+        background: var(--accent);
+        transition: right 450ms cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      a.home-link:hover {
+        color: var(--accent);
+      }
+
+      a.home-link:hover::after {
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="eyebrow">
+        <span>404</span>
+        <span class="rule"></span>
+      </div>
+      <h1>This page took a <em>wrong turn</em>.</h1>
+      <p>Whatever you were looking for isn't here, or it moved. Let's get you back on track.</p>
+      <a class="home-link" href="/">Back to the homepage →︎</a>
+    </main>
+  </body>
+</html>

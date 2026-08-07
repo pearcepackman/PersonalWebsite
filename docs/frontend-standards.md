@@ -6,8 +6,16 @@ Single source of truth for how this site is styled. When adding or changing UI, 
 - React + Vite, entry point `index.html` (root) → `src/index.jsx` → `src/App.jsx`
 - **Tailwind CSS v4**, configured CSS-first via `@theme` in `src/index.css` (no `tailwind.config.js` — v4's `@tailwindcss/vite` plugin scans source files directly). Style with Tailwind utility classes in JSX; avoid writing new bespoke CSS files per component.
 - Framer Motion for scroll reveals (`src/components/ui/Reveal.jsx`)
-- `@emailjs/browser` for the contact form, `react-helmet-async` for the page title/description
+- `@emailjs/browser` for the contact form
 - `src/App.jsx` is a thin composition root; each section lives in its own file under `src/components/`, shared primitives under `src/components/ui/`
+- **`vite-prerender-plugin` prerenders `App` to static HTML at build time** (`src/prerender.jsx`, wired in `vite.config.js`) — see the SSR-safety gotcha below, this is not optional context for any new component.
+
+### ⚠️ SSR-safety gotcha (App now genuinely runs in Node)
+`src/prerender.jsx` calls `renderToString(<App />)` in a plain Node process at `vite build` time — there is no `window`, `document`, `localStorage`, or any browser API available while that runs. Any new component (or anything it imports) that touches a browser API **outside a `useEffect`/event handler** (i.e. during render, or at module top-level on import) will crash the production build, not just misbehave.
+- Guard any top-level/import-time browser API access: `if (typeof window !== "undefined") { ... }` — see `Contact.jsx`'s `emailjs.init()` call for the pattern. `useTheme.js`'s state initializer is the same idea, already handled.
+- DOM measurement/mutation (`document.querySelector`, `addEventListener`, etc.) is safe as long as it's inside `useEffect` — effects never run during `renderToString`, only the render/return itself does. `ScrollbarTicks.jsx` and `BackgroundGradient.jsx` are both examples of components that touch `document`/`window` freely, but only inside effects.
+- **`react-helmet-async` was removed for this reason** — it doesn't have a real `document.head` to portal into during SSR and was silently rendering `<title>`/`<meta>` tags inline into the page body instead, duplicating (and slightly conflicting with) the real ones. `index.html`'s static `<title>`/meta tags are the single source of truth now — don't reintroduce a client-side head-tag library without checking it's SSR-safe first.
+- If a new component ever needs to render differently in prerender vs. the browser (rare), check `typeof window !== "undefined"` at render time rather than reaching for a "am I on the server" library — this is a single-page site, not worth the dependency.
 
 ## ⚠️ Cascade-layer gotcha (already bit us once)
 Tailwind v4 emits all of its utilities inside CSS cascade layers (`@layer base, components, utilities`, declared by `@import "tailwindcss"`). **Any CSS written outside an explicit `@layer` block is unlayered — and unlayered CSS always wins over layered CSS, regardless of specificity.** A single unlayered `* { margin: 0; padding: 0; }` reset silently zeroed out every `mx-*`/`px-*`/`py-*`/`mb-*` utility site-wide before this was caught.

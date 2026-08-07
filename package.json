@@ -2,6 +2,13 @@
   "name": "personal-website",
   "version": "0.1.0",
   "private": true,
+  "description": "Pearce Packman's personal portfolio site — React, Vite, Tailwind CSS, and Framer Motion.",
+  "author": "Pearce Packman",
+  "homepage": "https://pearcepackman.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pearcepackman/PersonalWebsite.git"
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.3.0",
@@ -12,7 +19,6 @@
     "framer-motion": "^12.23.11",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-helmet-async": "^3.0.0",
     "tailwindcss": "^4.3.0",
     "web-vitals": "^2.1.4"
   },
@@ -36,6 +42,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.2",
     "vite": "^8.0.14",
-    "vite-plugin-qrcode": "^0.4.1"
+    "vite-plugin-qrcode": "^0.4.1",
+    "vite-prerender-plugin": "^0.5.13"
   }
 }

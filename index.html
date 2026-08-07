@@ -41,12 +41,62 @@
     <link rel="manifest" href="/manifest.json" />
     <link rel="canonical" href="https://pearcepackman.com/" />
 
+    <!-- Structured data — static (not React-rendered), so it's visible to every crawler
+         regardless of JS execution, including ones that don't render the prerendered #root. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pearce Packman",
+        "url": "https://pearcepackman.com/",
+        "image": "https://pearcepackman.com/og-image.png",
+        "jobTitle": "Software Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Occams Group"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Maryland, Baltimore County"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "MD",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/pearce-packman/",
+          "https://github.com/pearcepackman"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://pearcepackman.com/",
+        "name": "Pearce Packman",
+        "description": "CS student at UMBC and Software Engineer Intern at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration."
+      }
+    </script>
+
     <!-- Umami analytics — cookieless, aggregate page views only, no PII -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="d62c3324-a54e-40a5-be3f-120c5e1b9814"></script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <h1>Pearce Packman - Software Engineer</h1>
+      <p>CS student at UMBC and Software Engineer Intern at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration. Based in Maryland.</p>
+      <p>
+        <a href="mailto:pearcepackman@gmail.com">Email</a> ·
+        <a href="https://www.linkedin.com/in/pearce-packman/">LinkedIn</a> ·
+        <a href="https://github.com/pearcepackman">GitHub</a> ·
+        <a href="/websiteResume.pdf">Resume</a>
+      </p>
+      <p>You need to enable JavaScript for the full interactive site.</p>
+    </noscript>
     <div id="root"></div>
+    <script prerender type="module" src="/src/prerender.jsx"></script>
     <script type="module" src="/src/index.jsx"></script>
   </body>
 </html>
