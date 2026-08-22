@@ -54,6 +54,30 @@
   --font-mono: 'Fragment Mono', monospace;
 }
 
+/* Fluid type scale for the site's big display headings (Hero name, Profile statement,
+   Contact heading) — two stages per token, not one: below 1366px (smallest common laptop,
+   see docs/frontend-standards.md) each still uses a plain `Nvw` clamp for mobile/tablet,
+   unchanged from before. From 1366px up through 2560px (1440p), each switches to a
+   `calc(A + Bvw)` clamp instead of plain `Nvw` — plain `Nvw` is a line through zero, so it
+   can only be pinned to one exact (width, size) pair; calc(A + Bvw) has a free offset too,
+   so it can be solved to pass through two exact pairs. Given target sizes F1 at 1366px and
+   F2 at 2560px: B = (F2 - F1) / (2560 - 1366) * 100, A = F1 - B/100 * 1366. The result is
+   one smooth, continuous curve from small-laptop through 1440p — no hand-picked midpoint,
+   no jump at any breakpoint in between. Add a new token the same way for any future display
+   heading rather than inlining a one-off clamp() in a component. */
+:root {
+  --text-hero: clamp(64px, 17vw, 150px);
+  --text-statement: clamp(28px, 3.6vw, 36px);
+  --text-display: clamp(40px, 9vw, 95px);
+}
+@media (min-width: 1366px) {
+  :root {
+    --text-hero: clamp(150px, calc(70px + 5.86vw), 220px);
+    --text-statement: clamp(36px, calc(27px + 0.67vw), 44px);
+    --text-display: clamp(95px, calc(55px + 2.93vw), 130px);
+  }
+}
+
 /* Base element styles must live in @layer base — Tailwind's own utilities are emitted
    inside cascade layers, and any *unlayered* CSS in this file would win over ALL of them
    regardless of specificity (unlayered CSS always beats layered CSS). Preflight (part of
@@ -86,16 +110,28 @@
   }
 }
 
-/* ── Ambient background drift — two glow layers move independently and very slowly.
-   Kept as plain @keyframes (not Tailwind utilities) since Tailwind has no built-in for
-   a custom named animation; referenced via animate-[drift-a_28s_...] in BackgroundGradient. */
-@keyframes drift-a {
-  0%, 100% { transform: translate(0%, 0%) scale(1); }
-  50% { transform: translate(10%, 8%) scale(1.18); }
+/* ── onMount entrance animations (Reveal/SplitChars `onMount` prop) — pure CSS, not Framer
+   Motion, on purpose. This content is guaranteed above-the-fold (the Hero) and present in
+   the prerendered HTML; a Framer Motion entrance can't move anything from its hidden
+   `initial` state until React hydrates, so on the prerendered page it sits frozen in that
+   hidden state for however long hydration takes — measured at ~1.4s in production via
+   Lighthouse's LCP breakdown. A CSS animation starts the instant the browser paints the
+   HTML, no JS required at all, so there's no freeze regardless of hydration speed. Mirrors
+   the values Reveal/SplitChars use for their Framer Motion (whileInView) path, so the two
+   look identical — this is purely about *when* the animation can start, not how it looks. */
+@keyframes fade-up-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-@keyframes drift-b {
-  0%, 100% { transform: translate(0%, 0%) scale(1); }
-  50% { transform: translate(-9%, -10%) scale(1.15); }
+.anim-fade-up-in {
+  animation: fade-up-in 1s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+@keyframes char-reveal-in {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0%); }
+}
+.anim-char-reveal-in {
+  animation: char-reveal-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* ── Scrollbar ── thin, squared-off (not a rounded pill — nothing else on this site is

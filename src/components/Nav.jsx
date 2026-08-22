@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "../hooks/useTheme";
 import Container from "./ui/Container";
 
 const LINKS = [
   { href: "#about", label: "Profile" },
   { href: "#work", label: "Work" },
-  { href: "#education", label: "Education" },
   { href: "#projects", label: "Projects" },
   { href: "#stack", label: "Index" },
+  { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -31,13 +31,23 @@ function MoonIcon(props) {
 export default function Nav() {
   const { theme, toggle } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
+  // useTheme defaults to "dark" during prerendering (no window on the server), then
+  // immediately resolves the real system/localStorage preference on the client. If this
+  // icon renders off `theme` from the very first client render, anyone whose actual
+  // preference isn't dark gets a different icon than what was server-rendered — a real
+  // hydration mismatch (React error #418), caught via a Lighthouse console-error audit.
+  // Staying on the SSR default (Sun, matching the "dark" default) until after mount avoids
+  // it: the mismatch only shows up in a normal post-hydration update, never during hydration
+  // itself.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   function closeMenu() {
     setMenuOpen(false);
   }
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-[14px]">
+    <nav className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-[6px]">
       <Container className="flex h-[74px] items-center justify-between">
         <a href="#hero" className="flex items-center gap-[11px] text-[15px] font-semibold" onClick={closeMenu}>
           <i className="block h-2 w-2 rounded-full bg-accent" />
@@ -56,10 +66,10 @@ export default function Nav() {
           <div className="flex items-center gap-5">
             <button
               onClick={toggle}
-              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={!mounted || theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
               className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-text-2 transition-[color,background-color,rotate] duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] hover:rotate-12 hover:bg-line/50 hover:text-accent"
             >
-              {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+              {!mounted || theme === "dark" ? <SunIcon /> : <MoonIcon />}
             </button>
 
             <button

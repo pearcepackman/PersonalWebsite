@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 const EASE = [0.19, 1, 0.22, 1];
+const HIDDEN = { opacity: 0, y: 18 };
+const VISIBLE = { opacity: 1, y: 0 };
 
 // Click-to-flip photo card: front is a duotone photo (grayscale + accent mix-blend-color
 // wash that resolves to full color on hover), back is personal-story text. A real 3D CSS
@@ -9,14 +12,18 @@ const EASE = [0.19, 1, 0.22, 1];
 // turning the card over.
 export default function FlipCard({ src, alt, tag, frontTitle, frontDesc, backGroups, delay = 0, className = "" }) {
   const [flipped, setFlipped] = useState(false);
+  const [observedRef, isHidden] = useScrollReveal({ amount: 0.2, margin: "0px 0px -15% 0px" });
 
+  // See useScrollReveal.js / Reveal.jsx — these tiles sit right after the Hero/statement,
+  // often still inside the initial viewport, so the same manually-driven animate approach
+  // applies here instead of Framer Motion's `whileInView` shorthand.
   return (
     <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2, margin: "0px 0px -15% 0px" }}
-      transition={{ duration: 0.8, delay, ease: EASE }}
+      ref={observedRef}
       className={className}
+      initial={false}
+      animate={isHidden ? HIDDEN : VISIBLE}
+      transition={{ duration: 0.8, delay, ease: EASE }}
     >
       <div
         role="button"

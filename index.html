@@ -2,6 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!-- Sets the correct theme before the browser paints anything, full stop. The
+         prerendered HTML has no way to know the visitor's real theme preference (no
+         window/localStorage exist in Node at build time), so it ships with no data-theme
+         attribute at all — which defaults to the dark palette (see :root in index.css).
+         Without this script, every light-mode visitor would see a flash of dark theme that
+         corrects itself once React hydrates and useTheme.js's effect runs — this script runs
+         synchronously (no defer/async/type=module) so it blocks first paint until it's done,
+         matching what useTheme.js itself does, just early enough to avoid ever painting the
+         wrong theme in the first place. Keep this in sync with useTheme.js's own logic if
+         that ever changes. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -11,14 +30,35 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Loaded non-render-blocking: a plain <link rel="stylesheet"> here would hold up the
+         very first paint until this CSS downloads, which is exactly the kind of delay that
+         widens the gap between "prerendered HTML paints" and "JS hydrates and animations
+         start" (see docs/frontend-standards.md's fluid-typography section for the related
+         freeze-then-animate issue this contributes to). preload fetches it at high priority
+         without blocking render; the media="print" trick applies it once loaded without ever
+         blocking; noscript covers JS-disabled visitors. font-display=swap (already in the
+         URL) still keeps text visible in a fallback font the moment it can, either way. -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Fragment+Mono&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Fragment+Mono&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Fragment+Mono&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- Primary SEO -->
     <title>Pearce Packman - Software Engineer</title>
-    <meta name="description" content="CS student at UMBC and Software Engineer Intern at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration. Based in Maryland." />
+    <meta name="description" content="CS student at UMBC and Software Engineer at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration. Based in Maryland." />
     <meta name="author" content="Pearce Packman" />
     <meta name="keywords" content="Pearce Packman, software engineer, full stack developer, React, Node.js, UMBC, Maryland, portfolio" />
 
@@ -26,7 +66,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pearcepackman.com/" />
     <meta property="og:title" content="Pearce Packman - Software Engineer" />
-    <meta property="og:description" content="CS student at UMBC and Software Engineer Intern at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration." />
+    <meta property="og:description" content="CS student at UMBC and Software Engineer at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration." />
     <meta property="og:image" content="https://pearcepackman.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -35,7 +75,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://pearcepackman.com/" />
     <meta name="twitter:title" content="Pearce Packman - Software Engineer" />
-    <meta name="twitter:description" content="CS student at UMBC and Software Engineer Intern at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration." />
+    <meta name="twitter:description" content="CS student at UMBC and Software Engineer at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration." />
     <meta name="twitter:image" content="https://pearcepackman.com/og-image.png" />
 
     <link rel="manifest" href="/manifest.json" />
@@ -76,7 +116,7 @@
         "@type": "WebSite",
         "url": "https://pearcepackman.com/",
         "name": "Pearce Packman",
-        "description": "CS student at UMBC and Software Engineer Intern at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration."
+        "description": "CS student at UMBC and Software Engineer at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration."
       }
     </script>
 
@@ -86,7 +126,7 @@
   <body>
     <noscript>
       <h1>Pearce Packman - Software Engineer</h1>
-      <p>CS student at UMBC and Software Engineer Intern at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration. Based in Maryland.</p>
+      <p>CS student at UMBC and Software Engineer at Occams Group. Full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration. Based in Maryland.</p>
       <p>
         <a href="mailto:pearcepackman@gmail.com">Email</a> ·
         <a href="https://www.linkedin.com/in/pearce-packman/">LinkedIn</a> ·

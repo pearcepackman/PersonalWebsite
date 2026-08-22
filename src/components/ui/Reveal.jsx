@@ -1,11 +1,23 @@
-import { forwardRef } from "react";
+import { forwardRef, useCallback } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 const EASE = [0.19, 1, 0.22, 1];
+const HIDDEN = { opacity: 0, y: 18 };
+const VISIBLE = { opacity: 1, y: 0 };
 
 const Reveal = forwardRef(function Reveal({ children, delay = 0, as = "div", className = "", onMount = false, ...rest }, ref) {
   const reduceMotion = useReducedMotion();
   const Tag = motion[as] || motion.div;
+  const [observedRef, isHidden] = useScrollReveal();
+  const mergedRef = useCallback(
+    (node) => {
+      if (typeof ref === "function") ref(node);
+      else if (ref) ref.current = node;
+      observedRef.current = node;
+    },
+    [ref, observedRef]
+  );
 
   if (reduceMotion) {
     const Static = as;
@@ -16,19 +28,32 @@ const Reveal = forwardRef(function Reveal({ children, delay = 0, as = "div", cla
     );
   }
 
-  // onMount skips the IntersectionObserver-based whileInView trigger entirely and just
-  // plays on mount. Some mobile browsers don't reliably fire the observer's first callback
-  // for a target that's already in view when the observer is created, so above-the-fold
-  // content (e.g. the Hero) needs this to guarantee it animates in on load.
-  const triggerProps = onMount
-    ? { animate: { opacity: 1, y: 0 } }
-    : { whileInView: { opacity: 1, y: 0 }, viewport: { once: false, amount: 0.15, margin: "0px 0px -15% 0px" } };
+  // onMount content (guaranteed above-the-fold, e.g. the Hero) uses a pure CSS @keyframes
+  // animation (.anim-fade-up-in, defined in index.css) instead of Framer Motion. Framer
+  // Motion is JS-driven — it can't move anything out of its hidden `initial` state until
+  // React hydrates, so on the prerendered production build this content would sit frozen
+  // in that hidden state for however long hydration takes (~1.4s measured via Lighthouse).
+  // A CSS animation starts the moment the browser paints the prerendered HTML, independent
+  // of hydration timing entirely, so there's no freeze regardless of how long JS takes.
+  if (onMount) {
+    const CssTag = as;
+    return (
+      <CssTag ref={ref} className={`anim-fade-up-in ${className}`} style={{ animationDelay: `${delay}s` }} {...rest}>
+        {children}
+      </CssTag>
+    );
+  }
 
+  // Everything else (scroll-triggered reveals): see useScrollReveal.js — `initial={false}`
+  // means this never plays a transition on mount, it just renders directly at whatever
+  // `animate` resolves to, which is VISIBLE until an IntersectionObserver positively
+  // determines otherwise. Always the same `motion.div`, never swapped for a different
+  // element type, so there's no remount cost either.
   return (
     <Tag
-      ref={ref}
-      initial={{ opacity: 0, y: 18 }}
-      {...triggerProps}
+      ref={mergedRef}
+      initial={false}
+      animate={isHidden ? HIDDEN : VISIBLE}
       transition={{ duration: 1, delay, ease: EASE }}
       className={className}
       {...rest}

@@ -3,21 +3,21 @@ import Reveal from "./ui/Reveal";
 import Container from "./ui/Container";
 
 const ROWS = [
-  { k: "Languages", v: "C++ · C · JavaScript · TypeScript · Python · SQL · Bash" },
-  { k: "Frontend", v: "React · React Native · Qt / C++ · HTML · CSS · Tailwind CSS" },
+  { k: "Languages", v: "TypeScript · C++ · C · JavaScript · Python · SQL · Bash" },
+  { k: "Frontend", v: "React · React Native · Qt · HTML · CSS · Tailwind CSS" },
   { k: "Backend", v: "Node.js · Express.js · REST APIs · PostgreSQL · Prisma · SQLite · Zod" },
-  { k: "Cloud & DevOps", v: "Azure · Docker · GitHub Actions · CI/CD · Neon" },
-  { k: "Testing", v: "Jest · Supertest · Playwright" },
-  { k: "AI & Auth", v: "Claude API · Manus API · Microsoft Graph API · Azure AD/SSO · Clerk · JWT" },
-  { k: "Embedded & Systems", v: "ESP32 · MQTT · BLE · IoT · Sensor I/O · LibreHardwareMonitor" },
-  { k: "Tools & OS", v: "Git · GitHub · Jira · VSCode · NeoVim · Linux · Windows · macOS" },
+  { k: "Cloud, DevOps & Testing", v: "Azure · Docker · GitHub Actions · CI/CD · ESLint · Neon · Jest · Supertest · Playwright" },
+  { k: "AI Tools", v: "Claude API · Claude Code · Manus API" },
+  { k: "Auth & Integrations", v: "Microsoft Graph API · Azure AD / SSO · JWT" },
+  { k: "Embedded & Systems", v: "ESP32 · IoT · BLE · MQTT · Sensor I/O" },
+  { k: "Tools & OS", v: "Git · GitHub · Jira · Linux · Windows" },
 ];
 
 export default function Index() {
   return (
     <section id="stack" className="border-t border-line py-24 md:py-[110px]">
       <Container>
-        <SectionHeader number="05" label="Index" />
+        <SectionHeader number="04" label="Index" />
 
         <div>
           {ROWS.map((row, i) => (

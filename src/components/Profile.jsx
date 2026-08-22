@@ -9,9 +9,9 @@ import snowboardPhoto from "../assets/snowboard.jpg";
 import gradPhoto from "../assets/grad.jpg";
 
 const STATEMENT = [
-  { text: "Just because the work is technical doesn't mean that's all it is. I care about how a thing is " },
-  { text: "built", emphasis: true },
-  { text: ", and how it holds up." },
+  { text: "From mechanic, to solar, to now software, my path hasn't exactly been conventional. But learning how and why things work, and " },
+  { text: "building", emphasis: true },
+  { text: " my own tools with it, is what I love to do." },
 ];
 
 const CONNECT_LINKS = [
@@ -68,7 +68,7 @@ const TILES = [
     backGroups: [
       {
         h: "Occams Group",
-        p: "Right now I'm the sole developer on OccamsRecruit, an AI-powered ATS that's live and used daily by the team, and it's actually been evaluated as better than the Zoho CRM we used before, at a fraction of the cost. It handles candidate scoring, resume parsing, and interview question generation with the Claude API, plus autonomous LinkedIn sourcing through a Manus AI agent. I also built OccamsEnrichment, a separate contact enrichment platform, and rebuilt the company website. There's 500+ automated tests and a full CI/CD pipeline behind all of it.",
+        p: "Sole developer building production software at Occams Group, spanning architecture, cloud infrastructure, and AI feature development. I designed and shipped a full-stack platform now used daily across the company, backed by 680+ automated tests and a real CI/CD pipeline with an enforced code quality gate. I built 10+ AI-driven features through a governed API layer with cost tracking and security safeguards in place, and I provisioned and manage the Azure infrastructure it all runs on. My testing and CI/CD approach got picked up by the CTO as a model for how the rest of the team works. I also built a separate contact enrichment platform and worked on the company website. I've operated with full architectural autonomy from day one and present progress directly to C-suite leadership.",
       },
       {
         h: "DAMS Lab",
@@ -87,7 +87,7 @@ export default function Profile() {
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-[1.5fr_1fr] md:gap-20">
           <SplitWords
             parts={STATEMENT}
-            className="font-serif text-[clamp(28px,3.6vw,44px)] font-normal leading-[1.18] tracking-[-0.02em]"
+            className="font-serif text-[length:var(--text-statement)] font-normal leading-[1.18] tracking-[-0.02em]"
           />
 
           <div>
