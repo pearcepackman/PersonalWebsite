@@ -52,8 +52,8 @@ export default function Contact() {
   return (
     <section id="contact" className="pt-24 pb-8 md:pt-[120px]">
       <Container>
-        <Reveal as="h2" className="mb-10 font-serif text-[clamp(40px,9vw,130px)] font-normal leading-[0.9] tracking-[-0.03em] md:mb-[60px]">
-          Let's Build <em className="italic text-accent">Something</em>!
+        <Reveal as="h2" className="mb-10 font-serif text-[length:var(--text-display)] font-normal leading-[0.9] tracking-[-0.03em] md:mb-[60px]">
+          Let's Build <em className="italic text-accent">Something</em>
         </Reveal>
 
         <Reveal delay={0.1} as="form" ref={formRef} onSubmit={handleSubmit} className="mb-16 max-w-xl md:mb-20" noValidate>

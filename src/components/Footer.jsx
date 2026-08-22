@@ -12,9 +12,9 @@ const CONTACT_LINKS = [
 const QUICK_LINKS = [
   { href: "#about", label: "Profile" },
   { href: "#work", label: "Work" },
-  { href: "#education", label: "Education" },
   { href: "#projects", label: "Projects" },
   { href: "#stack", label: "Index" },
+  { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
 ];
 

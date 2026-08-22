@@ -11,7 +11,11 @@ const charVariant = {
 // A single whileInView trigger on the parent cascades to children via variants —
 // per-character IntersectionObservers on elements this small don't fire reliably.
 // aria-hidden on the characters with an aria-label on the wrapper keeps it from
-// reading as garbled letters to a screen reader.
+// reading as garbled letters to a screen reader. role="text" is required on the wrapper —
+// a plain <span> has no implicit role that supports naming, so aria-label on it alone is an
+// invalid/ignored ARIA attribute (caught via Lighthouse's aria-prohibited-attr audit);
+// role="text" is the standard pattern for exactly this "one readable label over several
+// presentational child spans" case.
 export default function SplitChars({ text, delayStart = 0, staggerStep = 0.025, className = "", onMount = false }) {
   const reduceMotion = useReducedMotion();
 
@@ -28,6 +32,7 @@ export default function SplitChars({ text, delayStart = 0, staggerStep = 0.025, 
   return (
     <motion.span
       className={`inline-block overflow-hidden pr-[0.08em] ${className}`}
+      role="text"
       aria-label={text}
       initial="hidden"
       {...triggerProps}

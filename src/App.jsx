@@ -20,9 +20,9 @@ export default function App() {
         <Hero />
         <Profile />
         <Work />
-        <Education />
         <Projects />
         <Index />
+        <Education />
         <Contact />
       </main>
       <Footer />

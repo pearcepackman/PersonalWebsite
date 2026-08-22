@@ -1,6 +1,6 @@
 # Pearce Packman
 
-> Software Engineer based in the Baltimore/DMV area. CS student at UMBC and Software Engineer Intern at Occams Group, building full-stack and AI-integrated production systems.
+> Software Engineer based in the Baltimore/DMV area. CS student at UMBC and Software Engineer at Occams Group, building full-stack and AI-integrated production systems.
 
 Pearce is a full-stack developer with experience in React, Node.js, PostgreSQL, Azure, and AI integration (Claude API, Manus API). He worked as a mechanic and in construction before college, started in business/finance, then switched to computer science.
 

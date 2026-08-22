@@ -11,10 +11,10 @@ const ENTRIES = [
     loc: "B.S. Computer Science",
     bullets: [
       "B.S. Computer Science, expected December 2026",
-      "GPA: 3.62",
+      "GPA: 3.60",
       "Extra curricular: UMBC Racing Team",
     ],
-    tags: "Software Engineering · Operating Systems · Computer Security · Data Structures · Algorithms · Assembly Language",
+    tags: "Software Engineering · Operating Systems · Computer Security · Data Structures · Algorithms",
   },
   {
     id: "carroll",
@@ -35,7 +35,7 @@ export default function Education() {
   return (
     <section id="education" className="border-t border-line py-24 md:py-[110px]">
       <Container>
-        <SectionHeader number="03" label="Education" />
+        <SectionHeader number="05" label="Education" />
 
         <div>
           {ENTRIES.map((e, i) => (
