@@ -45,11 +45,21 @@ export default function ScrollbarTicks() {
       styleEl.textContent = `::-webkit-scrollbar-track { background-image: linear-gradient(to bottom, ${stops.join(", ")}); }`;
     }
 
-    // Layout settles a beat after mount (fonts/images), and again on resize.
-    const t = setTimeout(recompute, 300);
+    // recompute() forces a synchronous layout (querySelectorAll + reading .offsetTop on
+    // every section, plus scrollHeight) — real, non-trivial main-thread work on a page this
+    // size. Originally ran on a flat 300ms setTimeout, which landed right in the middle of
+    // the Hero's ~150ms-1250ms entrance animation timeline, and caused a real, visible
+    // stutter in that animation (a forced layout is exactly the kind of work that can stall
+    // frame delivery for an unrelated concurrently-running animation). requestIdleCallback
+    // runs this once the browser is actually idle instead of at a guessed fixed time, with a
+    // generous timeout as a fallback deadline (and a plain setTimeout fallback for Safari,
+    // which doesn't implement requestIdleCallback at all).
+    const schedule = window.requestIdleCallback || ((fn) => setTimeout(fn, 1500));
+    const cancel = window.cancelIdleCallback || clearTimeout;
+    const handle = schedule(recompute, { timeout: 2000 });
     window.addEventListener("resize", recompute);
     return () => {
-      clearTimeout(t);
+      cancel(handle);
       window.removeEventListener("resize", recompute);
       styleEl.remove();
     };

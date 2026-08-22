@@ -47,7 +47,7 @@ export default function Nav() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-[14px]">
+    <nav className="sticky top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-[6px]">
       <Container className="flex h-[74px] items-center justify-between">
         <a href="#hero" className="flex items-center gap-[11px] text-[15px] font-semibold" onClick={closeMenu}>
           <i className="block h-2 w-2 rounded-full bg-accent" />

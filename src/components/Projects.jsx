@@ -1,6 +1,8 @@
+import { useEffect, useRef } from "react";
 import SectionHeader from "./ui/SectionHeader";
 import Reveal from "./ui/Reveal";
 import Container from "./ui/Container";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 import corepanelDemo from "../assets/projects/corepanel-demo.mp4";
 import smarthomeDemo from "../assets/projects/smarthome-demo.mp4";
 
@@ -25,6 +27,39 @@ const PROJECTS = [
   },
 ];
 
+// Autoplay video only once actually scrolled into view, and pauses again once scrolled
+// away — not just `autoPlay` on mount. Video decode is real, ongoing CPU/GPU work even
+// while muted and even while off-screen; `autoPlay` also makes the browser start fetching
+// immediately on page load, competing with the actual critical-path resources (JS, fonts)
+// for bandwidth right when it matters most. `preload="none"` means nothing loads at all
+// until this component decides to actually play it.
+function ProjectVideo({ src }) {
+  const videoRef = useRef(null);
+  const [observedRef, isHidden] = useScrollReveal({ amount: 0.2, margin: "0px 0px -10% 0px" });
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (isHidden) video.pause();
+    else video.play().catch(() => {});
+  }, [isHidden]);
+
+  return (
+    <div ref={observedRef} className="aspect-[4/3] overflow-hidden border-b border-line bg-bg-2">
+      <video
+        ref={videoRef}
+        src={src}
+        loop
+        muted
+        playsInline
+        preload="none"
+        aria-hidden="true"
+        className="h-full w-full object-contain"
+      />
+    </div>
+  );
+}
+
 export default function Projects() {
   return (
     <section id="projects" className="border-t border-line py-24 md:py-[110px]">
@@ -35,20 +70,7 @@ export default function Projects() {
           {PROJECTS.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.06} as="a" href={p.href} target="_blank" rel="noopener noreferrer" className="block h-full">
               <div className="group h-full border border-line bg-bg transition-[translate,border-color,background-color,box-shadow] duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] hover:-translate-y-2 hover:border-accent hover:shadow-[0_18px_34px_-16px_rgba(0,0,0,0.4)]">
-                {p.demo && (
-                  <div className="aspect-[4/3] overflow-hidden border-b border-line bg-bg-2">
-                    <video
-                      src={p.demo}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="auto"
-                      aria-hidden="true"
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                )}
+                {p.demo && <ProjectVideo src={p.demo} />}
                 <div className="p-7 transition-colors duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:bg-bg-2">
                   {p.badge && (
                     <div className="mb-3 font-mono text-[11px] tracking-[0.05em] text-accent">{p.badge}</div>

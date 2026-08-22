@@ -42,7 +42,6 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.2",
     "vite": "^8.0.14",
-    "vite-plugin-qrcode": "^0.4.1",
-    "vite-prerender-plugin": "^0.5.13"
+    "vite-plugin-qrcode": "^0.4.1"
   }
 }

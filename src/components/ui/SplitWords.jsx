@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -14,6 +15,7 @@ const wordVariant = {
 // per-word IntersectionObservers don't fire reliably on elements this small.
 export default function SplitWords({ parts, delayStart = 0, staggerStep = 0.03, className = "" }) {
   const reduceMotion = useReducedMotion();
+  const [observedRef, isHidden] = useScrollReveal({ amount: 0.3, margin: "0px 0px -15% 0px" });
 
   const words = [];
   parts.forEach((part, pi) => {
@@ -40,12 +42,16 @@ export default function SplitWords({ parts, delayStart = 0, staggerStep = 0.03, 
     );
   }
 
+  // See useScrollReveal.js / Reveal.jsx — `initial={false}` + a manually-driven `animate`
+  // variant instead of Framer Motion's `whileInView` shorthand, so this (which sits right
+  // after the Hero, often still within the initial viewport) never ships hidden in the
+  // prerendered HTML, and never needs a component-type swap to fix that.
   return (
     <motion.span
+      ref={observedRef}
       className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.3, margin: "0px 0px -15% 0px" }}
+      initial={false}
+      animate={isHidden ? "hidden" : "visible"}
       variants={{ visible: { transition: { staggerChildren: staggerStep, delayChildren: delayStart } } }}
     >
       {words.map((w, i) => (
